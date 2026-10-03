@@ -1,0 +1,19 @@
+query,status,rank,top_3
+a woman in green dress,PASS,1,"beach/beach8.jpg, beach/beach7.jpg, cafe/cafe11.jpg"
+a woman in white dress,PASS,1,"beach/beach4.jpg, beach/beach3.jpg, beach/beach8.jpg"
+girl in white frock,FAIL,-,(none)
+woman in orange dress,PASS,1,"beach/beach7.jpg, cafe/cafe1.jpg, cafe/cafe13.jpg"
+cafe,PASS,1,"cafe/cafe10.jpg, cafe/cafe4.jpg, cafe/cafe1.jpg"
+man with white beard,FAIL,-,(none)
+old man,PASS,1,beach/beach2.jpg
+oldman,PASS,1,beach/beach2.jpg
+food,SKIPPED,-,"beach/goa_beaches1.jpg, beach/beach1.jpg, cafe/cafe11.jpg"
+dog on the beach,PASS,1,"beach/beach6.jpg, beach/beach2.jpg"
+baby on the beach,FAIL,2,"beach/beach4.jpg, baby.jpg, beach/goa_beaches2.jpg"
+night photos,PASS,1,"beach/goa_beaches12.jpg, cafe/cafe9.jpg, beach/goa_beaches2.jpg"
+penguin,FAIL,-,beach/beach6.jpg
+cap,PASS,1,"baby.jpg, cafe/cafe7.jpg, beach/beach2.jpg"
+kid in a woolly hat,PASS,1,baby.jpg
+toddler in a sweater on the beach,PASS,1,"baby.jpg, beach/goa_beaches2.jpg"
+baby wearing boots,PASS,1,baby.jpg
+little boy at the beach at sunset,PASS,1,"baby.jpg, beach/goa_beaches2.jpg, beach/beach.jpg"

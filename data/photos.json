@@ -1,0 +1,4421 @@
+[
+  {
+    "id": 1,
+    "path": "baby.jpg",
+    "description": "A toddler bundled up in a dark knit beanie with a pom-pom, a cream cable-knit sweater, dark pants, and dark boots walks across a sandy dune. The child looks down at the ground with a soft smile while balancing carefully on the uneven sand. In the background, soft ocean waves ripple beneath the warm golden light of the setting sun. Dry strands of coastal grass dot the sandy foreground around the toddler's feet, creating a serene and cozy atmosphere.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "winter",
+      "clothing_colour": [
+        "beige"
+      ],
+      "main_subject": [
+        "people"
+      ]
+    },
+    "capture_year": 2022,
+    "capture_month": 5,
+    "date_source": "assigned",
+    "everyday_words": [
+      "toddler",
+      "kid",
+      "baby",
+      "little boy",
+      "little girl",
+      "beanie",
+      "winter hat",
+      "pom pom hat",
+      "knit cap",
+      "sweater",
+      "cable knit sweater",
+      "dark boots",
+      "sand dune",
+      "beach sand",
+      "sunset",
+      "golden hour",
+      "ocean waves",
+      "coastal grass",
+      "walking on sand",
+      "cozy clothes",
+      "winter beach",
+      "golden light"
+    ]
+  },
+  {
+    "id": 2,
+    "path": "beach/beach.jpg",
+    "description": "A scenic view of the ocean during a warm sunset filled with soft pink and orange clouds against a pastel sky. A large group of surfers scattered across the water sit or rest on their surfboards, calmly floating while waiting for incoming waves. Far in the background, tiny silhouettes of sailboats and a distant ship glide along the glowing horizon. The golden evening light creates shimmering reflections across the water surface, instilling a peaceful and serene atmosphere.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "large group",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "nature or scenery",
+        "people"
+      ]
+    },
+    "capture_year": 2024,
+    "capture_month": 1,
+    "date_source": "assigned",
+    "everyday_words": [
+      "sunset ocean",
+      "surfers",
+      "surfboards",
+      "ocean waves",
+      "pink clouds",
+      "orange sky",
+      "pastel sky",
+      "sailboats",
+      "ship on horizon",
+      "golden hour",
+      "evening light",
+      "water reflection",
+      "surfers resting",
+      "scenic ocean",
+      "sea",
+      "beach sunset",
+      "waiting for waves",
+      "shimmering water"
+    ]
+  },
+  {
+    "id": 3,
+    "path": "beach/beach1.jpg",
+    "description": "Barefoot and wearing rolled-up grey jeans, a person walks along a sandy beach near the ocean's edge, passing by a cozy picnic setup. A white blanket laid on the sand holds two wine glasses filled with a sparkling beverage, one with a long orange straw inserted. Next to the drinks sits a wooden board filled with fresh food items, including vibrant red watermelon slices, bunches of grapes, and apples. The warm golden light cast over the gentle waves and sand creates a serene, relaxed, and romantic atmosphere.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "grey"
+      ],
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ]
+    },
+    "capture_year": 2026,
+    "capture_month": 8,
+    "date_source": "assigned",
+    "everyday_words": [
+      "beach picnic",
+      "barefoot",
+      "rolled up jeans",
+      "grey pants",
+      "walking on beach",
+      "wine glasses",
+      "sparkling drink",
+      "straw",
+      "fruit platter",
+      "wooden board",
+      "watermelon",
+      "grapes",
+      "apples",
+      "picnic blanket",
+      "golden hour",
+      "sunset waves",
+      "romantic beach",
+      "ocean shoreline",
+      "sand"
+    ]
+  },
+  {
+    "id": 4,
+    "path": "beach/beach10.jpg",
+    "description": "A young woman with long curly dark hair sits cross-legged on a white woven blanket, holding a fresh peach in her hand while looking directly into the camera. She is wearing a light, oversized white striped button-down shirt that loosely covers her shoulders. In the softly blurred background, a small group of friends relaxes near large tree roots on a sandy shore, with one person holding a guitar. The calm, warm lighting and natural beach environment create a serene and bohemian summer mood.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people"
+      ]
+    },
+    "capture_year": 2024,
+    "capture_month": 1,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young woman",
+      "girl",
+      "curly dark hair",
+      "holding peach",
+      "white blanket",
+      "button down shirt",
+      "striped shirt",
+      "beach picnic",
+      "friends on beach",
+      "guitar",
+      "tree roots",
+      "sandy shore",
+      "boho vibe",
+      "summer beach",
+      "warm light",
+      "casual shirt",
+      "fruit",
+      "looking at camera"
+    ]
+  },
+  {
+    "id": 5,
+    "path": "beach/beach11.jpg",
+    "description": "A tranquil scene at a sandy beach features tall green dune grass in the sharp foreground focus. In the soft-focus background, the sun sets near the horizon, casting a bright golden reflection across the ocean surface and wet shore. The expansive sky above is filled with soft pastel shades of pink, orange, and warm gray clouds. Gentle waves wash along the coastline, creating a calm, serene atmosphere during dusk without any people present.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ],
+      "main_subject": [
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2024,
+    "capture_month": 1,
+    "date_source": "assigned",
+    "everyday_words": [
+      "dune grass",
+      "beach grass",
+      "sunset",
+      "dusk",
+      "golden hour",
+      "ocean horizon",
+      "pastel sky",
+      "pink clouds",
+      "orange sky",
+      "wet sand",
+      "gentle waves",
+      "empty beach",
+      "peaceful beach",
+      "coastline",
+      "sea",
+      "warm sunset",
+      "no people"
+    ]
+  },
+  {
+    "id": 6,
+    "path": "beach/beach2.jpg",
+    "description": "An old man stands on a wet sandy beach alongside a medium-sized black and white dog. He wears a dark jacket over a light patterned shirt, khaki shorts, and a dark cap, holding a walking stick in one hand and a pair of black shoes in the other. The dog stands patiently beside his bare feet, gazing toward the viewer. In the background, faint ocean waves meet a pale, overcast sky, creating a quiet and peaceful mood.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "beige",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people",
+        "animal"
+      ]
+    },
+    "capture_year": 2026,
+    "capture_month": 8,
+    "date_source": "assigned",
+    "everyday_words": [
+      "old man",
+      "elderly man",
+      "senior man",
+      "black and white dog",
+      "dog on beach",
+      "walking stick",
+      "cane",
+      "cap",
+      "hat",
+      "khaki shorts",
+      "jacket",
+      "holding shoes",
+      "barefoot",
+      "wet sand",
+      "overcast sky",
+      "ocean waves",
+      "pet",
+      "walking dog"
+    ]
+  },
+  {
+    "id": 7,
+    "path": "beach/beach3.jpg",
+    "description": "A young woman relaxes inside a woven hammock on a serene, sandy beach, resting her head against soft white pillows. She is dressed in a loose white shirt and sits with her legs bent while looking out towards the calm sea. In the background, a peach-colored beach umbrella and a lounge chair sit on the shore, with distant hazy hills rising from the water. Palm fronds hang gently from above, enhancing the peaceful, tropical mood of the moment.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white"
+      ],
+      "main_subject": [
+        "people"
+      ]
+    },
+    "capture_year": 2026,
+    "capture_month": 8,
+    "date_source": "assigned",
+    "everyday_words": [
+      "woman in hammock",
+      "hammock on beach",
+      "beach umbrella",
+      "lounge chair",
+      "white shirt",
+      "pillows",
+      "tropical beach",
+      "palm leaves",
+      "sea view",
+      "relaxing on beach",
+      "beach chair",
+      "hills",
+      "sandy beach",
+      "summer vacation",
+      "peach umbrella",
+      "young woman"
+    ]
+  },
+  {
+    "id": 8,
+    "path": "beach/beach4.jpg",
+    "description": "A young woman walks barefoot along a sandy beach shoreline while tenderly holding a baby in her arms. She is wearing a white dress decorated with a leafy purple floral pattern, while the baby wears a bright pink ruffled outfit. In the background, calm ocean waves gently roll onto the shore under a soft, muted sky. The young woman looks down smiling at the baby, creating a heartwarming and peaceful atmosphere during the warm evening light.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "two",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "pink",
+        "purple",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people"
+      ]
+    },
+    "capture_year": 2021,
+    "capture_month": 7,
+    "date_source": "assigned",
+    "everyday_words": [
+      "mom and baby",
+      "mother and child",
+      "young woman",
+      "baby",
+      "infant",
+      "white dress",
+      "floral dress",
+      "pink outfit",
+      "pink dress",
+      "barefoot",
+      "walking on beach",
+      "holding baby",
+      "ocean shoreline",
+      "evening light",
+      "sunset beach",
+      "gentle waves",
+      "smiling mom"
+    ]
+  },
+  {
+    "id": 9,
+    "path": "beach/beach5.jpg",
+    "description": "A person sits on a sandy dune overlooking a vast coastline, holding an open book printed with Arabic text. The background features rolling sand dunes stretching toward a wide ocean under a bright, hazy sky. Clumps of beach grass grow along the sandy ridge near the reader. The overall mood is quiet and peaceful, capturing a serene moment of outdoor reading by the sea.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "object"
+      ]
+    },
+    "capture_year": 2021,
+    "capture_month": 7,
+    "date_source": "assigned",
+    "everyday_words": [
+      "reading on beach",
+      "person with book",
+      "arabic book",
+      "open book",
+      "sand dunes",
+      "dune",
+      "beach grass",
+      "ocean view",
+      "coastline",
+      "reading outdoors",
+      "hazy sky",
+      "sea view",
+      "sandy ridge",
+      "quiet beach",
+      "sitting on sand"
+    ]
+  },
+  {
+    "id": 10,
+    "path": "beach/beach6.jpg",
+    "description": "A small, spotted dog with black, white, and brown fur happily trots across a sandy beach while carrying a wooden stick in its mouth. The dog wears a bright turquoise collar that contrasts with its speckled coat and the warm tones of the sand. In the background, the calm blue ocean stretches to the horizon under a soft sky painted with light blue and pastel pink clouds. The scene captures a playful and serene moment during the warm golden hour of late afternoon.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ],
+      "main_subject": [
+        "animal"
+      ]
+    },
+    "capture_year": 2021,
+    "capture_month": 7,
+    "date_source": "assigned",
+    "everyday_words": [
+      "spotted dog",
+      "puppy",
+      "dog with stick",
+      "dog on beach",
+      "turquoise collar",
+      "blue collar",
+      "playing on beach",
+      "sandy beach",
+      "blue ocean",
+      "pink clouds",
+      "pastel sky",
+      "golden hour",
+      "late afternoon",
+      "running dog",
+      "pet",
+      "sea"
+    ]
+  },
+  {
+    "id": 11,
+    "path": "beach/beach7.jpg",
+    "description": "A young woman stands smiling on sandy dunes near the ocean, looking back over her shoulder. She is wearing a long, flowing orange maxi dress with an open back and a wide-brimmed straw hat with frayed edges. The background features rolling sand dunes dotted with sparse green vegetation under a cloudy, overcast sky. Her joyful expression and relaxed pose convey a happy, carefree mood during a summer day.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "orange"
+      ],
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2024,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young woman",
+      "girl",
+      "smiling woman",
+      "sand dunes",
+      "ocean",
+      "orange dress",
+      "maxi dress",
+      "flowing dress",
+      "open back dress",
+      "straw hat",
+      "wide brim hat",
+      "frayed hat",
+      "cloudy sky",
+      "overcast sky",
+      "summer day",
+      "beach vegetation",
+      "happy woman",
+      "carefree",
+      "looking back",
+      "sandy beach"
+    ]
+  },
+  {
+    "id": 12,
+    "path": "beach/beach8.jpg",
+    "description": "A young woman stands on a sandy beach, looking out towards the calm ocean under an overcast sky. She is wearing a long, flowing olive green maxi dress with an open back and a wide-brimmed straw hat. Gentle waves lap at the shore near her feet as she stands peacefully on the wet sand. The serene atmosphere is enhanced by the soft, muted colors of the cloudy sky and the quiet sea.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "green"
+      ],
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2024,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young woman",
+      "girl",
+      "sandy beach",
+      "ocean",
+      "overcast sky",
+      "cloudy sky",
+      "olive green dress",
+      "green dress",
+      "maxi dress",
+      "flowing dress",
+      "open back dress",
+      "straw hat",
+      "wide brim hat",
+      "wet sand",
+      "gentle waves",
+      "quiet sea",
+      "peaceful",
+      "coast",
+      "shore"
+    ]
+  },
+  {
+    "id": 13,
+    "path": "beach/beach9.jpg",
+    "description": "A wide, sandy beach stretches across the foreground, showing textured footprints in the sand under a clear blue sky. In the distance, a calm blue ocean meets the horizon, with several people scattered along the shoreline enjoying the water. On the left side of the beach, a wooden signpost stands near a person dressed in blue clothing. Other distant figures can be seen wading in the gentle waves or standing on the shore, creating a peaceful and relaxing atmosphere. The bright daylight and vast open space evoke a serene summer day at the coast.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "large group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "blue"
+      ],
+      "main_subject": [
+        "nature or scenery",
+        "people"
+      ]
+    },
+    "capture_year": 2024,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "sandy beach",
+      "footprints in sand",
+      "clear blue sky",
+      "blue ocean",
+      "shoreline",
+      "people at beach",
+      "wooden signpost",
+      "wooden sign",
+      "person in blue",
+      "wading in water",
+      "gentle waves",
+      "summer day",
+      "coast",
+      "sea",
+      "sunny day",
+      "outdoors",
+      "open beach",
+      "footprints"
+    ]
+  },
+  {
+    "id": 14,
+    "path": "beach/goa_beaches1.jpg",
+    "description": "A hearty breakfast spread is laid out on a rustic wooden table overlooking a sunny sandy beach. The meal includes a large herb omelet, a plate with a fried egg, baked beans, grilled tomatoes, mushrooms, and toast, alongside bowls of fresh fruit salad, yogurt, and honey. Two tall glasses containing a pink smoothie and orange juice with colorful straws stand next to the plates. In the background, empty beach chairs, umbrellas, and small boats rest on the sand near the calm ocean under a bright sky, creating a serene and relaxing morning atmosphere.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ],
+      "main_subject": [
+        "food or drinks",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "breakfast",
+      "rustic wooden table",
+      "beach dining",
+      "herb omelet",
+      "fried egg",
+      "baked beans",
+      "grilled tomatoes",
+      "mushrooms",
+      "toast",
+      "fruit salad",
+      "yogurt",
+      "pink smoothie",
+      "orange juice",
+      "straws",
+      "beach chairs",
+      "beach umbrellas",
+      "small boats",
+      "ocean view",
+      "morning meal",
+      "food on table"
+    ]
+  },
+  {
+    "id": 15,
+    "path": "beach/goa_beaches10.jpg",
+    "description": "This cozy outdoor dining setup is located on a sandy beach under a rustic thatched roof illuminated by a warm hanging lantern. A wooden table draped in a red and white checkered tablecloth is surrounded by comfortable wicker chairs with patterned cushions. In the background, the deep blue twilight sky frames a serene beachscape dotted with lounge chairs, umbrellas, and distant string lights. The warm red glow cast from the roof creates a romantic and inviting atmosphere, perfect for a quiet evening by the sea.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ],
+      "main_subject": [
+        "building or place",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 10,
+    "date_source": "assigned",
+    "everyday_words": [
+      "outdoor dining",
+      "beach restaurant",
+      "thatched roof",
+      "hanging lantern",
+      "wooden table",
+      "checkered tablecloth",
+      "red and white tablecloth",
+      "wicker chairs",
+      "cushions",
+      "twilight sky",
+      "lounge chairs",
+      "beach umbrellas",
+      "string lights",
+      "evening",
+      "romantic setup",
+      "sea view",
+      "cozy dining"
+    ]
+  },
+  {
+    "id": 16,
+    "path": "beach/goa_beaches11.jpg",
+    "description": "A single lit white candle burns brightly inside a clear glass lantern, which rests on a terracotta-colored ceramic bowl base. The lantern sits on a table covered with a colorful, patterned tablecloth featuring vintage-style advertisements and text, including fragments like \"KING\" and \"Good Times\". In the softly blurred background, empty wooden chairs and tables suggest an outdoor cafe or restaurant setting during the evening. The warm glow of the candle flame contrasts beautifully with the cool purple and pink tones of the twilight background, creating a cozy and intimate atmosphere.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ],
+      "main_subject": [
+        "object"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 10,
+    "date_source": "assigned",
+    "everyday_words": [
+      "lit candle",
+      "white candle",
+      "glass lantern",
+      "terracotta base",
+      "ceramic bowl",
+      "patterned tablecloth",
+      "vintage text",
+      "wooden chairs",
+      "cafe tables",
+      "outdoor cafe",
+      "twilight",
+      "evening",
+      "cozy lighting",
+      "candle flame",
+      "restaurant seating",
+      "purple sky",
+      "pink sky"
+    ]
+  },
+  {
+    "id": 17,
+    "path": "beach/goa_beaches12.jpg",
+    "description": "A cozy outdoor restaurant setting is captured at dusk, featuring a warm candle glowing inside a glass lantern on a white-clothed table in the foreground. The table also holds a dimly lit menu, while empty wicker chairs are arranged neatly around it. In the soft-focus background, a few people can be seen socializing under the deep blue evening sky, framed by tall palm trees and warm ambient lights. The scene exudes a serene and romantic tropical atmosphere, perfect for an evening dinner.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "building or place",
+        "object"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 10,
+    "date_source": "assigned",
+    "everyday_words": [
+      "outdoor restaurant",
+      "dusk",
+      "glowing candle",
+      "glass lantern",
+      "white tablecloth",
+      "menu",
+      "wicker chairs",
+      "people socializing",
+      "evening sky",
+      "palm trees",
+      "ambient lights",
+      "tropical setting",
+      "dinner table",
+      "romantic dinner",
+      "nighttime restaurant",
+      "beach resort"
+    ]
+  },
+  {
+    "id": 18,
+    "path": "beach/goa_beaches2.jpg",
+    "description": "A small group of children are gathered on a sandy beach at night, silhouetted against the warm glow of a beachside establishment. Behind them, a rustic wooden structure with a thatched roof features a prominent, illuminated yellow sign that reads \"SUNJAY'S SUN TRIBE\". The children are dressed in dark, casual summer clothing, with one boy holding a stick while others look down at the sand. String lights and colorful decorations illuminate the background, casting a mysterious yet inviting atmosphere over the nocturnal scene.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "small group",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "children",
+      "kids",
+      "sandy beach",
+      "night beach",
+      "silhouettes",
+      "thatched roof",
+      "wooden structure",
+      "yellow sign",
+      "summer clothes",
+      "boy with stick",
+      "string lights",
+      "decorations",
+      "beach hut",
+      "nighttime",
+      "group of kids",
+      "beach shack",
+      "casual clothing"
+    ]
+  },
+  {
+    "id": 19,
+    "path": "beach/goa_beaches3.jpg",
+    "description": "A serene beach scene unfolds under a dramatic sunset sky that transitions from deep blue to vibrant orange near the horizon. Several small fishing boats with tiny flags are parked along the shoreline, casting dark silhouettes against the glowing water. Silhouettes of a group of people are scattered across the sandy shore, with some standing near the boats and others gathered around beach chairs on the right. The overall atmosphere is peaceful and calm, capturing a quiet evening moment by the ocean as the sun dips below the horizon.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "large group",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "nature or scenery",
+        "people"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "sunset sky",
+      "orange sky",
+      "blue sky",
+      "shoreline",
+      "fishing boats",
+      "small boats",
+      "flags on boats",
+      "silhouettes",
+      "glowing water",
+      "group of people",
+      "sandy shore",
+      "beach chairs",
+      "ocean sunset",
+      "evening at sea",
+      "peaceful beach",
+      "coastal view",
+      "twilight"
+    ]
+  },
+  {
+    "id": 20,
+    "path": "beach/goa_beaches4.jpg",
+    "description": "A lone person stands beside a small outrigger boat in the shallows of a calm sea. The individual is wearing dark clothing and is silhouetted against the bright orange and yellow hues of a setting sun. The sun shines brightly above the horizon, casting a shimmering golden reflection across the gentle waves. The boat features a covered canopy structure and a long outrigger pole resting on the water. The scene evokes a tranquil, serene mood during twilight.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "vehicle"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "lone person",
+      "person in water",
+      "outrigger boat",
+      "small boat",
+      "calm sea",
+      "setting sun",
+      "sunset",
+      "golden reflection",
+      "shimmering water",
+      "gentle waves",
+      "boat canopy",
+      "twilight",
+      "silhouette",
+      "dark clothing",
+      "ocean sunset",
+      "sea shallows",
+      "tranquil sea"
+    ]
+  },
+  {
+    "id": 21,
+    "path": "beach/goa_beaches5.jpg",
+    "description": "A group of people are enjoying a sunny day at a sandy beach with several colorful umbrellas and lounge chairs arranged neatly. A large metal sign reading \"I [heart] GOA\" with a logo of Xavier's Beach Cafe stands prominently on the sand. In the background, calm waters stretch out under a clear, bright sky, while lush greenery borders the shore in the distance. The atmosphere is vibrant and relaxed as visitors lounge and walk around the area. The scene captures a popular tourist destination full of warmth and leisure.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "large group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "sandy beach",
+      "ocean",
+      "sea",
+      "beach umbrellas",
+      "lounge chairs",
+      "sun chairs",
+      "sign",
+      "metal sign",
+      "I love Goa sign",
+      "clear sky",
+      "sunny day",
+      "tourists",
+      "crowd",
+      "people on beach",
+      "green trees",
+      "greenery",
+      "coastal view",
+      "beach cafe",
+      "beach resort",
+      "vacationers",
+      "people lounging",
+      "beach visitors",
+      "calm water"
+    ]
+  },
+  {
+    "id": 22,
+    "path": "beach/goa_beaches6.jpg",
+    "description": "A tranquil day at the beach features a sandy shore with gentle waves rolling in from the ocean under a pale blue sky with scattered clouds. A few people are seen walking along the water's edge, wearing casual, light-colored clothing. On the left side of the beach, a rustic beachfront structure with a thatched roof and a distinctive red Om sign stands near some palm trees and scattered rocks. The mood is calm and relaxing, as visitors enjoy the coastal scenery. The readable text on the structure includes the Om symbol.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "nature or scenery",
+        "people"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 11,
+    "date_source": "assigned",
+    "everyday_words": [
+      "beach",
+      "sandy shore",
+      "ocean waves",
+      "sea",
+      "pale blue sky",
+      "clouds",
+      "people walking",
+      "light clothing",
+      "casual clothes",
+      "beachfront hut",
+      "thatched roof structure",
+      "Om sign",
+      "palm trees",
+      "rocks",
+      "shoreline",
+      "water's edge",
+      "calm beach",
+      "ocean side",
+      "beachgoers",
+      "rustic hut",
+      "coast",
+      "seaside"
+    ]
+  },
+  {
+    "id": 23,
+    "path": "beach/goa_beaches7.jpg",
+    "description": "A person sits on the ground with their back to the camera near a small green structure with a corrugated roof by the sea. The individual wears a white shirt, a red hat, and patterned clothing. In the background, the vast ocean with rolling waves meets a grey, overcast sky. Further in the distance, a group of people is visible near a pier or walkway. The overall mood is quiet and contemplative, capturing a solitary moment by the water.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "white",
+        "red",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 10,
+    "date_source": "assigned",
+    "everyday_words": [
+      "person sitting",
+      "back to camera",
+      "green hut",
+      "corrugated roof",
+      "sea",
+      "ocean",
+      "rolling waves",
+      "grey sky",
+      "overcast weather",
+      "red hat",
+      "white shirt",
+      "patterned clothing",
+      "pier",
+      "walkway",
+      "people in background",
+      "seaside",
+      "solitary person",
+      "sitting on ground",
+      "ocean view",
+      "cloudy day",
+      "waterfront"
+    ]
+  },
+  {
+    "id": 24,
+    "path": "beach/goa_beaches8.jpg",
+    "description": "A sunny day scene on a sandy beach features several wooden buildings and palm trees in the background. A small group of people are relaxing on the beach and near the buildings, wearing casual clothing such as shorts and swimsuits. Several canoes in bright orange and yellow are placed near the water's edge, alongside umbrellas and outdoor seating. The atmosphere is relaxed and vacation-like, with readable text visible on some signs and storefronts.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 10,
+    "date_source": "assigned",
+    "everyday_words": [
+      "sandy beach",
+      "wooden buildings",
+      "palm trees",
+      "people relaxing",
+      "casual clothes",
+      "shorts",
+      "swimsuits",
+      "orange canoes",
+      "yellow canoes",
+      "kayaks",
+      "beach umbrellas",
+      "outdoor seating",
+      "patio chairs",
+      "sunny day",
+      "storefronts",
+      "water's edge",
+      "beach resort",
+      "vacation spot",
+      "canoes on sand",
+      "beachgoers",
+      "seaside"
+    ]
+  },
+  {
+    "id": 25,
+    "path": "beach/goa_beaches9.jpg",
+    "description": "A tranquil tropical beach scene unfolds with a wooden fishing boat resting on the golden sand in the foreground. In the mid-ground, a small group of people can be seen strolling along the shoreline near a line of rustic beach huts nestled among lush palm trees. The background features gentle rolling hills and a clear blue sky dotted with soft white clouds, illuminated by the bright daylight. The overall mood is serene and peaceful, capturing a typical coastal afternoon in a tropical setting.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "nature or scenery",
+        "vehicle"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 10,
+    "date_source": "assigned",
+    "everyday_words": [
+      "tropical beach",
+      "golden sand",
+      "wooden boat",
+      "fishing boat",
+      "boat on shore",
+      "shoreline",
+      "people walking",
+      "beach huts",
+      "rustic huts",
+      "palm trees",
+      "green hills",
+      "blue sky",
+      "white clouds",
+      "bright daylight",
+      "seaside",
+      "coast",
+      "ocean shore",
+      "tropical trees",
+      "sandy coast",
+      "coastal view",
+      "beach strolling"
+    ]
+  },
+  {
+    "id": 26,
+    "path": "cafe/cafe1.jpg",
+    "description": "A young woman wearing a striped sleeve sits at a wooden table in a warmly lit cafe with a relaxed and inviting atmosphere. On the table, there are multiple cups of coffee with latte art, a glass jar filled with a vibrant orange beverage and a straw, a small white vase containing dry grass, and a modern lamp casting a soft glow. In the background, a large potted plant and a partial view of a brick wall enhance the cozy interior setting. The arrangement suggests people are enjoying drinks and conversation together.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "two",
+      "time_of_day": "sunset or evening",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ]
+    },
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young woman",
+      "striped sleeve",
+      "wooden table",
+      "cafe interior",
+      "coffee cups",
+      "latte art",
+      "coffee mug",
+      "glass jar",
+      "orange drink",
+      "straw",
+      "white vase",
+      "dry grass",
+      "modern lamp",
+      "table lamp",
+      "potted plant",
+      "indoor plant",
+      "brick wall",
+      "cozy cafe",
+      "warm lighting",
+      "drinks on table",
+      "coffee shop"
+    ]
+  },
+  {
+    "id": 27,
+    "path": "cafe/cafe10.jpg",
+    "description": "An overhead view of a tall, bright cafe interior featuring a large multi-paned arched window framing greenery outside. Several people are scattered at wooden tables, many of them using laptops, working, or studying, dressed in casual clothing including dark jackets and sweaters. A prominent large black pendant lamp hangs from the arched ceiling, dominating the center of the vertical frame. Various items like mugs, drinks, notebooks, and bags are visible on the tables, and a small sign with the word COFFEE is partially visible on the left. The overall mood is quiet and focused, typical of a busy contemporary coffee shop workspace.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "large group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 2,
+    "date_source": "assigned",
+    "everyday_words": [
+      "overhead view",
+      "high ceiling cafe",
+      "arched window",
+      "people working",
+      "laptops",
+      "studying",
+      "dark jackets",
+      "sweaters",
+      "black pendant lamp",
+      "hanging light",
+      "wooden tables",
+      "coffee mugs",
+      "drinks",
+      "notebooks",
+      "bags",
+      "coffee sign",
+      "cafe interior",
+      "greenery outside",
+      "coffee shop workspace",
+      "students",
+      "patrons"
+    ]
+  },
+  {
+    "id": 28,
+    "path": "cafe/cafe11.jpg",
+    "description": "A group of friends are gathered around a table in a brightly lit cafe, enthusiastically looking at a video camera held by one of them. The man on the left wears a patterned short-sleeved shirt with sunglasses on his head, while the woman on the right wears a light green hoodie, and the person in the back has a large afro and a white shirt. On the table, there is a teapot filled with red liquid, white coffee cups on saucers, a plate with food items, and a small dish of jam. The background features a brick wall, a yellow wall section, and a hanging lamp, creating a warm and cheerful atmosphere.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "multicolour or patterned",
+        "green",
+        "white"
+      ],
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 2,
+    "date_source": "assigned",
+    "everyday_words": [
+      "group of friends",
+      "cafe",
+      "video camera",
+      "camera",
+      "man in patterned shirt",
+      "sunglasses",
+      "woman in green hoodie",
+      "green sweatshirt",
+      "person with afro",
+      "white shirt",
+      "teapot",
+      "red tea",
+      "coffee cups",
+      "saucers",
+      "plate of food",
+      "jam dish",
+      "hanging lamp",
+      "brick wall",
+      "yellow wall",
+      "people at table",
+      "friends hanging out"
+    ]
+  },
+  {
+    "id": 29,
+    "path": "cafe/cafe12.jpg",
+    "description": "In this cozy indoor setting, a young woman sits on a sofa next to a person in dark clothing, while a dog rests on the concrete floor in the foreground. The woman wears a sleeveless top, and two wooden mid-century modern chairs face the seating area. The background features a white brick wall decorated with framed pictures, green plants, and shelves filled with various items. Natural light fills the room, creating a relaxed and calm mood. There is no visible readable text in the image.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "animal"
+      ]
+    },
+    "capture_year": 2023,
+    "capture_month": 2,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young woman",
+      "sofa",
+      "couch",
+      "person in dark clothes",
+      "dog sleeping",
+      "dog on floor",
+      "concrete floor",
+      "sleeveless top",
+      "wooden chairs",
+      "mid-century chairs",
+      "white brick wall",
+      "framed pictures",
+      "wall art",
+      "green plants",
+      "house plants",
+      "indoor shelves",
+      "cozy living room",
+      "natural light",
+      "indoor seating",
+      "pet dog"
+    ]
+  },
+  {
+    "id": 30,
+    "path": "cafe/cafe13.jpg",
+    "description": "Two young women are sitting together by a large window in a cozy cafe, looking at a small camera. The woman on the left wears an orange shirt and a brown head covering, while the woman on the right wears a beige trench coat, glasses, and a dark brown head covering. They are seated on wooden chairs at a counter next to a window, with a large potted plant and a decorative red brick wall visible in the background. Several woven lampshades hang from the ceiling, casting a warm light over the interior scene. The mood is calm and focused as they examine their photos.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "orange",
+        "brown",
+        "beige"
+      ],
+      "main_subject": [
+        "people"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 12,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young women",
+      "friends",
+      "large window",
+      "cafe counter",
+      "small camera",
+      "orange shirt",
+      "brown head covering",
+      "hijab",
+      "beige trench coat",
+      "glasses",
+      "dark head covering",
+      "wooden chairs",
+      "potted plant",
+      "red brick wall",
+      "woven lampshades",
+      "hanging lamps",
+      "cafe interior",
+      "looking at photos",
+      "cozy atmosphere",
+      "indoor window seat"
+    ]
+  },
+  {
+    "id": 31,
+    "path": "cafe/cafe14.jpg",
+    "description": "A young woman wearing a pink-and-white striped shirt holds two wine glasses and a pink plate filled with white coconut-covered sweets, almonds, and milk. She stands on a dark sandy beach with ocean waves washing ashore in the background. The scene feels relaxed and luxurious, capturing a scenic moment by the sea.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "pink",
+        "white",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 12,
+    "date_source": "assigned",
+    "everyday_words": [
+      "woman",
+      "young woman",
+      "girl",
+      "striped shirt",
+      "pink and white shirt",
+      "wine glasses",
+      "glasses",
+      "pink plate",
+      "plate",
+      "sweets",
+      "coconut sweets",
+      "almonds",
+      "milk",
+      "dark sand",
+      "beach",
+      "ocean",
+      "waves",
+      "sea",
+      "seaside",
+      "coastal"
+    ]
+  },
+  {
+    "id": 32,
+    "path": "cafe/cafe2.jpg",
+    "description": "A group of people are sitting at outdoor tables outside a charming shop with a sign reading \"& Antiques\" and another sign for \"Dürümcü Kerem\". The patrons are dressed in dark jackets and sweaters, with one person resting their head in their hands while seated at a white table. Above the outdoor seating area, a row of warm, glowing string lights illuminates the space, casting a cozy ambiance against the grey, rustic facade of the building. The background features air conditioning units, metal piping, and other storefronts along a cobblestone street. The overall mood is quiet and intimate, capturing a relaxed evening gathering.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "winter",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned",
+    "everyday_words": [
+      "people",
+      "group",
+      "outdoor tables",
+      "patrons",
+      "dark jackets",
+      "sweaters",
+      "jackets",
+      "white table",
+      "string lights",
+      "warm lights",
+      "antiques shop",
+      "storefront",
+      "building",
+      "air conditioner",
+      "metal pipes",
+      "cobblestone street",
+      "cobblestone",
+      "street",
+      "evening",
+      "outdoor seating"
+    ]
+  },
+  {
+    "id": 33,
+    "path": "cafe/cafe3.jpg",
+    "description": "A group of young women is seated at a table outside a cafe, enjoying each other's company in the daytime. They are wearing warm jackets and coats in neutral and blue tones. The cafe is decorated for the holidays with green garlands and red bows around the entrance, and the sign above reads 'Kuzguncuk Cikolata Kahve'. The atmosphere is cozy and cheerful as they sit on patterned chairs on the pavement. The background features a multi-story building with windows and architectural details typical of a city street.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "winter",
+      "clothing_colour": [
+        "blue"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned",
+    "everyday_words": [
+      "women",
+      "young women",
+      "girls",
+      "outdoor cafe",
+      "cafe",
+      "table",
+      "jackets",
+      "coats",
+      "blue coat",
+      "holiday decor",
+      "garlands",
+      "red bows",
+      "patterned chairs",
+      "chairs",
+      "pavement",
+      "sidewalk",
+      "building",
+      "windows",
+      "city street",
+      "street",
+      "daytime"
+    ]
+  },
+  {
+    "id": 34,
+    "path": "cafe/cafe4.jpg",
+    "description": "A group of people are gathered outside an outdoor cafe named 'FRIENDS', which features a green awning with the iconic show logo. Some patrons are seated at tables in the foreground while others stand near the entrance under a leafy tree. The scene is illuminated by the warm, inviting light coming from inside the cozy cafe setting during the daytime. Customers wear casual clothing in various colors like red and grey, blending into a lively street atmosphere.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "red",
+        "grey"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2020,
+    "capture_month": 9,
+    "date_source": "assigned",
+    "everyday_words": [
+      "people",
+      "group",
+      "outdoor cafe",
+      "cafe",
+      "green awning",
+      "awning",
+      "tables",
+      "tree",
+      "leafy tree",
+      "daytime",
+      "casual clothes",
+      "red clothing",
+      "grey clothing",
+      "street",
+      "cafe entrance",
+      "customers",
+      "patrons",
+      "outdoors",
+      "coffee shop"
+    ]
+  },
+  {
+    "id": 35,
+    "path": "cafe/cafe5.jpg",
+    "description": "Two people are seated at a wooden table in a cafe, enjoying refreshing beverages with plastic lids and straws. The person in the foreground wears a blue denim jacket and holds a light-colored iced drink in a clear plastic cup. The person in the background wears a striped sweater and a patterned shirt while holding a pink-and-purple smoothie. A book, a smartphone, and a small paper menu or flyer rest on the table alongside the cups. The atmosphere is casual, relaxed, and social, characteristic of a casual outing.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "summer",
+      "clothing_colour": [
+        "blue",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ]
+    },
+    "capture_year": 2020,
+    "capture_month": 9,
+    "date_source": "assigned",
+    "everyday_words": [
+      "people",
+      "wooden table",
+      "cafe",
+      "iced drink",
+      "smoothie",
+      "plastic cup",
+      "straws",
+      "denim jacket",
+      "jean jacket",
+      "striped sweater",
+      "patterned shirt",
+      "book",
+      "smartphone",
+      "phone",
+      "paper menu",
+      "flyer",
+      "drinks",
+      "beverages",
+      "table"
+    ]
+  },
+  {
+    "id": 36,
+    "path": "cafe/cafe6.jpg",
+    "description": "A couple sits at a small wooden table outdoors at night, dining alongside a rustic stone wall illuminated by warm wall lamps. The man wears a light-coloured t-shirt and is seen from behind, while plants hang from above, framing the scene. Multiple empty tables and chairs stretch along the stone facade, creating a quiet and inviting atmosphere. The ground is paved with patterned stones, and the overall mood is cozy and intimate.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "two",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "unknown"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2020,
+    "capture_month": 9,
+    "date_source": "assigned",
+    "everyday_words": [
+      "couple",
+      "man",
+      "wooden table",
+      "outdoors",
+      "night",
+      "outdoor dining",
+      "stone wall",
+      "wall lamps",
+      "lights",
+      "t-shirt",
+      "hanging plants",
+      "plants",
+      "empty tables",
+      "chairs",
+      "paved ground",
+      "stone floor",
+      "rustic wall"
+    ]
+  },
+  {
+    "id": 37,
+    "path": "cafe/cafe7.jpg",
+    "description": "A group of friends is sitting outdoors at a table outside a cafe, enjoying a sunny day under a red and white striped awning. A person in a black jacket sits with their back to the camera, while another wears a brown cap, a light-coloured hoodie, and a jacket. Across from them, a person with sunglasses wears a grey sweatshirt. The table holds a small metal can and some documents or menus, while large glass windows reflect the surrounding street behind them. The atmosphere is warm and casual, with bright sunlight casting strong shadows across the scene. The readable text on the window appears to be reversed and partially obscured.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "black",
+        "brown",
+        "grey"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 1,
+    "date_source": "assigned",
+    "everyday_words": [
+      "friends",
+      "group",
+      "outdoor table",
+      "cafe",
+      "sunny day",
+      "striped awning",
+      "black jacket",
+      "cap",
+      "hat",
+      "hoodie",
+      "jacket",
+      "sunglasses",
+      "sweatshirt",
+      "grey sweatshirt",
+      "can",
+      "menus",
+      "glass window",
+      "sunlight",
+      "shadows",
+      "outdoors"
+    ]
+  },
+  {
+    "id": 38,
+    "path": "cafe/cafe8.jpg",
+    "description": "A group of friends gathers around a wooden table in an indoor setting, possibly a cafe, enjoying warm beverages topped with cinnamon. Three distinct white cups filled with a milky drink and dusted with cinnamon sit on matching saucers alongside a small candle and a decorative bowl of dried red potpourri. The individuals, dressed in colorful clothing including red and dark sleeves, hold the cups and saucers while interacting warmly. The scene exudes a cozy, inviting mood with a focus on shared moments and warm drinks. The table surface features a distinct wood grain pattern.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "winter",
+      "clothing_colour": [
+        "red",
+        "multicolour or patterned"
+      ],
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 1,
+    "date_source": "assigned",
+    "everyday_words": [
+      "friends",
+      "wooden table",
+      "indoors",
+      "cafe",
+      "hot drinks",
+      "cinnamon",
+      "white cups",
+      "cups and saucers",
+      "saucers",
+      "candle",
+      "potpourri",
+      "red sleeves",
+      "colorful clothing",
+      "warm drinks",
+      "coffee cups",
+      "milky drink",
+      "wood table"
+    ]
+  },
+  {
+    "id": 39,
+    "path": "cafe/cafe9.jpg",
+    "description": "In this nighttime street scene, several people gather outside a brightly lit, warmly glowing corner café named Naftalin. A group of people are standing near the entrance; one woman wears a black jacket and blue jeans, while another wears a blue jacket, an orange scarf, and jeans. Another person is visible inside the café, wearing a light-coloured shirt, and a couple of individuals are seated at an outdoor table to the right, with one man in a white t-shirt and glasses. The storefront features a red wooden frame, arched windows, and decorative signs, including a banner above the main sign with phone numbers and text. The overall mood is vibrant and inviting, illuminated by warm overhead lights that cast a cozy glow on the cobblestone pavement.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "small group",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "black",
+        "blue",
+        "orange",
+        "white"
+      ],
+      "main_subject": [
+        "people",
+        "building or place"
+      ]
+    },
+    "capture_year": 2019,
+    "capture_month": 1,
+    "date_source": "assigned",
+    "everyday_words": [
+      "night street",
+      "people",
+      "corner cafe",
+      "woman",
+      "black jacket",
+      "blue jeans",
+      "jeans",
+      "blue jacket",
+      "orange scarf",
+      "man",
+      "white t-shirt",
+      "glasses",
+      "outdoor table",
+      "red wooden frame",
+      "arched windows",
+      "signs",
+      "overhead lights",
+      "cobblestone street",
+      "cobblestone",
+      "street"
+    ]
+  },
+  {
+    "id": 40,
+    "path": "car.jpg",
+    "description": "An off-white vintage sedan is parked outdoors near a sandy beach with tall dry grasses and reeds in the background. The vehicle features a roof rack and a visible license plate on the rear bumper that reads P 822 EK 61. The setting appears to be a peaceful coastal spot during the daytime with clear skies over the water. There are no people visible in the scene, and the car is stationary, evoking a quiet, nostalgic atmosphere. The overall composition highlights the classic automobile against a natural, serene landscape.",
+    "attributes": {
+      "location_type": "beach",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ],
+      "main_subject": [
+        "vehicle",
+        "nature or scenery"
+      ]
+    },
+    "capture_year": 2022,
+    "capture_month": 5,
+    "date_source": "assigned",
+    "everyday_words": [
+      "vintage car",
+      "off white car",
+      "sedan",
+      "classic car",
+      "car",
+      "automobile",
+      "sandy beach",
+      "beach",
+      "tall grass",
+      "dry grass",
+      "reeds",
+      "roof rack",
+      "license plate",
+      "bumper",
+      "coastal spot",
+      "daytime",
+      "clear sky",
+      "water",
+      "sea"
+    ]
+  },
+  {
+    "id": 41,
+    "path": "istockphoto-974238866-612x612.jpg",
+    "description": "A massive audience of people sits closely together in a large, dimly lit auditorium, facing a brightly illuminated stage where a speaker stands in the distance. The crowd consists of many individuals wearing dark and blue attire, their silhouettes glowing with the cool blue light emanating from the stage and ambient background fixtures. The atmosphere is focused and attentive as the spectators watch the presentation unfold. The background is filled with glowing blue lights and vertical patterns reminiscent of a modern conference hall.",
+    "attributes": {
+      "location_type": "event venue",
+      "people_count": "large group",
+      "time_of_day": "sunset or evening",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ],
+      "main_subject": [
+        "people"
+      ]
+    },
+    "capture_year": 2022,
+    "capture_month": 5,
+    "date_source": "assigned",
+    "everyday_words": [
+      "audience",
+      "crowd",
+      "people",
+      "auditorium",
+      "conference hall",
+      "stage",
+      "speaker",
+      "presentation",
+      "spectators",
+      "blue lights",
+      "dimly lit auditorium",
+      "large crowd",
+      "dark clothing",
+      "blue clothing",
+      "speaker on stage",
+      "event",
+      "watching presentation",
+      "indoor conference",
+      "silhouettes",
+      "illuminated stage"
+    ]
+  },
+  {
+    "id": 42,
+    "path": "pet.jpg",
+    "description": "A young woman wearing a red shirt and blue jeans is affectionately hugging a small dachshund dog in what appears to be a cafe or restaurant setting. The dog wears a light gray harness and has its tongue slightly out. Two blurred drink cups are in the foreground on either side of the frame. The background is a neutral, out-of-focus wall. The overall mood is tender and affectionate.",
+    "attributes": {
+      "location_type": "cafe or restaurant",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "red",
+        "blue"
+      ],
+      "main_subject": [
+        "people",
+        "animal"
+      ]
+    },
+    "capture_year": 2022,
+    "capture_month": 5,
+    "date_source": "assigned",
+    "everyday_words": [
+      "young woman",
+      "woman",
+      "girl",
+      "red shirt",
+      "blue jeans",
+      "jeans",
+      "dachshund",
+      "small dog",
+      "dog",
+      "hugging dog",
+      "cafe",
+      "restaurant",
+      "gray harness",
+      "dog harness",
+      "drink cups",
+      "cups",
+      "pet",
+      "hugging pet",
+      "dog with tongue out",
+      "woman with dog"
+    ]
+  },
+  {
+    "id": 43,
+    "path": "Birthday photos/istockphoto-1643692451-612x612.jpg",
+    "description": "Three people are standing together indoors celebrating a birthday in a joyful atmosphere. The young woman in the center is laughing heartily while wearing a dark maroon dress with a shiny belt, flanked by a man in a light blue tunic on the left and a woman in a blue denim dress on the right. All three are wearing colorful pointy birthday party hats. The background wall is decorated with brightly colored balloons, silver streamers, and a banner that reads HAPPY BIRTHDAY.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue",
+        "red",
+        "purple"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "family celebration",
+      "party hat",
+      "balloons",
+      "happy birthday banner",
+      "laughing",
+      "smiling",
+      "man with mustache",
+      "older man",
+      "young woman",
+      "middle aged woman",
+      "maroon dress",
+      "blue tunic",
+      "denim dress",
+      "silver streamers",
+      "indoor party",
+      "cheerful",
+      "joyful",
+      "birthday decorations"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 44,
+    "path": "Birthday photos/istockphoto-1643692452-612x612.jpg",
+    "description": "Three people pose joyfully together in front of a decorated wall during an indoor birthday celebration. The man on the left wears a light blue traditional shirt, the woman in the center wears a denim dress, and the young woman on the right wears a dark purple sleeveless dress. All three are wearing colorful party hats while smiling and laughing. Colorful balloons and a banner reading HAPPY BIRTHDAY hang behind them, creating a cheerful and festive atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue",
+        "purple"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "party hats",
+      "balloons",
+      "happy birthday banner",
+      "celebration",
+      "family photo",
+      "smiling",
+      "laughing",
+      "denim dress",
+      "kurta",
+      "purple dress",
+      "indoor party",
+      "joyful group",
+      "party decorations",
+      "cheerful mood",
+      "festive background",
+      "man and women",
+      "fun times"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 45,
+    "path": "Birthday photos/istockphoto-1643692453-612x612.jpg",
+    "description": "An older man, a young woman, and a middle-aged woman stand close together and smile happily during a birthday celebration. The man wears a light blue long-sleeved tunic, the young woman wears a dark maroon dress with a metallic belt, and the woman on the right wears a blue denim dress. All three are wearing sparkly conical party hats with the text \"Happy Birthday\" on them. The background white wall is decorated with colorful balloons, silver tinsel, and a banner spelling \"HAPPY BIRTHDAY\". The overall mood is warm, joyful, and festive.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue",
+        "red"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "party hat",
+      "balloons",
+      "happy birthday banner",
+      "family photo",
+      "cheerful",
+      "smiling family",
+      "blue kurta",
+      "denim dress",
+      "maroon dress",
+      "indoor celebration",
+      "decorations",
+      "man with mustache",
+      "birthday hat",
+      "festive",
+      "silver tinsel"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 46,
+    "path": "Birthday photos/istockphoto-1643692454-612x612 (1).jpg",
+    "description": "An older man and a woman kiss a smiling young woman on both of her cheeks during a festive indoor birthday celebration. The young woman stands in the center wearing a fitted maroon dress, flanked by the man in a light blue tunic and the woman in a denim top. All three wear colorful conical party hats decorated with polka dots and glittery trim. In the background, a white wall is decorated with yellow, green, orange, and white balloons, as well as a bunting banner that reads 'HAPPY BIRTHDAY'.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue",
+        "purple"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "family celebration",
+      "kiss on cheek",
+      "party hats",
+      "balloons",
+      "happy birthday banner",
+      "parents and daughter",
+      "affection",
+      "smiling woman",
+      "denim dress",
+      "kurta",
+      "decorations",
+      "joyful",
+      "indoor party",
+      "cone hat",
+      "wall decorations"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 47,
+    "path": "Birthday photos/istockphoto-1643692454-612x612.jpg",
+    "description": "An older man and a woman kiss a young woman on both cheeks during a festive birthday celebration indoors. The young woman in the center wears a dark purple dress and smiles joyfully, while the man wears a light blue kurta and the woman on the right wears a blue denim dress. All three are wearing colorful birthday party hats with festive patterns and foil accents. The background features a white wall decorated with vibrant balloons, silver fringe streamers, and a banner reading HAPPY BIRTHDAY. The mood is affectionate, warm, and joyful as the family celebrates together.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue",
+        "purple"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "family kiss",
+      "party hats",
+      "balloons",
+      "kissing cheek",
+      "happy birthday banner",
+      "parents and daughter",
+      "purple dress",
+      "blue kurta",
+      "denim dress",
+      "celebration",
+      "joyful family",
+      "indoor party",
+      "party decorations",
+      "festive backdrop",
+      "smiling woman",
+      "loving family",
+      "birthday celebration"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 48,
+    "path": "Birthday photos/istockphoto-1643695427-612x612.jpg",
+    "description": "A woman wearing a conical party hat gives two thumbs-up signs while winking and playfully sticking her tongue out. She is dressed in a blue denim blouse featuring pleated details along the front. The background consists of a white wall decorated with vibrant balloons in purple, yellow, orange, and green, alongside silver tinsel and a birthday banner. The entire scene captures a cheerful and playful celebration atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "woman",
+      "birthday party",
+      "party hat",
+      "balloons",
+      "thumbs up",
+      "denim shirt",
+      "celebration",
+      "festive",
+      "winking",
+      "sticking tongue out",
+      "joyful",
+      "birthday banner",
+      "decorations",
+      "fun",
+      "cheerful",
+      "middle aged woman",
+      "indoor party",
+      "blue top",
+      "happy birthday"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 49,
+    "path": "Birthday photos/istockphoto-1643695433-612x612.jpg",
+    "description": "A middle-aged woman wearing a blue denim shirt and a colorful party hat smiles broadly while giving thumbs-up gestures with both hands. She stands indoors against a white background decorated for a celebration. Vibrant balloons in shades of purple, green, yellow, orange, and white are arranged around her alongside a silver tinsel garland and a gold banner that reads \"HAPPY BIRTHDAY\". The overall atmosphere is joyful, lively, and festive.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "woman",
+      "middle-aged woman",
+      "birthday hat",
+      "party hat",
+      "balloons",
+      "thumbs up",
+      "smiling",
+      "happy woman",
+      "blue shirt",
+      "denim top",
+      "birthday banner",
+      "celebration",
+      "party decorations",
+      "festive mood",
+      "happy birthday banner",
+      "indoor party",
+      "joyful",
+      "cheerful",
+      "colorful balloons"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 50,
+    "path": "Birthday photos/istockphoto-1643695434-612x612.jpg",
+    "description": "A smiling middle-aged woman and man stand together while wearing colorful birthday hats indoors. The woman wears a dark blue denim top, and the man wears a light blue long-sleeved traditional shirt. Behind them, a white wall is decorated with silver tinsel streamers, colorful balloons, and a banner that reads \"HAPPY BIRTHDAY\". Both individuals are smiling broadly, creating a joyful and celebratory atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "happy birthday",
+      "birthday party",
+      "couple",
+      "man and woman",
+      "smiling",
+      "balloons",
+      "party hats",
+      "celebration",
+      "denim top",
+      "kurta",
+      "party banner",
+      "festive decor",
+      "mustache",
+      "grey hair",
+      "birthday decorations",
+      "tinsel streamers",
+      "indoor party"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 51,
+    "path": "Birthday photos/istockphoto-1643695440-612x612.jpg",
+    "description": "A middle-aged woman with grey hair stands with her arms outstretched in an excited gesture, smiling happily at the camera. She wears a denim blue shirt and a colorful conical birthday hat adorned with a glittering pink ruffle. Behind her, a white wall is festooned with a string banner reading \"HAPPY BIRTHDAY\" and vibrant balloons in yellow, purple, green, and orange. The festive atmosphere creates a cheerful, joyful, and playful birthday mood.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "woman",
+      "birthday party",
+      "party hat",
+      "celebration",
+      "balloons",
+      "happy birthday",
+      "denim shirt",
+      "blue top",
+      "excited",
+      "cheerful",
+      "smiling",
+      "grey hair",
+      "festive",
+      "decorations",
+      "banner",
+      "joyful",
+      "middle aged woman",
+      "indoor party",
+      "fun"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 52,
+    "path": "Birthday photos/istockphoto-1643695481-612x612 (1).jpg",
+    "description": "A middle-aged woman and a man with a mustache are celebrating a birthday together indoors. Both individuals are wearing festive party hats and blue shirts, looking at each other and laughing cheerfully. The white wall behind them is decorated with silver streamers, colorful balloons, and a gold 'HAPPY BIRTHDAY' banner. The mood is joyful, affectionate, and celebratory.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "party hat",
+      "couple",
+      "laughing",
+      "balloons",
+      "happy birthday banner",
+      "smiling woman",
+      "man with mustache",
+      "celebration",
+      "festive decor",
+      "blue shirt",
+      "silver streamers",
+      "happy mood",
+      "joyful couple",
+      "indoor celebration",
+      "decorations",
+      "mature couple",
+      "family party"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 53,
+    "path": "Birthday photos/istockphoto-1643695481-612x612.jpg",
+    "description": "An older woman and man are celebrating a birthday indoors, smiling and laughing together. Both individuals are wearing colorful cone-shaped party hats and blue shirts, with the woman in a darker blue denim top and the man in a light blue button-up shirt. The background is decorated for a party with a \"HAPPY BIRTHDAY\" banner, silver tinsel, and several colorful balloons in shades of yellow, orange, blue, and pink. The couple appears joyful and affectionate as they share a happy moment during the celebration.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "older couple",
+      "husband and wife",
+      "smiling",
+      "laughing",
+      "party hats",
+      "balloons",
+      "birthday banner",
+      "celebration",
+      "happy birthday",
+      "blue shirt",
+      "denim shirt",
+      "kurta",
+      "indoor party",
+      "decorations",
+      "tinsel",
+      "joyful",
+      "anniversary",
+      "middle-aged couple",
+      "senior citizens"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 54,
+    "path": "Birthday photos/istockphoto-1643695490-612x612.jpg",
+    "description": "An older man with a mustache and a woman are celebrating a birthday indoors against a decorated white wall. The man, wearing a light blue kurta and a colorful party hat, is feeding a small piece of cake to the woman, who wears a blue denim top and a polka-dotted party hat. The background is festively decorated with colorful balloons, a silver tinsel curtain, and a banner that reads \"HAPPY BIRTHDAY\". Both individuals are smiling joyfully, creating a warm and celebratory atmosphere during the party.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "feeding cake",
+      "older man",
+      "woman",
+      "party hats",
+      "balloons",
+      "happy birthday banner",
+      "celebration",
+      "smiling",
+      "laughing",
+      "blue shirt",
+      "denim top",
+      "tinsel curtain",
+      "indoor party",
+      "family",
+      "joy",
+      "cake",
+      "mustache",
+      "anniversary",
+      "festive decorations"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 55,
+    "path": "Birthday photos/istockphoto-1643695491-612x612.jpg",
+    "description": "A happy middle-aged woman and man are celebrating a birthday indoors against a decorated white wall. The woman, wearing a blue denim shirt and a colorful party hat with pink trim, is feeding a bite of cake to the man. The man, wearing a light blue shirt and a matching party hat with gold trim, opens his mouth to eat the food with a joyful expression. The background is decorated with colorful balloons in pink, yellow, orange, and blue, along with silver tinsel and a \"HAPPY BIRTHDAY\" banner. The overall mood is cheerful and celebratory as they share a sweet moment together.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "celebrating",
+      "feeding cake",
+      "husband and wife",
+      "middle-aged couple",
+      "party hats",
+      "balloons",
+      "happy birthday banner",
+      "blue shirts",
+      "indoor celebration",
+      "smiling",
+      "joyful",
+      "sharing food",
+      "decorations",
+      "tinsel",
+      "mustache",
+      "grey hair",
+      "cake bite",
+      "festive mood",
+      "senior couple"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 56,
+    "path": "Birthday photos/pexels-n-voitkevich-7826291.jpg",
+    "description": "A chocolate birthday cake with white frosting sits on a white hexagonal stand, celebrating a 50th anniversary or birthday. Two golden candles shaped as the numbers \"5\" and \"0\" are lit on top of the cake, casting a warm glow. To the left of the candles, a star-shaped wire sparkler emits delicate sparks against a blurry background of golden bokeh lights. The festive scene is filled with warm light, creating a celebratory and joyful atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "food or drinks",
+        "object"
+      ],
+      "location_type": "other",
+      "people_count": "none",
+      "time_of_day": "unknown",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "birthday cake",
+      "50th birthday",
+      "50th anniversary",
+      "chocolate cake",
+      "white frosting",
+      "gold candles",
+      "number candles",
+      "star sparkler",
+      "bokeh background",
+      "golden lights",
+      "celebration",
+      "party",
+      "cake stand",
+      "lit candles",
+      "sparks",
+      "festive",
+      "milestone birthday",
+      "half century",
+      "warm glow",
+      "confetti"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 57,
+    "path": "Birthday photos/pexels-n-voitkevich-7826296.jpg",
+    "description": "A festive 50th birthday party setup is arranged on a black table against a shimmering gold tinsel backdrop. The table is decorated with silver foil balloons spelling \"50\", a chocolate cake with a gold \"50\" topper, plates of donuts, macarons, and cookies, along with two black champagne flutes and a bottle of wine. Stacked white gift boxes with gold polka dots and two white pillar candles add to the celebratory display. On the wooden floor beneath the table, several black balloons and clear balloons filled with gold confetti are scattered. A black pom-pom garland hangs across the top of the gold curtain, enhancing the elegant gold and black color scheme.",
+    "attributes": {
+      "main_subject": [
+        "object",
+        "food or drinks"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "50th birthday",
+      "birthday party",
+      "party decorations",
+      "gold tinsel",
+      "silver balloons",
+      "chocolate cake",
+      "macarons",
+      "donuts",
+      "party table",
+      "black balloons",
+      "confetti balloons",
+      "gift boxes",
+      "champagne flutes",
+      "celebration",
+      "festive decor",
+      "gold and black theme",
+      "milestone birthday",
+      "candles",
+      "wine bottle"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 58,
+    "path": "Birthday photos/pexels-n-voitkevich-7826301.jpg",
+    "description": "A two-layer chocolate cake with white frosting sits on a white pedestal stand, decorated with gold candles forming the number \"50\" and a star-shaped topper. In the foreground, glazed donuts with chocolate stripes are softly blurred, while a small bowl of colorful macarons rests in the background. The dark table is scattered with gold confetti, and a textured glass candle holder is visible on the left. A shimmering gold tinsel curtain hangs in the background, creating a festive and celebratory atmosphere for a milestone birthday party.",
+    "attributes": {
+      "main_subject": [
+        "food or drinks",
+        "object"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "50th birthday cake",
+      "chocolate cake",
+      "birthday candles",
+      "number 50",
+      "gold decorations",
+      "donuts",
+      "macarons",
+      "party table",
+      "celebration",
+      "milestone birthday",
+      "gold tinsel",
+      "confetti",
+      "cake stand",
+      "dessert table",
+      "festive mood",
+      "indoor party",
+      "sweets",
+      "pastries",
+      "gold star topper"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 59,
+    "path": "Birthday photos/pexels-n-voitkevich-7826349.jpg",
+    "description": "A two-layer chocolate cake with white frosting sits on a white hexagonal cake stand with gold legs. Two gold metallic candles shaped like the numbers \"5\" and \"0\" are placed on top of the cake, with their flames gently burning. The background is softly blurred, showing warm golden bokeh lights and a dark balloon, suggesting a festive indoor celebration. Gold confetti is scattered on the wooden surface beneath the cake stand, adding to the celebratory mood of a 50th birthday.",
+    "attributes": {
+      "main_subject": [
+        "food or drinks",
+        "object"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "unknown",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "birthday cake",
+      "50th birthday",
+      "chocolate cake",
+      "gold candles",
+      "number candles",
+      "lit candles",
+      "cake stand",
+      "celebration",
+      "milestone birthday",
+      "fifty",
+      "frosting",
+      "bokeh lights",
+      "party decor",
+      "confetti",
+      "festive",
+      "anniversary cake",
+      "golden anniversary",
+      "dessert",
+      "sweet treat",
+      "indoor party"
+    ],
+    "capture_year": 2026,
+    "capture_month": 1,
+    "date_source": "assigned"
+  },
+  {
+    "id": 60,
+    "path": "Pets/07471b27-72df-475b-b532-f26f9c4bcf80.jpg",
+    "description": "A young toddler boy with blonde hair stands on a lush green lawn, holding a colorful toy ball. He is wearing a light blue t-shirt, matching blue shorts, and white sneakers. Sitting attentively in front of him is a medium-sized dog with tan, black, and white fur, looking up at the boy expectantly. In the background, a wooden fence and vibrant garden flowers are softly blurred, creating a peaceful backyard setting. The overall mood is warm and playful, capturing a sweet moment of connection between a child and his pet.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "blue",
+        "white"
+      ]
+    },
+    "everyday_words": [
+      "toddler",
+      "little boy",
+      "dog",
+      "pet",
+      "backyard",
+      "lawn",
+      "grass",
+      "playing",
+      "toy ball",
+      "colorful ball",
+      "blue shirt",
+      "blue shorts",
+      "white sneakers",
+      "blonde hair",
+      "garden",
+      "fence",
+      "summer day",
+      "puppy",
+      "friendship",
+      "playing fetch",
+      "outdoor play",
+      "family pet"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 61,
+    "path": "Pets/istockphoto-1335321864-612x612.jpg",
+    "description": "An older woman sits comfortably in a rustic wooden armchair on a spacious veranda, focused on her smartphone. She is dressed in a patterned skirt and a light-colored shirt, enjoying a quiet moment. A black and tan dog stands alertly beside her chair, while a black and white cat stretches out asleep on the dark, polished floor in the foreground. In the background, a dark wooden table holds a pineapple and a blue mug, with lush tropical greenery visible beyond the open porch.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "summer",
+      "clothing_colour": [
+        "multicolour or patterned",
+        "pink",
+        "green"
+      ]
+    },
+    "everyday_words": [
+      "older woman",
+      "using phone",
+      "veranda",
+      "porch",
+      "pets",
+      "black dog",
+      "sleeping cat",
+      "tuxedo cat",
+      "wooden chair",
+      "distressed furniture",
+      "tropical background",
+      "relaxed afternoon",
+      "home patio",
+      "pineapple",
+      "blue mug",
+      "cozy home",
+      "barefoot",
+      "summer day"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 62,
+    "path": "Pets/istockphoto-1357322049-612x612.jpg",
+    "description": "A young woman wearing a grey loungewear set and a festive reindeer headband is kneeling on the floor, warmly hugging her small dog. The dog is wearing a bright yellow sweater and looks cozy in her embrace. In the background, a decorated Christmas tree with glowing lights and a white sofa create a warm, festive atmosphere in the living room. The scene is filled with a cozy, affectionate mood during the holiday season.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "night",
+      "setting": "indoor",
+      "season": "winter",
+      "clothing_colour": [
+        "grey",
+        "white"
+      ]
+    },
+    "everyday_words": [
+      "woman hugging dog",
+      "pet owner",
+      "small dog",
+      "dog sweater",
+      "Christmas tree",
+      "holiday season",
+      "cozy living room",
+      "reindeer headband",
+      "grey pajamas",
+      "winter holidays",
+      "festive lights",
+      "hugging pet",
+      "indoor Christmas",
+      "cozy winter",
+      "pet love",
+      "fluffy slippers",
+      "Christmas decorations",
+      "warm atmosphere",
+      "schnauzer",
+      "cuddling dog"
+    ],
+    "capture_year": 2025,
+    "capture_month": 9,
+    "date_source": "assigned"
+  },
+  {
+    "id": 63,
+    "path": "Pets/istockphoto-2177437394-612x612 (1).jpg",
+    "description": "A brown and white dog walks along a concrete curb at night while on a leash. The dog has long, floppy brown ears and a white body with brown patches. In the background, streaks of orange and yellow light from streetlights create a motion blur effect against the dark night sky. The dog is looking down towards the ground near the concrete barrier, appearing curious or focused. A thin black leash lies on the asphalt road surface in the foreground.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "street or city",
+      "people_count": "none",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "dog",
+      "puppy",
+      "pet",
+      "night walk",
+      "dog leash",
+      "walking dog",
+      "streetlights",
+      "motion blur",
+      "concrete curb",
+      "brown and white dog",
+      "spaniel mix",
+      "nighttime",
+      "dark sky",
+      "asphalt road",
+      "sniffing",
+      "outdoor walk",
+      "pet care",
+      "dog walking",
+      "evening walk",
+      "roadside"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 64,
+    "path": "Pets/istockphoto-2177437394-612x612.jpg",
+    "description": "A brown and white dog walks along a concrete barrier at night, sniffing the ground. The dog is attached to a grey leash that trails onto the dark asphalt path. In the background, bright orange streetlights are heavily blurred into streaks of light, indicating movement or a long exposure. The scene is set outdoors under a dark night sky, creating a dynamic yet quiet atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "street or city",
+      "people_count": "none",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "dog",
+      "puppy",
+      "pet",
+      "walking dog",
+      "night walk",
+      "dog leash",
+      "brown and white dog",
+      "motion blur",
+      "streetlights",
+      "concrete wall",
+      "asphalt",
+      "night time",
+      "outdoor walk",
+      "sniffing",
+      "canine",
+      "furry friend",
+      "dark background",
+      "light streaks",
+      "evening walk"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 65,
+    "path": "Pets/istockphoto-2252633457-612x612.jpg",
+    "description": "A young woman with long, wavy reddish-brown hair interacts with two dogs in a sunny, grassy field. She extends her hand to a white Labrador retriever, which gently licks her palm, while a black Labrador sits attentively behind them. The woman wears a cozy beige knit sweater and grey pants as she kneels in the grass. Warm golden sunlight filters through the scene, highlighting the dogs' fur and creating a peaceful, affectionate atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "animal"
+      ],
+      "location_type": "nature or park",
+      "people_count": "one",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "beige",
+        "grey"
+      ]
+    },
+    "everyday_words": [
+      "dogs",
+      "labrador retriever",
+      "white dog",
+      "black dog",
+      "pet owner",
+      "feeding dogs",
+      "licking hand",
+      "golden hour",
+      "sunset",
+      "grassy field",
+      "park",
+      "woman",
+      "red hair",
+      "knit sweater",
+      "animal lover",
+      "dog training",
+      "treats",
+      "outdoor",
+      "sunny day",
+      "pets",
+      "friendship",
+      "canine"
+    ],
+    "capture_year": 2025,
+    "capture_month": 9,
+    "date_source": "assigned"
+  },
+  {
+    "id": 66,
+    "path": "Pets/pexels-andres-alarcon-40036850-8571647.jpg",
+    "description": "A white cat with black markings on its head sits alertly in a grassy field during the evening. The background features a tall hedge and a soft, warm sunset sky with light clouds. In the foreground, blurred green foliage and a yellow dandelion flower frame the view. On the left, a large, dense bush stands next to a metal pipe or pole. The overall atmosphere is peaceful and quiet as the cat gazes directly at the camera.",
+    "attributes": {
+      "main_subject": [
+        "animal",
+        "nature or scenery"
+      ],
+      "location_type": "nature or park",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "cat",
+      "white cat",
+      "black and white cat",
+      "grassy field",
+      "lawn",
+      "sunset",
+      "evening sky",
+      "hedge",
+      "bushes",
+      "dandelions",
+      "green grass",
+      "outdoor",
+      "nature",
+      "pet",
+      "feline",
+      "looking at camera",
+      "peaceful",
+      "backyard",
+      "garden",
+      "twilight",
+      "countryside"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 67,
+    "path": "Pets/pexels-cottonbro-5961360.jpg",
+    "description": "A cute Pembroke Welsh Corgi lies peacefully on the green grass in the foreground of a backyard garden. Behind the dog, a small group of older adults are standing and chatting near a white house surrounded by tall pine trees. The people are dressed in casual summer clothing, including light blue, white, and grey shirts with beige trousers and blue jeans. A lush green hydrangea bush with light blue flowers sits next to the dog, adding a touch of nature to the warm, relaxed scene.",
+    "attributes": {
+      "main_subject": [
+        "animal",
+        "people"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "blue",
+        "white",
+        "beige",
+        "grey"
+      ]
+    },
+    "everyday_words": [
+      "corgi",
+      "dog",
+      "puppy",
+      "backyard",
+      "garden",
+      "lawn",
+      "grass",
+      "family gathering",
+      "older people",
+      "grandparents",
+      "house",
+      "cottage",
+      "summer day",
+      "outdoor party",
+      "hydrangeas",
+      "flowers",
+      "pet",
+      "relaxing",
+      "socializing",
+      "trees",
+      "pine trees"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 68,
+    "path": "Pets/pexels-evan-cameron-21436484-36525945.jpg",
+    "description": "A brown tabby cat sits in profile, looking alertly to the right side of the frame. Warm, dramatic light illuminates the cat's face, whiskers, and back, highlighting its striped fur texture against a dark background. In the background, out-of-focus green plants and branches are barely visible in the shadows. The scene is set at night in a dark outdoor area, creating a mysterious and quiet mood.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "other",
+      "people_count": "none",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "cat",
+      "tabby cat",
+      "brown cat",
+      "pet",
+      "feline",
+      "whiskers",
+      "night",
+      "dark",
+      "warm light",
+      "dramatic lighting",
+      "shadow",
+      "outdoor",
+      "garden",
+      "plants",
+      "alert cat",
+      "looking away",
+      "profile",
+      "domestic cat",
+      "animal",
+      "cozy",
+      "mysterious",
+      "backyard"
+    ],
+    "capture_year": 2025,
+    "capture_month": 9,
+    "date_source": "assigned"
+  },
+  {
+    "id": 69,
+    "path": "Pets/pexels-gem-webb-428343-35028131.jpg",
+    "description": "A white dog, possibly a husky or shepherd mix, sits alertly in a snow-covered yard at night. The dog's eyes glow brightly from the camera's flash, creating a striking and slightly eerie look. In the background, a wooden fence covered in snow stands before a dark, wooded area. Light snow appears to be falling, captured as soft white blurs in the foreground. The overall atmosphere is cold, quiet, and mysterious under the dark night sky.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "nature or park",
+      "people_count": "none",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "winter",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "white dog",
+      "husky",
+      "shepherd",
+      "snow",
+      "winter",
+      "night",
+      "glowing eyes",
+      "backyard",
+      "fence",
+      "wooden fence",
+      "cold",
+      "freezing",
+      "snowfall",
+      "winter night",
+      "pet",
+      "animal",
+      "outdoors",
+      "dark",
+      "woods",
+      "trees",
+      "winter scene"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 70,
+    "path": "Pets/pexels-jaclou-dl-37891868.jpg",
+    "description": "A small, fluffy light-brown dog and a brown tabby cat sit side-by-side in a lush green grassy field. The dog, with long silky fur covering its ears and a dark nose, looks directly at the camera with a calm expression. Beside it, the tabby cat looks slightly downward and to the side, showcasing its striped coat and green eyes. The background is filled with soft-focus green grass and numerous white daisy flowers, creating a bright and natural setting.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "nature or park",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "cat",
+      "dog",
+      "pets",
+      "tabby cat",
+      "fluffy dog",
+      "green grass",
+      "daisies",
+      "flowers",
+      "summer",
+      "outdoors",
+      "nature",
+      "cute animals",
+      "friends",
+      "domestic animals",
+      "garden",
+      "meadow",
+      "sunny day",
+      "small dog",
+      "striped cat",
+      "brown dog",
+      "white flowers"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 71,
+    "path": "Pets/pexels-jessikaarraes-16538965.jpg",
+    "description": "An orange and white long-haired cat sits on a light-colored tiled floor, looking curiously upward. In the background, a second, lighter grey cat lies relaxed on the floor. The setting is a modern, minimalist home interior featuring a white shelving unit filled with books and decorative items. The warm, soft lighting creates a cozy and peaceful atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "unknown",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "orange and white cat",
+      "fluffy cat",
+      "two cats",
+      "pet",
+      "feline",
+      "home interior",
+      "bookshelf",
+      "tiled floor",
+      "cozy room",
+      "indoor cat",
+      "curious cat",
+      "minimalist decor",
+      "domestic animal",
+      "cute pets",
+      "white shelves",
+      "warm lighting",
+      "sitting cat",
+      "lying cat"
+    ],
+    "capture_year": 2025,
+    "capture_month": 9,
+    "date_source": "assigned"
+  },
+  {
+    "id": 72,
+    "path": "Pets/pexels-karen-waters-2150270882-32018814.jpg",
+    "description": "A black and white cat sits alertly amidst a lush garden filled with vibrant flowers. In the foreground, a dense patch of bright pink and delicate white blossoms frames the scene. Behind the cat, beautifully manicured yellow and green shrubs rise up, creating a colorful backdrop. A brick house with a white-framed window is partially visible in the upper right corner under a soft daylight sky. The overall atmosphere is peaceful and serene, capturing a quiet moment in a backyard garden.",
+    "attributes": {
+      "main_subject": [
+        "animal",
+        "nature or scenery"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "cat",
+      "black and white cat",
+      "garden",
+      "flowers",
+      "pink flowers",
+      "white flowers",
+      "backyard",
+      "bushes",
+      "yellow shrub",
+      "house",
+      "pet",
+      "feline",
+      "outdoor",
+      "summer garden",
+      "nature",
+      "plants",
+      "brick house",
+      "peaceful",
+      "cute cat",
+      "spring blossoms"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 73,
+    "path": "Pets/pexels-mariansicko-4214919.jpg",
+    "description": "A fluffy grey tabby cat sits upright on a light-colored floor, bathed in warm sunlight streaming from a window. Next to the cat, a long-haired brown dog lies comfortably on the floor, resting its head and looking towards the camera. In the background, a wooden folding chair stands near a radiator under a bright window, creating a soft, out-of-focus backdrop. The bright backlighting highlights the cat's fur and creates a warm, peaceful atmosphere in the room. Both pets appear calm and relaxed in their cozy indoor environment.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "cat",
+      "dog",
+      "pets",
+      "domestic animals",
+      "tabby cat",
+      "brown dog",
+      "long-haired dog",
+      "fluffy cat",
+      "indoor pets",
+      "sunlight",
+      "sunbeam",
+      "cozy home",
+      "wooden chair",
+      "peaceful",
+      "resting",
+      "sitting cat",
+      "lying dog",
+      "warm light",
+      "pet friends",
+      "cute animals"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 74,
+    "path": "Pets/pexels-pragyanbezbo-25713124.jpg",
+    "description": "A joyful tan and white dog runs enthusiastically down a concrete path in a lush garden towards the camera. The dog has its mouth wide open in a happy expression, with its ears perked up and front paws lifted mid-stride. In the background, a white house with a wooden window frame is partially visible behind dense green bushes and vibrant pink flowers. A small pink potted plant sits near the edge of the path, surrounded by overgrown greenery and leafy trees. The bright daylight enhances the lively and energetic mood of the scene.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "dog running",
+      "happy dog",
+      "border collie",
+      "pet playing",
+      "backyard garden",
+      "running dog",
+      "dog in yard",
+      "cute dog",
+      "fluffy dog",
+      "brown and white dog",
+      "green plants",
+      "pink flowers",
+      "concrete path",
+      "outdoor play",
+      "energetic pet",
+      "dog smiling",
+      "house background",
+      "summer day",
+      "garden path",
+      "happy pet"
+    ],
+    "capture_year": 2025,
+    "capture_month": 9,
+    "date_source": "assigned"
+  },
+  {
+    "id": 75,
+    "path": "Pets/pexels-ricardo-oliveira-317251078-31765791.jpg",
+    "description": "A small white dog with brown patches on its ears and face lies peacefully on a blue quilted cushion. In the background, a fluffy beige pet bed rests on the floor next to a dark sofa. Warm, golden sunlight streams through a nearby window, casting soft rays across the room and creating a hazy, serene atmosphere. The dog appears relaxed and sleepy, enjoying the cozy indoor setting.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "dog",
+      "puppy",
+      "pet",
+      "sleeping dog",
+      "dog bed",
+      "cushion",
+      "sunlight",
+      "sunbeams",
+      "golden hour",
+      "cozy",
+      "warm",
+      "peaceful",
+      "indoor",
+      "living room",
+      "sofa",
+      "couch",
+      "pet care",
+      "resting",
+      "sleepy dog",
+      "hazy light",
+      "dreamlike"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 76,
+    "path": "Pets/pexels-vladislovas-sketerskis-2157863731-36681840.jpg",
+    "description": "An orange and white tabby cat sits quietly on a doorstep, bathed in a warm patch of sunlight. To the left, a rustic stone planter holds a cluster of vibrant yellow daffodils with green leaves. The background features a dark green front door cast in deep shadow, creating a strong contrast with the sunlit areas. The scene feels peaceful and serene, capturing a quiet moment outdoors.",
+    "attributes": {
+      "main_subject": [
+        "animal",
+        "nature or scenery"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "orange cat",
+      "ginger cat",
+      "tabby cat",
+      "yellow flowers",
+      "daffodils",
+      "stone planter",
+      "doorstep",
+      "front door",
+      "sunlight",
+      "shadows",
+      "sunbathing cat",
+      "pet",
+      "outdoor",
+      "peaceful",
+      "spring flowers",
+      "green leaves",
+      "doormat",
+      "warm light"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 77,
+    "path": "Pets/pexels-who0ne-36014807.jpg",
+    "description": "A small, light-colored kitten with blue eyes and faint tabby stripes stands on a grey stone step. The kitten is looking directly at the camera with a curious expression, partially framed by the green leaves of a ZZ plant. To the left, a large green plastic planter holds the leafy plant against a textured beige wall. The scene is set outdoors on a doorstep, creating a calm and gentle atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "home",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "kitten",
+      "cat",
+      "blue eyes",
+      "tabby stripes",
+      "pet",
+      "cute animal",
+      "green planter",
+      "potted plant",
+      "ZZ plant",
+      "stone steps",
+      "doorstep",
+      "curious cat",
+      "outdoor patio",
+      "houseplant",
+      "green pot",
+      "small cat",
+      "feline",
+      "looking at camera",
+      "domestic cat",
+      "animal portrait"
+    ],
+    "capture_year": 2025,
+    "capture_month": 9,
+    "date_source": "assigned"
+  },
+  {
+    "id": 78,
+    "path": "bali/istockphoto-1844211582-2048x2048.jpg",
+    "description": "A young woman in a vibrant red dress is captured mid-air on a giant swing suspended high above a lush green valley. She has her arms outstretched wide, embracing the freedom and the breathtaking view of the terraced rice fields below. The background features dense tropical palm trees and terraced hillsides under a bright blue sky with scattered clouds. A watermark reading \"iStock Credit: kitzcorner\" is visible on the right side of the image. The overall mood is one of exhilaration, adventure, and serene connection with nature.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ],
+      "location_type": "nature or park",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "red"
+      ]
+    },
+    "everyday_words": [
+      "bali swing",
+      "rice terrace",
+      "red dress",
+      "giant swing",
+      "tegalalang",
+      "tropical vacation",
+      "adventure travel",
+      "lush greenery",
+      "palm trees",
+      "swinging high",
+      "arms open",
+      "freedom",
+      "scenic view",
+      "indonesia",
+      "travel goals",
+      "outdoor adventure",
+      "nature lover",
+      "exotic destination",
+      "sunny day",
+      "blue sky"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 79,
+    "path": "bali/istockphoto-2226960901-612x612.jpg",
+    "description": "A young woman sits on the edge of a rocky cliff, looking out over a breathtaking tropical ocean landscape with her arms raised wide in celebration. She wears a wide-brimmed straw hat, a white crop top, and light pink trousers, capturing a sense of freedom and adventure. Below her, the vibrant turquoise and deep blue waters of the sea surround lush, green-topped limestone islets under a bright blue sky. The steep, verdant cliffs frame the coastline, creating a dramatic and picturesque backdrop that evokes a joyful mood of wanderlust.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ],
+      "location_type": "nature or park",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "pink",
+        "brown"
+      ]
+    },
+    "everyday_words": [
+      "woman on cliff",
+      "tropical island",
+      "ocean view",
+      "straw hat",
+      "pink pants",
+      "white top",
+      "arms raised",
+      "freedom",
+      "vacation",
+      "scenic overlook",
+      "turquoise water",
+      "sea stacks",
+      "cliffside",
+      "summer holiday",
+      "wanderlust",
+      "adventure",
+      "beautiful landscape",
+      "coastal view",
+      "rocky cliff",
+      "traveling"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 80,
+    "path": "bali/istockphoto-2281656344-612x612.jpg",
+    "description": "A smiling man and woman pose outdoors next to a colorful statue of a woman holding a long staff. The man wears a dark striped button-up shirt, light-colored trousers, sunglasses, and a cap, while the woman wears a white t-shirt, denim shorts, a pink sun hat, and sunglasses. The statue is dressed in a vibrant green and gold sarong with a pink sash and a golden crown. In the background, lush green hills and trees are visible under a bright blue sky, with a wooden sign reading \"WATERFALL\" on the left.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "nature or park",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "black",
+        "blue",
+        "pink",
+        "beige"
+      ]
+    },
+    "everyday_words": [
+      "couple",
+      "vacation",
+      "tourists",
+      "statue",
+      "posing",
+      "smiling",
+      "sunglasses",
+      "sun hat",
+      "summer",
+      "outdoor",
+      "waterfall sign",
+      "green hills",
+      "travel",
+      "holiday",
+      "happy",
+      "striped shirt",
+      "white t-shirt",
+      "denim shorts",
+      "scarf",
+      "staff",
+      "crown",
+      "tropical"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 81,
+    "path": "bali/istockphoto-2281811862-612x612.jpg",
+    "description": "A young woman and a young man pose together at a traditional Balinese stone split gate, surrounded by lush green trees and foliage. The woman on the left wears a long white dress and sunglasses, leaning casually against the dark stone structure. On the right, the man wears a patterned brown and white short-sleeved shirt, white shorts, and sunglasses, mirroring her relaxed pose. Small stone statues sit at the base of each side of the gate, adding to the cultural atmosphere of the scene. The bright daylight filters through the dense canopy above, creating a serene and tropical vacation mood.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "building or place"
+      ],
+      "location_type": "nature or park",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "brown",
+        "multicolour or patterned"
+      ]
+    },
+    "everyday_words": [
+      "couple",
+      "vacation",
+      "Bali",
+      "temple gate",
+      "split gate",
+      "Candi Bentar",
+      "stone gate",
+      "sunglasses",
+      "white dress",
+      "patterned shirt",
+      "tropical",
+      "greenery",
+      "trees",
+      "posing",
+      "travel",
+      "holiday",
+      "summer",
+      "outdoor",
+      "stone statues",
+      "tourists",
+      "young woman",
+      "young man"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 82,
+    "path": "bali/istockphoto-2281811878-612x612.jpg",
+    "description": "A young woman and a young man are walking together down a path, smiling and looking at each other warmly. The woman is wearing a long, light-coloured striped maxi dress with white sneakers and sunglasses, while the man wears a brown and white leaf-patterned short-sleeve shirt, light shorts, and sunglasses. They are walking through a traditional stone gateway, flanked by two stone statues, with lush green trees and foliage filling the background. The atmosphere is relaxed and romantic, capturing a happy moment during a vacation or stroll.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "building or place"
+      ],
+      "location_type": "other",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "brown",
+        "beige",
+        "multicolour or patterned"
+      ]
+    },
+    "everyday_words": [
+      "couple walking",
+      "vacation",
+      "Bali gate",
+      "stone statues",
+      "maxi dress",
+      "patterned shirt",
+      "sunglasses",
+      "sneakers",
+      "romantic walk",
+      "temple entrance",
+      "summer holiday",
+      "lush greenery",
+      "happy couple",
+      "traveling",
+      "outdoor path",
+      "stone archway",
+      "tropical destination"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 83,
+    "path": "bali/istockphoto-2281811895-612x612.jpg",
+    "description": "A young woman and a young man are walking happily together along a paved path in an outdoor setting. The woman wears a light-colored striped halter dress and white sneakers, while the man wears a brown and white leaf-patterned shirt, beige shorts, and sunglasses. In the background, traditional stone temple structures and lush green trees stand under a bright, slightly cloudy sky. The couple appears relaxed and joyful, capturing a warm vacation atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "people"
+      ],
+      "location_type": "other",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "brown",
+        "beige",
+        "multicolour or patterned"
+      ]
+    },
+    "everyday_words": [
+      "couple",
+      "walking",
+      "vacation",
+      "holiday",
+      "Bali",
+      "temple",
+      "summer dress",
+      "sunglasses",
+      "smiling",
+      "happy",
+      "holding hands",
+      "outdoor",
+      "travel",
+      "tourists",
+      "sneakers",
+      "shorts",
+      "patterned shirt",
+      "stone path",
+      "tropical",
+      "trees",
+      "sunny day"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 84,
+    "path": "bali/istockphoto-2282319138-612x612.jpg",
+    "description": "A man and a woman are sitting together on the stone steps in front of an ornate Balinese temple entrance. The man wears a light yellow shirt, sunglasses, and a blue patterned sarong, while the woman wears a bright pink top, sunglasses, and a dark patterned sarong with a blue sash. Behind them, the temple features intricate stone carvings, a large decorative face above the golden-trimmed wooden door, and two guardian statues on either side. Tall green trees are visible in the background under a bright sky, creating a serene and cultural atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "building or place"
+      ],
+      "location_type": "other",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "yellow",
+        "pink",
+        "blue",
+        "multicolour or patterned"
+      ]
+    },
+    "everyday_words": [
+      "couple",
+      "Balinese temple",
+      "Bali",
+      "sarong",
+      "guardian statues",
+      "stone carvings",
+      "travel",
+      "vacation",
+      "tourists",
+      "temple door",
+      "sunglasses",
+      "pink top",
+      "yellow shirt",
+      "traditional wrap",
+      "outdoor steps",
+      "cultural site",
+      "holiday",
+      "posing",
+      "historic building",
+      "ornate architecture"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 85,
+    "path": "bali/istockphoto-2289034915-612x612.jpg",
+    "description": "A young woman in a vibrant pink dress and a young man in a blue shirt and white trousers pose between two ornate white Balinese split gates. The background features a bright blue sky with fluffy white clouds and a distant mountain peak. A perfect mirror reflection of the entire scene, including the couple and the gates, is visible in the lower half of the image. The serene atmosphere captures a romantic travel moment at a scenic tourist destination.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "building or place"
+      ],
+      "location_type": "other",
+      "people_count": "two",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "pink",
+        "blue",
+        "white"
+      ]
+    },
+    "everyday_words": [
+      "couple",
+      "Bali",
+      "temple gate",
+      "reflection",
+      "mirror effect",
+      "pink dress",
+      "blue shirt",
+      "white pants",
+      "mountain",
+      "clouds",
+      "blue sky",
+      "tourist spot",
+      "travel",
+      "posing",
+      "vacation",
+      "scenic view",
+      "split gate",
+      "Candi Bentar",
+      "romantic",
+      "holiday",
+      "tourist attraction"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 86,
+    "path": "bali/pexels-arief-r-2162260748-39341845.jpg",
+    "description": "A group of monkeys is huddled together on a weathered stone ledge, with one large macaque looking directly at the camera. This larger monkey holds a smaller one close, which in turn wraps its arms around an even smaller baby monkey in a protective embrace. In the soft-focus background, two more monkeys sit together amidst lush green trees and misty foliage. The scene captures a tender, nurturing moment among the animals in their sanctuary habitat.",
+    "attributes": {
+      "main_subject": [
+        "animal"
+      ],
+      "location_type": "nature or park",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "monkeys",
+      "macaque",
+      "baby monkey",
+      "hugging",
+      "cuddling",
+      "animal family",
+      "wildlife",
+      "stone ledge",
+      "temple",
+      "monkey forest",
+      "nature",
+      "green trees",
+      "misty background",
+      "protective embrace",
+      "furry",
+      "wild animals",
+      "sanctuary",
+      "cute",
+      "outdoor"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 87,
+    "path": "bali/pexels-azi-461441342-30471166.jpg",
+    "description": "This photograph captures the iconic Pura Ulun Danu Bratan, a major Hindu Shaivite temple in Bali, Indonesia, situated on the shores of Lake Bratan. The main multi-tiered shrine, or meru, features eleven thatched roofs tapering upwards against a misty, overcast sky. In the foreground, ornate stone carvings, traditional Balinese statues, and vibrant red flowers decorate the temple grounds. A calm lake surrounds the temple structures, with lush green hills shrouded in fog visible in the distant background, creating a serene and spiritual atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "building or place",
+        "nature or scenery"
+      ],
+      "location_type": "other",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "unknown"
+      ]
+    },
+    "everyday_words": [
+      "bali temple",
+      "pura ulun danu bratan",
+      "indonesia",
+      "lake bratan",
+      "pagoda",
+      "multi-tiered roof",
+      "hindu temple",
+      "water temple",
+      "misty mountains",
+      "foggy sky",
+      "stone statues",
+      "red flowers",
+      "shrine",
+      "traditional architecture",
+      "tourist destination",
+      "serene lake",
+      "cloudy day",
+      "balinese culture",
+      "travel photography"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 88,
+    "path": "bali/pexels-msbln-5374152.jpg",
+    "description": "A high-angle view captures a stunning tropical beach with brilliant turquoise water and dramatic limestone cliffs covered in lush green vegetation. Several distinct rock formations rise sharply from the sea near the sandy shore, while tropical palm trees sway near the water's edge. The bright daylight illuminates the clear water, revealing the rocky seabed beneath the surface. The scene conveys a serene and peaceful mood, showcasing a breathtaking natural paradise.",
+    "attributes": {
+      "main_subject": [
+        "nature or scenery"
+      ],
+      "location_type": "beach",
+      "people_count": "none",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "tropical beach",
+      "turquoise water",
+      "limestone cliffs",
+      "rock formations",
+      "palm trees",
+      "sandy shore",
+      "ocean view",
+      "island paradise",
+      "clear sea",
+      "nature scenery",
+      "coastal landscape",
+      "bali beach",
+      "sunny day",
+      "green vegetation",
+      "sea water",
+      "travel destination",
+      "tropical coast"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 89,
+    "path": "bali/pexels-murod-lens-1082996343-31965167.jpg",
+    "description": "A young woman is performing a traditional Balinese dance on an outdoor stage. She wears vibrant yellow, pink, and gold patterned attire with elaborate traditional jewelry and flowers in her hair. Her arms are gracefully posed, and she is captured in a dynamic kneeling and leaning movement. In the background, a large burgundy ceremonial umbrella is visible, along with a soft-focus outdoor setting with trees and stage equipment.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "object"
+      ],
+      "location_type": "event venue",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "pink",
+        "yellow",
+        "unknown",
+        "multicolour or patterned"
+      ]
+    },
+    "everyday_words": [
+      "young woman",
+      "Balinese dancer",
+      "traditional dance",
+      "dance performance",
+      "cultural dance",
+      "ceremonial umbrella",
+      "pink costume",
+      "gold jewelry",
+      "floral headpiece",
+      "stage performance",
+      "outdoor stage",
+      "traditional dress",
+      "graceful pose",
+      "performer",
+      "costume",
+      "dance festival",
+      "ethnic culture",
+      "artistic pose"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 90,
+    "path": "bali/pexels-oliver-schmid-2854872-4395505.jpg",
+    "description": "An aerial view captures a stunning tropical coastline featuring dramatic limestone cliffs framing a secluded sandy beach. Turquoise waves gently lap against the shore, creating white foam that contrasts with the golden sand. Lush green vegetation clings to the rugged rock formations, illuminated by the warm light of the setting sun. The scene evokes a peaceful and awe-inspiring atmosphere, showcasing the untouched beauty of nature.",
+    "attributes": {
+      "main_subject": [
+        "nature or scenery"
+      ],
+      "location_type": "beach",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "cliff",
+      "ocean",
+      "beach",
+      "sand",
+      "waves",
+      "island",
+      "coastal view",
+      "tropical landscape",
+      "rock formation",
+      "sea",
+      "nature",
+      "sunset",
+      "aerial view",
+      "coastline",
+      "vacation spot",
+      "paradise",
+      "scenic landscape"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 91,
+    "path": "bali/pexels-pamleader-15360619.jpg",
+    "description": "Two people stand at the water's edge on a beach during sunset, casting long reflections on the wet sand. The sky is filled with dramatic, dark clouds tinged with vibrant orange and pink hues near the horizon. Gentle waves ripple onto the shore as daylight fades into a tranquil evening. The atmosphere is serene and peaceful, capturing a quiet moment by the sea.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ],
+      "location_type": "beach",
+      "people_count": "two",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "black"
+      ]
+    },
+    "everyday_words": [
+      "beach",
+      "sunset",
+      "ocean",
+      "sea",
+      "waves",
+      "shore",
+      "sand",
+      "water",
+      "sky",
+      "clouds",
+      "dusk",
+      "evening",
+      "twilight",
+      "silhouettes",
+      "two people",
+      "couple",
+      "standing",
+      "reflections",
+      "peaceful",
+      "serene",
+      "nature"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 92,
+    "path": "bali/pexels-tomfisk-5197437.jpg",
+    "description": "A group of people wearing face masks ride a motorcycle up a paved road surrounded by lush green foliage and banana trees. The rider in the front wears a black jacket while the passengers behind them wear yellow and dark jackets. The road curves slightly into the distance amidst a dense forest background. The mood is calm and everyday, depicting rural travel. The license plate on the motorcycle features some readable alphanumeric text.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "vehicle"
+      ],
+      "location_type": "street or city",
+      "people_count": "small group",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "black",
+        "yellow"
+      ]
+    },
+    "everyday_words": [
+      "people on a motorcycle",
+      "riding a scooter",
+      "rural road",
+      "paved street",
+      "lush green trees",
+      "banana plants",
+      "wearing face masks",
+      "motorcycle rider",
+      "passengers",
+      "hillside",
+      "foliage",
+      "tropical landscape",
+      "daytime travel",
+      "winding road",
+      "village transport"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 93,
+    "path": "bali/pexels-yudo-yulyanto-2158242539-35867014.jpg",
+    "description": "A woman stands on a stone path facing the ocean while wearing a white dress, a blue denim jacket draped over her shoulder, and a large sun hat. She is holding the brim of her hat with one hand as she gazes out at the sea and sandy beach. Above her, the branches of a tree with green leaves stretch across the bright blue sky with scattered clouds. To her right, a large decorative bowl sits on a stone pillar near the edge of the path. The scene exudes a peaceful and relaxing holiday mood.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "nature or scenery"
+      ],
+      "location_type": "beach",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "white",
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "woman at the beach",
+      "vacation outfit",
+      "sun hat",
+      "white dress",
+      "denim jacket",
+      "looking at the ocean",
+      "tropical getaway",
+      "sunny day",
+      "relaxing by the sea",
+      "summer fashion",
+      "beachside view",
+      "stone pathway",
+      "tree branches",
+      "blue sky",
+      "clouds",
+      "sand and water",
+      "coastal scenery",
+      "holiday mood",
+      "travel photography",
+      "back view"
+    ],
+    "capture_year": 2025,
+    "capture_month": 11,
+    "date_source": "assigned"
+  },
+  {
+    "id": 94,
+    "path": "random birthday photos/istockphoto-1470246290-612x612.jpg",
+    "description": "A man and a woman are celebrating inside the open trunk of a car at night, holding a cake with lit candles. The man wears a red sweater and the woman is dressed in a beige knitted sweater. The car is decorated with festive fairy lights in the background. The atmosphere is warm, romantic, and celebratory.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ],
+      "location_type": "street or city",
+      "people_count": "two",
+      "time_of_day": "night",
+      "setting": "outdoor",
+      "season": "winter",
+      "clothing_colour": [
+        "red",
+        "beige"
+      ]
+    },
+    "everyday_words": [
+      "man and woman",
+      "couple",
+      "celebration",
+      "birthday cake",
+      "lit candles",
+      "car trunk",
+      "nighttime",
+      "romance",
+      "red sweater",
+      "beige sweater",
+      "fairy lights",
+      "outdoor",
+      "smiling",
+      "happy",
+      "surprise",
+      "dessert",
+      "evening",
+      "vehicle"
+    ],
+    "capture_year": 2025,
+    "capture_month": 6,
+    "date_source": "assigned"
+  },
+  {
+    "id": 95,
+    "path": "random birthday photos/istockphoto-2158580612-612x612.jpg",
+    "description": "A group of cheerful people celebrate a birthday indoors, with colorful confetti falling all around them. A smiling woman in a yellow top sits before a birthday cake with lit candles. Others cheer excitedly, raising their hands amidst balloons and party decorations. The mood is joyful and energetic, filled with laughter and celebration.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "object"
+      ],
+      "location_type": "home",
+      "people_count": "large group",
+      "time_of_day": "unknown",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "yellow",
+        "pink",
+        "unknown",
+        "white"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "celebration",
+      "confetti",
+      "birthday cake",
+      "candles",
+      "happy people",
+      "party hats",
+      "balloons",
+      "cheering",
+      "joy",
+      "party decorations",
+      "indoor celebration",
+      "friends",
+      "family",
+      "festive mood",
+      "birthday candles"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 96,
+    "path": "random birthday photos/pexels-dream_-makkerzz-1603229-28157821.jpg",
+    "description": "This is a close-up photo of a decorated birthday cake featuring a light blue frosting. The cake is adorned with a number '1' candle, golden star decorations, and teddy bear cake toppers. A miniature yellow ladder stands on the right side of the cake, adding a playful touch. The background consists of a shiny, out-of-focus curtain with warm bokeh lights, creating a festive atmosphere.",
+    "attributes": {
+      "main_subject": [
+        "food or drinks",
+        "object"
+      ],
+      "location_type": "event venue",
+      "people_count": "none",
+      "time_of_day": "night",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "birthday cake",
+      "first birthday",
+      "cake topper",
+      "blue cake",
+      "teddy bear cake",
+      "number one candle",
+      "golden stars",
+      "party decoration",
+      "celebration",
+      "dessert",
+      "sweet treat",
+      "kids birthday",
+      "party theme",
+      "bokeh lights",
+      "festive background"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 97,
+    "path": "random birthday photos/pexels-estoymhrb-13397652.jpg",
+    "description": "A young woman stands outdoors, holding a white birthday cake adorned with dark spheres and a gold \"Happy Birthday\" cake topper. She is dressed in a black dress with intricate beadwork. The background is filled with an arrangement of colorful balloons in shades of beige, brown, and peach, complemented by natural greenery and foliage. The mood is celebratory and joyful, capturing a special milestone moment.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "object"
+      ],
+      "location_type": "nature or park",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "outdoor",
+      "season": "summer",
+      "clothing_colour": [
+        "black"
+      ]
+    },
+    "everyday_words": [
+      "young woman",
+      "holding birthday cake",
+      "white frosted cake",
+      "black party dress",
+      "beaded dress",
+      "gold cake topper",
+      "happy birthday sign",
+      "birthday celebration",
+      "balloon arch",
+      "beige balloons",
+      "brown balloons",
+      "peach balloons",
+      "outdoor party",
+      "nature backdrop",
+      "celebrating birthday",
+      "cake holder",
+      "party decor",
+      "happy face",
+      "birthday portraits"
+    ],
+    "capture_year": 2025,
+    "capture_month": 6,
+    "date_source": "assigned"
+  },
+  {
+    "id": 98,
+    "path": "random birthday photos/pexels-kawerodriguess-15458947.jpg",
+    "description": "A young woman wearing a black, one-shoulder, bodycon dress is sitting indoors on a white pedestal, holding a small silver cake with pink flowers and a large letter M cake topper. She is smiling softly while posing for the camera against a plain, light-colored background. The mood is celebratory and elegant. The cake features decorative paper flowers and leaf cutouts attached to the topper.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ],
+      "location_type": "unknown",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "black"
+      ]
+    },
+    "everyday_words": [
+      "young woman",
+      "birthday cake",
+      "celebration",
+      "holding cake",
+      "black dress",
+      "one shoulder dress",
+      "silver cake",
+      "letter M topper",
+      "cake topper",
+      "pink flowers",
+      "smiling woman",
+      "indoor portrait",
+      "studio photo",
+      "party decoration",
+      "elegant pose"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 99,
+    "path": "random birthday photos/pexels-suedadilli-19310821.jpg",
+    "description": "This outdoor photograph captures a rustic birthday cake placed on a wooden board, adorned with white frosting, delicate flowers, and baby's breath. Two tall golden candles and a brightly lit sparkler stand atop the cake, casting a warm glow. Beside the cake, a silver fork rests on the wooden surface against a backdrop of soft green foliage. The scene evokes a cozy and celebratory mood.",
+    "attributes": {
+      "main_subject": [
+        "food or drinks",
+        "object"
+      ],
+      "location_type": "nature or park",
+      "people_count": "none",
+      "time_of_day": "sunset or evening",
+      "setting": "outdoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "none"
+      ]
+    },
+    "everyday_words": [
+      "birthday cake",
+      "sparkler",
+      "candles",
+      "white frosting",
+      "flowers",
+      "baby's breath",
+      "wooden board",
+      "silver fork",
+      "celebration",
+      "rustic",
+      "outdoor",
+      "golden candles",
+      "food",
+      "dessert",
+      "sweet",
+      "party",
+      "cozy mood",
+      "evening"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  },
+  {
+    "id": 100,
+    "path": "random birthday photos/pexels-sunj-rbt-164969857-10885107.jpg",
+    "description": "A close-up shot captures a decorated white birthday cake adorned with pink and gold frosting along the bottom edge. A prominent candle shaped like the number 5, topped with a flickering flame, stands at the center surrounded by wire stems tipped with small white pearls. Behind the cake, indistinct figures are visible, holding hands in a celebratory manner. The mood is warm, joyous, and celebratory, suggesting a special milestone birthday party. The background is dark and out of focus, emphasizing the cake as the main subject.",
+    "attributes": {
+      "main_subject": [
+        "food or drinks",
+        "people"
+      ],
+      "location_type": "event venue",
+      "people_count": "two",
+      "time_of_day": "sunset or evening",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "black"
+      ]
+    },
+    "everyday_words": [
+      "birthday cake",
+      "fifth birthday",
+      "number five candle",
+      "celebration",
+      "party",
+      "white frosting",
+      "pink frosting",
+      "gold details",
+      "pearl decorations",
+      "lighted candle",
+      "flame",
+      "dessert",
+      "sweet treat",
+      "holding hands",
+      "milestone birthday"
+    ],
+    "capture_year": 2025,
+    "capture_month": 6,
+    "date_source": "assigned"
+  },
+  {
+    "id": 101,
+    "path": "random birthday photos/pexels-tima-miroshnichenko-5805041.jpg",
+    "description": "A group of friends is celebrating a birthday indoors, with a young woman in the center holding a small white cake with '23' candles. The woman on the left wears a white hoodie and a black beanie, and the woman on the right wears a maroon top and blue jeans, while the birthday woman wears a light blue blazer over a black outfit. Confetti falls all around them in a joyful, celebratory atmosphere. The background shows a neutral wall, string lights, and some party clutter.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ],
+      "location_type": "home",
+      "people_count": "small group",
+      "time_of_day": "sunset or evening",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "white",
+        "black",
+        "blue",
+        "red",
+        "beige"
+      ]
+    },
+    "everyday_words": [
+      "birthday party",
+      "friends",
+      "celebration",
+      "birthday cake",
+      "candles",
+      "number 23",
+      "confetti",
+      "party popper",
+      "party hats",
+      "indoor celebration",
+      "smiling people",
+      "young adults",
+      "blazer",
+      "hoodie",
+      "jeans",
+      "beanie",
+      "string lights",
+      "joyful",
+      "cheering",
+      "party vibe"
+    ],
+    "capture_year": 2025,
+    "capture_month": 7,
+    "date_source": "assigned"
+  },
+  {
+    "id": 102,
+    "path": "random birthday photos/pexels-yaroslav-shuraev-8088254.jpg",
+    "description": "A person wearing a blue outfit holds a decorated birthday cake featuring candles shaped like the number 18. The cake sits on an ornate patterned plate with floral details. The background shows a cozy indoor setting with warm lighting, blurred furniture, and scattered festive confetti on the floor. The mood is celebratory and joyful as the individual presents the milestone dessert. The scene highlights the personal celebration moment captured closely in a home environment.",
+    "attributes": {
+      "main_subject": [
+        "people",
+        "food or drinks"
+      ],
+      "location_type": "home",
+      "people_count": "one",
+      "time_of_day": "day",
+      "setting": "indoor",
+      "season": "unknown",
+      "clothing_colour": [
+        "blue"
+      ]
+    },
+    "everyday_words": [
+      "birthday cake",
+      "eighteenth birthday",
+      "celebration",
+      "number candles",
+      "18 candles",
+      "holding cake",
+      "party",
+      "milestone birthday",
+      "decorated cake",
+      "plate",
+      "blue outfit",
+      "hands",
+      "confetti",
+      "indoor party",
+      "dessert",
+      "lit candles",
+      "festive mood"
+    ],
+    "capture_year": 2025,
+    "capture_month": 8,
+    "date_source": "assigned"
+  }
+]

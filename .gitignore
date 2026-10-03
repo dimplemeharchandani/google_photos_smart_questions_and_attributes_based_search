@@ -1,0 +1,32 @@
+# Secrets. Streamlit Cloud reads these from the app's Secrets panel, not from git.
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local model caches (sentence-transformers / torch download these at runtime)
+.cache/
+models/
+
+# OS and editor
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.idea/
+.vscode/
+*.swp
