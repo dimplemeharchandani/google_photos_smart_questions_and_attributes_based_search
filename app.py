@@ -7,6 +7,7 @@ button to narrow them. No typing after the search.
 With an empty search, every photo is shown in a month-by-month timeline.
 """
 
+import html
 import io
 import sys
 from pathlib import Path
@@ -280,8 +281,21 @@ PAGE_STYLE = """
   .st-key-brand:hover::before, .st-key-nav-new:hover::before, .st-key-nav-library:hover::before, .st-key-nav-flow:hover::before { display: block; }
   .st-key-brand::after { content: "Back to Quick Find."; }
   .st-key-nav-new::after { content: "Clear the search and start over."; }
-  .st-key-nav-library::after { content: "Coming soon \\2014 browse photos by year."; }
+  .st-key-nav-library::after { content: "Browse every photo, grouped by month."; }
   .st-key-nav-flow::after { content: "Coming soon \\2014 see how matching works."; }
+  .st-key-nav-library button[kind="primary"] {
+    background: #e8eaed !important;
+    color: #3c4043 !important;
+  }
+
+  /* ---------------- Photo library ---------------- */
+  .library-title {
+    font-size: 1.55rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: .6rem 0 1.2rem;
+  }
 
   .nav-item {
     position: relative;
@@ -506,6 +520,119 @@ PAGE_STYLE = """
     object-position: center;
     border-radius: 10px;
   }
+  /* Each photo card. The image's own built-in fullscreen button is
+     stretched to cover the whole photo and hidden, so a click anywhere
+     on the photo opens it full screen - no visible button needed. A
+     small "i" sits on top, in front of that invisible button, and only
+     shows its details on hover. */
+  [class*="st-key-photocard-"] {
+    position: relative;
+    border-radius: 10px;
+  }
+  /* Lets the hover tooltip float above neighbouring photos instead of
+     being clipped to this card's own box. */
+  [class*="st-key-photocard-"]:hover {
+    z-index: 30;
+  }
+  /* The extra wrapper around each photo confuses Streamlit's own
+     width-to-column-width measurement for st.image, so the rendered
+     width is forced here instead of relying on that. */
+  [class*="st-key-photocard-"] [data-testid="stElementContainer"],
+  [class*="st-key-photocard-"] [data-testid="stFullScreenFrame"],
+  [class*="st-key-photocard-"] [data-testid="stImage"],
+  [class*="st-key-photocard-"] [data-testid="stImageContainer"] {
+    width: 100% !important;
+    display: block !important;
+  }
+  [class*="st-key-photocard-"] [data-testid="stImage"] img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+  [class*="st-key-photocard-"] [data-testid="stElementToolbar"] {
+    opacity: 1 !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    z-index: 5;
+  }
+  [class*="st-key-photocard-"] [data-testid="stElementToolbarButtonContainer"],
+  [class*="st-key-photocard-"] [data-testid="stElementToolbarButton"],
+  [class*="st-key-photocard-"] .stTooltipHoverTarget {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  /* Only the "open" trigger is stretched and hidden. The "Close
+     fullscreen" button (shown once the photo is already expanded)
+     keeps its normal small, visible, clickable corner icon. */
+  [class*="st-key-photocard-"] button[data-testid="stBaseButton-elementToolbar"][aria-label="Fullscreen"] {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+  }
+  .photo-info {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 20;
+  }
+  .photo-info-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(32, 33, 36, .35);
+    color: rgba(255, 255, 255, .9);
+    font-size: 11px;
+    font-weight: 700;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", serif;
+    cursor: default;
+    user-select: none;
+    opacity: .65;
+    transition: opacity .15s ease;
+  }
+  .photo-info:hover .photo-info-dot {
+    opacity: 1;
+  }
+  .photo-info-tip {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 0;
+    z-index: 25;
+    width: 230px;
+    max-width: 60vw;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+    box-shadow: 0 6px 18px rgba(32, 33, 36, .25);
+  }
+  .photo-info-tip div { margin: 2px 0; }
+  .photo-info-tip b { font-weight: 600; }
+  .photo-info:hover .photo-info-tip { display: block; }
+
   [data-testid="stMain"] h3 {
     font-size: 1.1rem !important;
     font-weight: 500 !important;
@@ -524,14 +651,24 @@ PAGE_STYLE = """
 
 
 def render_sidebar():
-    """Brand, New search, placeholders for Photo library / How it works, and Repository."""
+    """Brand, New search, Photo library, a How it works placeholder, and Repository."""
+    view = st.session_state.get("view", "home")
     with st.sidebar:
         if st.button("Quick Find", key="brand", width="stretch"):
+            st.session_state.view = "home"
             st.rerun()
         if st.button("New search", key="nav-new", width="stretch"):
+            st.session_state.view = "home"
             st.session_state.do_reset = True
             st.rerun()
-        st.button("Photo library", key="nav-library", width="stretch")
+        if st.button(
+            "Photo library",
+            key="nav-library",
+            type="primary" if view == "library" else "secondary",
+            width="stretch",
+        ):
+            st.session_state.view = "library"
+            st.rerun()
         st.button("How it works", key="nav-flow", width="stretch")
         st.markdown(
             f"<a class='nav-item' href='{GITHUB_URL}' target='_blank' rel='noopener'>"
@@ -711,33 +848,43 @@ def detail_text(key, value):
     return shown_value(key, value)
 
 
-def show_photo_menu(photo, score=None):
-    """Small menu at the top-right of a photo. Opens that photo's details."""
-    _spacer, menu = st.columns([6, 1])
-    with menu:
-        with st.popover("⋮"):
-            key = date_key(photo)
-            if key is None:
-                date_text = "Date unknown"
-            else:
-                date_text = f"{MONTH_NAMES[key[1]]} {key[0]}"
-            st.markdown(f"**Date:** {date_text}")
-            attributes = photo.get("attributes") if isinstance(photo.get("attributes"), dict) else {}
-            for field, title in DETAIL_FIELDS:
-                st.markdown(f"**{title}:** {detail_text(field, attributes.get(field))}")
-            st.markdown("**Description:**")
-            st.write(photo.get("description") or "Unknown")
-            st.markdown(f"**File:** {photo.get('path') or ''}")
-            if score is not None:
-                st.markdown(f"**Score:** {score:.2f}")
+def photo_info_html(photo, score=None):
+    """A small 'i' for the top-right corner. Hovering it shows the details."""
+    key = date_key(photo)
+    date_text = f"{MONTH_NAMES[key[1]]} {key[0]}" if key is not None else "Date unknown"
+    attributes = photo.get("attributes") if isinstance(photo.get("attributes"), dict) else {}
+    rows = [("Date", date_text)]
+    rows += [(title, detail_text(field, attributes.get(field))) for field, title in DETAIL_FIELDS]
+    lines = "".join(
+        f"<div><b>{html.escape(title)}:</b> {html.escape(str(value))}</div>"
+        for title, value in rows
+    )
+    description = html.escape(photo.get("description") or "Unknown")
+    file_line = html.escape(photo.get("path") or "")
+    score_line = f"<div><b>Score:</b> {score:.2f}</div>" if score is not None else ""
+    return (
+        "<div class='photo-info'>"
+        "<span class='photo-info-dot'>i</span>"
+        "<div class='photo-info-tip'>"
+        f"{lines}"
+        f"<div><b>Description:</b> {description}</div>"
+        f"<div><b>File:</b> {file_line}</div>"
+        f"{score_line}"
+        "</div></div>"
+    )
 
 
-def show_thumb(photo):
-    source = config.PHOTOS_DIR / photo["path"]
-    source_mtime = source.stat().st_mtime if source.is_file() else 0
-    image = thumbnail(photo["path"], source_mtime)
-    if image is not None:
-        st.image(image, width="stretch")
+def show_photo_card(photo, score=None):
+    """One photo. An info icon overlays its top-right corner on hover;
+    clicking the photo itself opens it full screen (no separate button).
+    """
+    with st.container(key=f"photocard-{id(photo)}"):
+        st.markdown(photo_info_html(photo, score), unsafe_allow_html=True)
+        source = config.PHOTOS_DIR / photo["path"]
+        source_mtime = source.stat().st_mtime if source.is_file() else 0
+        image = thumbnail(photo["path"], source_mtime)
+        if image is not None:
+            st.image(image, width="stretch")
 
 
 def show_grid(entries, show_details=False, with_score=False):
@@ -751,8 +898,7 @@ def show_grid(entries, show_details=False, with_score=False):
                     photo, score = entry
                 else:
                     photo, score = entry, None
-                show_photo_menu(photo, score if with_score else None)
-                show_thumb(photo)
+                show_photo_card(photo, score if with_score else None)
                 if score is not None:
                     st.caption(f"{score:.2f}")
                 if with_score and show_details:
@@ -926,9 +1072,20 @@ def render_prompts():
                 st.rerun()
 
 
+def render_library(photos):
+    """Every photo, grouped by month, newest first. No search, no filters."""
+    st.markdown("<div class='library-title'>Photo library</div>", unsafe_allow_html=True)
+    groups, unknown = group_by_date(photos or [], lambda photo: photo)
+    if not groups and not unknown:
+        st.write("No photos yet.")
+        return
+    show_date_groups(groups, unknown)
+
+
 def main():
     st.set_page_config(page_title="Quick Find", page_icon="🔍", layout="wide")
     st.markdown(PAGE_STYLE, unsafe_allow_html=True)
+    st.session_state.setdefault("view", "home")
     render_sidebar()
 
     if st.session_state.pop("do_reset", False):
@@ -947,6 +1104,10 @@ def main():
             f"but this app searches with {config.EMBEDDING_MODEL}. "
             "Re-run build_embeddings.py, then refresh this page."
         )
+        return
+
+    if st.session_state.view == "library":
+        render_library(photos)
         return
 
     # Enter inside the box submits the form, same as the Search button.
