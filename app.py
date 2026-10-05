@@ -528,6 +528,7 @@ PAGE_STYLE = """
   [class*="st-key-photocard-"] {
     position: relative;
     border-radius: 10px;
+    gap: 0 !important;
   }
   /* Lets the hover tooltip float above neighbouring photos instead of
      being clipped to this card's own box. */
@@ -587,16 +588,16 @@ PAGE_STYLE = """
   }
   .photo-info {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 8px;
+    right: 8px;
     z-index: 20;
   }
   .photo-info-dot {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: rgba(32, 33, 36, .35);
     color: rgba(255, 255, 255, .9);
@@ -615,7 +616,7 @@ PAGE_STYLE = """
   .photo-info-tip {
     display: none;
     position: absolute;
-    top: 24px;
+    top: 26px;
     right: 0;
     z-index: 25;
     width: 230px;
