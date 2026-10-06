@@ -104,6 +104,18 @@ def embed_query(model, text):
     return vector / length
 
 
+def expand_free_text(text):
+    """Rewrite casual words (config.FREE_TEXT_SYNONYMS) before scoring.
+
+    Only affects the embedding + re-ranker text, so a search for "frock"
+    is scored as if it said "dress" without changing what the search box
+    showed or what mentioned_labels sees.
+    """
+    words = text.split(" ")
+    rewritten = [config.FREE_TEXT_SYNONYMS.get(word, word) for word in words]
+    return " ".join(rewritten)
+
+
 def fold_text(text):
     """Lowercase, drop accents, and collapse spaces. café and cafe then match."""
     normalized = unicodedata.normalize("NFKD", text)
@@ -241,7 +253,16 @@ def search(query):
             f"but search uses {config.EMBEDDING_MODEL}."
         )
 
-    similarities = matrix @ embed_query(load_model(), config.QUERY_PREFIX + text)
+    scored_text = expand_free_text(text)
+    query_vector = embed_query(load_model(), config.QUERY_PREFIX + scored_text)
+    # §2.8: Apple's Accelerate BLAS raises spurious divide-by-zero /
+    # overflow / invalid-value warnings on this matmul on Apple Silicon
+    # (a known NumPy + Accelerate quirk, unrelated to this data - checked
+    # by hand that neither matrix nor query_vector contain NaN/Inf, and
+    # that similarities never does either). Silenced locally, around
+    # only this call, rather than globally.
+    with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
+        similarities = matrix @ query_vector
     if len(similarities) == 0:
         return []
     similarity_by_id = {
@@ -253,7 +274,7 @@ def search(query):
     if not candidates:
         return []
 
-    raw_scores = rerank_scores(text, [photo_text(photo) for photo in candidates])
+    raw_scores = rerank_scores(scored_text, [photo_text(photo) for photo in candidates])
     low = min(raw_scores)
     high = max(raw_scores)
     floor = float(config.RERANK_MIN_SCORE)

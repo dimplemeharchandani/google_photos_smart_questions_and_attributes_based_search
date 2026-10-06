@@ -1,18 +1,18 @@
 query,status,rank,top_3
-a woman in green dress,PASS,1,"beach/beach8.jpg, beach/beach7.jpg, cafe/cafe11.jpg"
-a woman in white dress,PASS,1,"beach/beach4.jpg, beach/beach3.jpg, beach/beach8.jpg"
-girl in white frock,FAIL,-,(none)
-woman in orange dress,PASS,1,"beach/beach7.jpg, cafe/cafe1.jpg, cafe/cafe13.jpg"
+a woman in green dress,PASS,1,"beach/beach8.jpg, bali/pexels-yudo-yulyanto-2158242539-35867014.jpg, beach/beach7.jpg"
+a woman in white dress,FAIL,2,"bali/pexels-yudo-yulyanto-2158242539-35867014.jpg, beach/beach3.jpg, random birthday photos/pexels-kawerodriguess-15458947.jpg"
+girl in white frock,FAIL,4,"bali/pexels-yudo-yulyanto-2158242539-35867014.jpg, random birthday photos/pexels-kawerodriguess-15458947.jpg, random birthday photos/pexels-estoymhrb-13397652.jpg"
+woman in orange dress,PASS,1,"beach/beach7.jpg, Birthday photos/istockphoto-1643695427-612x612.jpg, Birthday photos/istockphoto-1643695433-612x612.jpg"
 cafe,PASS,1,"cafe/cafe10.jpg, cafe/cafe4.jpg, cafe/cafe1.jpg"
 man with white beard,FAIL,-,(none)
-old man,PASS,1,beach/beach2.jpg
-oldman,PASS,1,beach/beach2.jpg
-food,SKIPPED,-,"beach/goa_beaches1.jpg, beach/beach1.jpg, cafe/cafe11.jpg"
-dog on the beach,PASS,1,"beach/beach6.jpg, beach/beach2.jpg"
+old man,PASS,1,"beach/beach2.jpg, Birthday photos/istockphoto-1643695490-612x612.jpg, Birthday photos/istockphoto-1643695481-612x612.jpg"
+oldman,PASS,1,"beach/beach2.jpg, Birthday photos/istockphoto-1643695490-612x612.jpg, Birthday photos/istockphoto-1643692453-612x612.jpg"
+food,SKIPPED,-,"beach/goa_beaches1.jpg, beach/beach1.jpg, cafe/cafe8.jpg"
+dog on the beach,PASS,1,"beach/beach6.jpg, beach/beach2.jpg, Pets/istockphoto-2252633457-612x612.jpg"
 baby on the beach,FAIL,2,"beach/beach4.jpg, baby.jpg, beach/goa_beaches2.jpg"
-night photos,PASS,1,"beach/goa_beaches12.jpg, cafe/cafe9.jpg, beach/goa_beaches2.jpg"
-penguin,FAIL,-,beach/beach6.jpg
-cap,PASS,1,"baby.jpg, cafe/cafe7.jpg, beach/beach2.jpg"
+night photos,FAIL,2,"Pets/pexels-gem-webb-428343-35028131.jpg, beach/goa_beaches12.jpg, cafe/cafe9.jpg"
+penguin,PASS,-,(none)
+cap,PASS,1,"baby.jpg, bali/istockphoto-2281656344-612x612.jpg, beach/beach2.jpg"
 kid in a woolly hat,PASS,1,baby.jpg
 toddler in a sweater on the beach,PASS,1,"baby.jpg, beach/goa_beaches2.jpg"
 baby wearing boots,PASS,1,baby.jpg

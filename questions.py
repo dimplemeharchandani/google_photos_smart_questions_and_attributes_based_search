@@ -174,6 +174,31 @@ def _same_value_share(photos, key):
     return max(counts.values()) / len(photos)
 
 
+def _known_value_share(photos, key):
+    """Share of photos that have an actual (non-unknown) value for key."""
+    if not photos:
+        return 0.0
+    known = 0
+    for photo in photos:
+        if key == "capture_year":
+            if _year_number(photo.get("capture_year")) is not None:
+                known += 1
+            continue
+        if key == "capture_month":
+            if _month_number(photo.get("capture_month")) is not None:
+                known += 1
+            continue
+        value = photo_value(photo, key)
+        if key in config.LIST_ATTRIBUTES:
+            parts = [part for part in _colour_parts(value) if part != "unknown"]
+            if parts:
+                known += 1
+            continue
+        if not _is_unknown(value):
+            known += 1
+    return known / len(photos)
+
+
 def _option_counts(photos, key):
     """Value to how many current photos have it. Skips unknown and none."""
     counts = {}
@@ -299,6 +324,23 @@ def _choice_narrows(photos, question_key, value):
     return len(apply_answer(photos, question_key, value)) < len(photos)
 
 
+def _narrowing_score(photos, counts):
+    """How many photos could still remain after one tap - smaller is better.
+
+    Unknown-valued photos pass through whichever button is tapped (see
+    apply_answer), so the worst case for any question is its biggest
+    known option plus everyone whose value is unknown. Scoring every
+    eligible question this way, instead of asking the first one in
+    QUESTION_ORDER that merely narrows at all, means a question that
+    splits the current photos evenly outranks one where one option
+    dominates - see docs/search_and_questions_improvement_plan.md §2.4.
+    """
+    if not counts:
+        return len(photos)
+    unknown = len(photos) - sum(counts.values())
+    return max(counts.values()) + unknown
+
+
 def _not_about_people(answers):
     """True when the user already said the photo is not about people."""
     subject = answers.get("main_subject")
@@ -324,6 +366,8 @@ def _skip_reason(key, photos, search_text, answers, asked):
             return "colour already in the search"
     if _same_value_share(photos, key) >= config.SKIP_QUESTION_IF_SHARE:
         return "already agree"
+    if _known_value_share(photos, key) < config.MIN_KNOWN_SHARE_FOR_QUESTION:
+        return "too few known values"
     counts = _option_counts(photos, key)
     options = [value for value in counts if _choice_narrows(photos, key, value)]
     if not options:
@@ -358,14 +402,28 @@ def next_question(
         answers = {}
     asked = set(asked) | set(answers)
 
+    best_key = None
+    best_counts = None
+    best_score = None
     for key in config.QUESTION_ORDER:
         if _skip_reason(key, photos, search_text, answers, asked):
             continue
         counts = _option_counts(photos, key)
-        options = _sorted_options(key, {value: count for value, count in counts.items() if _choice_narrows(photos, key, value)})
-        if not options:
+        narrowing_counts = {
+            value: count for value, count in counts.items() if _choice_narrows(photos, key, value)
+        }
+        if not narrowing_counts:
             continue
-        options.append({"value": config.NOT_SURE_LABEL, "count": None, "label": config.NOT_SURE_LABEL})
-        options.append({"value": config.SHOW_NOW_LABEL, "count": None, "label": config.SHOW_NOW_LABEL})
-        return {"key": key, "text": config.QUESTIONS[key], "options": options}
-    return None
+        score = _narrowing_score(photos, narrowing_counts)
+        # Strict "<" (not "<="), so the first tie in QUESTION_ORDER keeps
+        # winning - ties are common (e.g. a clean 50/50 split) and the
+        # fixed order remains a sensible, stable tie-breaker.
+        if best_score is None or score < best_score:
+            best_key, best_counts, best_score = key, narrowing_counts, score
+
+    if best_key is None:
+        return None
+    options = _sorted_options(best_key, best_counts)
+    options.append({"value": config.NOT_SURE_LABEL, "count": None, "label": config.NOT_SURE_LABEL})
+    options.append({"value": config.SHOW_NOW_LABEL, "count": None, "label": config.SHOW_NOW_LABEL})
+    return {"key": best_key, "text": config.QUESTIONS[best_key], "options": options}

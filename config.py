@@ -324,6 +324,23 @@ LABEL_SYNONYMS = {
     },
 }
 
+# Casual or regional words rewritten to a more "standard" word before a
+# search is embedded and re-ranked (not before label matching - that is
+# LABEL_SYNONYMS's job, feeding add_label_matches instead).
+#
+# This is a small, hand-curated map, not a thesaurus: add an entry only
+# once a real query shows the gap, the way "frock" -> "dress" was found
+# by tests/test_queries.csv's "girl in white frock" case (see
+# docs/search_and_questions_improvement_plan.md §2.3).
+FREE_TEXT_SYNONYMS = {
+    "frock": "dress",
+    "pram": "stroller",
+    "specs": "glasses",
+    "snaps": "photos",
+    "fag": "cigarette",
+    "telly": "television",
+}
+
 # Date labels. The vision model does not fill these.
 # They come from the photo's EXIF date, a made-up date when EXIF is missing,
 # or assign_dates.py when date_source is "assigned".
@@ -383,8 +400,16 @@ RERANK_MODEL = "BAAI/bge-reranker-base"
 
 # Hide a photo when its raw re-ranker score is below this.
 # If every photo is below it, the search returns no photos.
-# -4 is below a weak but real match and above an unrelated search.
-RERANK_MIN_SCORE = -4.0
+#
+# Calibrated against tests/test_queries.csv rather than picked blindly:
+# -4.0 let a true match ("girl in white frock", raw -5.23) get discarded
+# while letting an unrelated query ("penguin", raw -3.92) return a photo.
+# -3.6 sits strictly between those two measured scores, so it fixes the
+# false-positive without needing to touch the false-empty case (that one
+# is instead fixed on the input side - see FREE_TEXT_SYNONYMS below,
+# which turns "frock" into "dress" before scoring and lifts its raw score
+# well above either value).
+RERANK_MIN_SCORE = -3.6
 
 # Final order mixes two scores. The re-ranker score is scaled to 0–1
 # across the candidates, then combined with the first-stage similarity.
@@ -393,7 +418,11 @@ RERANK_WEIGHT = 0.1
 SIMILARITY_WEIGHT = 0.9
 
 # How many of the closest embedding matches are sent to the re-ranker.
-RERANK_TOP_N = 30
+# Bumped from 30 (§2.8): at 102 photos the cost difference is small
+# (~0.2-0.3s per search) and a slightly wider net gives the re-ranker a
+# few more real candidates to work with before RERANK_MIN_SCORE trims it
+# back down. Revisit again as the library grows well past this size.
+RERANK_TOP_N = 40
 
 # Added in front of search text only. Photo descriptions are embedded without it.
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
@@ -422,6 +451,14 @@ MAX_RESULTS_BEFORE_QUESTIONS = 2
 # Skip a question when at least this share of the current results already agree.
 # 0.9 means skip it when 90% of the photos share one answer.
 SKIP_QUESTION_IF_SHARE = 0.9
+
+# Skip a question when fewer than this share of the current results even
+# have a known (non-"unknown") value for it. A question that half the
+# library can't answer anyway (season: 51/102 "unknown" at the time this
+# was measured) is a weak use of the question budget - the other
+# attributes sit at 0.85-1.00 known, so 0.6 only catches genuinely
+# sparse ones. See docs/search_and_questions_improvement_plan.md §2.5.
+MIN_KNOWN_SHARE_FOR_QUESTION = 0.6
 
 # Ask at most this many narrowing questions for one search.
 MAX_QUESTIONS = 3

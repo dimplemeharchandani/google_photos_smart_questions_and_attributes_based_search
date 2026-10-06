@@ -7,10 +7,12 @@ button to narrow them. No typing after the search.
 With an empty search, every photo is shown in a month-by-month timeline.
 """
 
+import csv
 import html
 import io
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import streamlit as st
@@ -20,8 +22,13 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 import config
-from questions import SUMMARY_NAMES, apply_answer, change_line, next_question, shown_value
-from search import clean_text, load_library, search
+from questions import SUMMARY_NAMES, apply_answer, change_line, next_question, shown_value, summary_line
+from search import clean_text, load_library, mentioned_labels, search
+
+# One row per thumbs up / down, so §2.1-§2.5 can eventually be judged
+# against real usage instead of just tests/test_queries.csv.
+FEEDBACK_LOG_PATH = config.DATA_DIR / "feedback_log.csv"
+FEEDBACK_LOG_FIELDS = ("timestamp", "query", "answers", "result_count", "verdict")
 
 # Some originals are very large. The page only shows a small copy.
 Image.MAX_IMAGE_PIXELS = None
@@ -1299,6 +1306,54 @@ def log_answer(label, value):
     st.session_state.answer_log = log
 
 
+def credit_mentioned_attributes(query):
+    """Pre-fill answers for attributes the query already named (§2.1).
+
+    mentioned_labels() is what add_label_matches already uses to widen
+    the candidate pool - it maps words like "beach" to a fixed attribute
+    value. Until now that detection never left search.py: the rail
+    stayed empty and the result count didn't reflect it, so the next
+    question could look like it was ignoring what you just typed even
+    when it already knew. Crediting it here - narrowing the results and
+    adding a rail tile, exactly as if it had been tapped - closes that
+    gap. See docs/search_and_questions_improvement_plan.md §2.1 and §3.
+
+    A label is only credited when the query names exactly one of its
+    values; a query naming two values for the same attribute (e.g.
+    "beach and cafe") is left alone rather than guessing which one.
+    """
+    found = mentioned_labels(query)
+    if not found:
+        return
+    by_label = {}
+    for label, value in found:
+        by_label.setdefault(label, set()).add(value)
+
+    results = st.session_state.results
+    photos = [photo for photo, _score in results]
+    scores = {id(photo): score for photo, score in results}
+    answers = dict(st.session_state.answers)
+    asked = list(st.session_state.asked)
+    before_total = len(photos)
+
+    for label in config.QUESTION_ORDER:
+        values = by_label.get(label)
+        if not values or len(values) != 1 or label in answers:
+            continue
+        value = next(iter(values))
+        photos = apply_answer(photos, label, value)
+        answers[label] = value
+        asked.append(label)
+        log_answer(answer_label(label), shown_value(label, value))
+
+    st.session_state.results = [(photo, scores[id(photo)]) for photo in photos]
+    st.session_state.answers = answers
+    st.session_state.asked = asked
+    after_total = len(photos)
+    if after_total != before_total:
+        st.session_state.last_change = change_line(before_total, after_total)
+
+
 def render_answers_rail():
     """The right-hand panel: every answer (and "Not sure") given so far.
 
@@ -1784,6 +1839,8 @@ def render_loading_search():
     query = st.session_state.get("pending_query", "")
     with st.spinner("Searching your library\u2026"):
         st.session_state.results = search(query) if query else []
+    if query:
+        credit_mentioned_attributes(query)
     st.session_state.phase = "loading_questions"
     st.rerun()
 
@@ -1825,8 +1882,34 @@ def render_loading_results():
     st.rerun()
 
 
+def log_feedback(verdict):
+    """Append one query + its answers + the tapped verdict to a CSV log.
+
+    §2.7: feedback used to only show a toast and vanish. This is the
+    data that would eventually turn "looks right in a few test queries"
+    into "measured against real usage" - same spirit as the existing
+    data/test_results.csv, just one row per real search instead of per
+    saved test case.
+    """
+    FEEDBACK_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    is_new = not FEEDBACK_LOG_PATH.exists()
+    with FEEDBACK_LOG_PATH.open("a", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=FEEDBACK_LOG_FIELDS)
+        if is_new:
+            writer.writeheader()
+        writer.writerow(
+            {
+                "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "query": st.session_state.get("active_query", ""),
+                "answers": summary_line(st.session_state.get("answers", {})),
+                "result_count": len(st.session_state.get("results", [])),
+                "verdict": verdict,
+            }
+        )
+
+
 def render_feedback():
-    """Single-click thumbs up / thumbs down. Local UI feedback only.
+    """Single-click thumbs up / thumbs down, logged to FEEDBACK_LOG_PATH.
 
     Lives in a bordered box in the rail, right below "Your answers" -
     not at the bottom of the results, so it's visible without scrolling.
@@ -1837,10 +1920,12 @@ def render_feedback():
         with up_column:
             if st.button("\U0001F44D", key="feedback-up", width="stretch"):
                 st.session_state.feedback = "up"
+                log_feedback("up")
                 st.toast("Thanks for the feedback!")
         with down_column:
             if st.button("\U0001F44E", key="feedback-down", width="stretch"):
                 st.session_state.feedback = "down"
+                log_feedback("down")
                 st.toast("Thanks for the feedback!")
         # Checked after both buttons, so the caption appears on the very
         # same run as the click that set it (not only on the next rerun).
