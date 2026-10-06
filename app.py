@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 import config
-from questions import apply_answer, change_line, next_question, shown_value, summary_line
+from questions import SUMMARY_NAMES, apply_answer, change_line, next_question, shown_value
 from search import clean_text, load_library, search
 
 # Some originals are very large. The page only shows a small copy.
@@ -472,9 +472,22 @@ PAGE_STYLE = """
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .st-key-search-top [data-testid="stForm"] { width: 100%; max-width: none; }
   .st-key-top-bar div[data-testid="stButton"] > button {
     min-height: 2.6rem;
+  }
+  /* "Start over" is the one real action once a search is running, so it
+     gets Streamlit's primary (filled) treatment instead of the plain
+     outline every other button here uses. */
+  .st-key-top-start-over button[kind="primary"] {
+    background: var(--blue) !important;
+    border-color: var(--blue) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+  }
+  .st-key-top-start-over button[kind="primary"]:hover {
+    background: #174ea6 !important;
+    border-color: #174ea6 !important;
+    color: #fff !important;
   }
 
   /* ---------------- Answers rail (right of the conversation) ---------------- */
@@ -966,48 +979,32 @@ def date_question_pending():
     return len(library_months(results_photos())) >= 2
 
 
-def date_summary_line():
-    """'Dates: Jan 2023 - Dec 2024', or '' when no range was chosen."""
-    span = span_ends()
-    if span is None:
-        return ""
-    start, end, full = span
-    if full:
-        return ""
-    return f"Dates: {month_chip(start)} \u2013 {month_chip(end)}"
+def answer_label(question_key):
+    """The short name shown on a tile, e.g. 'main_subject' -> 'Mainly of'."""
+    return SUMMARY_NAMES.get(question_key, question_key.replace("_", " ").title())
 
 
-def answer_tiles():
-    """Every answer given so far, as ('Label', 'Value') pairs, asked order.
+def log_answer(label, value):
+    """Record one answered (or "Not sure"-d) question for the rail.
 
-    The date range (if chosen) comes first, matching it always being the
-    first question. Each later piece reuses summary_line's "Label: Value"
-    formatting, just split back apart so each can sit in its own tile.
+    Every tap is logged here, including "Not sure" - that is still useful
+    context ("you weren't sure about the season"), so it stays visible
+    rather than silently vanishing the way a skipped question used to.
     """
-    tiles = []
-    date_line = date_summary_line()
-    if date_line:
-        label, value = date_line.split(":", 1)
-        tiles.append((label.strip(), value.strip()))
-    attrs_line = summary_line(st.session_state.get("answers", {}))
-    if attrs_line:
-        for part in attrs_line.split(" · "):
-            if ":" in part:
-                label, value = part.split(":", 1)
-                tiles.append((label.strip(), value.strip()))
-    return tiles
+    log = list(st.session_state.get("answer_log", []))
+    log.append((label, value))
+    st.session_state.answer_log = log
 
 
 def render_answers_rail():
-    """The right-hand panel: every answer given so far, as small tiles.
+    """The right-hand panel: every answer (and "Not sure") given so far.
 
-    Replaces the single inline "answers so far" line with something closer
-    to a running record of the conversation - one tile per answer, newest
-    appended at the bottom, in the order the questions were asked.
+    One tile per tap, in the order the questions were asked - a running
+    record of the conversation, not just a single summary line.
     """
     with st.container(key="answers-rail"):
         st.markdown("<div class='rail-title'>Your answers</div>", unsafe_allow_html=True)
-        tiles = answer_tiles()
+        tiles = st.session_state.get("answer_log", [])
         if not tiles:
             st.markdown(
                 "<div class='rail-empty'>Your answers will show up here as you "
@@ -1140,6 +1137,7 @@ def reset_search():
     st.session_state.show_more_for = ""
     st.session_state.phase = "idle"
     st.session_state.date_done = False
+    st.session_state.answer_log = []
     st.session_state.pop("feedback", None)
     st.session_state.pop("result_sort", None)
     st.session_state.pop("date_from", None)
@@ -1162,6 +1160,7 @@ def remember_question_state():
     st.session_state.setdefault("show_more_for", "")
     st.session_state.setdefault("phase", "idle")
     st.session_state.setdefault("date_done", False)
+    st.session_state.setdefault("answer_log", [])
 
 
 def start_search(query):
@@ -1182,6 +1181,7 @@ def start_search(query):
     st.session_state.pop("result_sort", None)
     st.session_state.date_done = False
     st.session_state.phase = "loading_questions" if query else "idle"
+    st.session_state.answer_log = []
     st.session_state.pop("feedback", None)
     st.session_state.pop("date_from", None)
     st.session_state.pop("date_to", None)
@@ -1206,12 +1206,14 @@ def apply_tap(question, choice):
     st.session_state.show_more_for = ""
     if choice == config.NOT_SURE_LABEL:
         st.session_state.not_sure_count += 1
+        log_answer(answer_label(question["key"]), config.NOT_SURE_LABEL)
     elif choice == config.SHOW_NOW_LABEL:
         st.session_state.stopped = True
     else:
         answers = dict(st.session_state.answers)
         answers[question["key"]] = choice
         st.session_state.answers = answers
+        log_answer(answer_label(question["key"]), shown_value(question["key"], choice))
     st.session_state.last_change = change_line(before, after)
 
 
@@ -1287,45 +1289,30 @@ def render_search_form(centered):
     return submitted, search_text
 
 
-def render_top_bar(editable):
+def render_top_bar():
     """The row above every phase once a search is running.
 
-    While questions are being asked, the typed search sits here as a
-    plain, unclickable pill - the conversation has "moved to the top".
-    Once results are shown it turns back into a real search box, so a
-    fresh search can be typed right there. "Start over" sits beside it
-    either way, in the same horizontal row.
+    The typed search sits here as a plain, unclickable pill for the whole
+    conversation - including once results are shown, so attention stays on
+    "Start over" rather than inviting another edit mid-flow. That button
+    is the one real action here, so it gets the primary (filled) style.
     """
     query = st.session_state.get("active_query", "")
-    submitted, search_text = False, ""
     with st.container(key="top-bar"):
         bar_column, reset_column = st.columns([5, 1])
         with bar_column:
-            if editable:
-                with st.container(key="search-top"):
-                    with st.form(f"search-{st.session_state.get('search_round', 0)}"):
-                        search_text = st.text_input(
-                            "Search text",
-                            value=query,
-                            label_visibility="collapsed",
-                        )
-                        submitted = st.form_submit_button("Search")
-            else:
-                st.markdown(
-                    f"<div class='top-query-pill'>{html.escape(query)}</div>",
-                    unsafe_allow_html=True,
-                )
+            st.markdown(
+                f"<div class='top-query-pill'>{html.escape(query)}</div>",
+                unsafe_allow_html=True,
+            )
         with reset_column:
-            start_over = st.button("Start over", key="top-start-over", width="stretch")
+            start_over = st.button(
+                "Start over", key="top-start-over", type="primary", width="stretch"
+            )
 
     if start_over:
         st.session_state.do_reset = True
         st.rerun()
-    if submitted:
-        cleaned = clean_text(search_text)
-        if cleaned:
-            start_search(cleaned)
-            st.rerun()
 
 
 def render_prompts():
@@ -1376,6 +1363,10 @@ def render_date_question():
     # no longer shown.
     st.session_state.date_start_index = start_index
     st.session_state.date_end_index = end_index
+    if skip_clicked:
+        log_answer("Dates", config.NOT_SURE_LABEL)
+    elif (start_index, end_index) != (0, last_index):
+        log_answer("Dates", f"{month_chip(months[start_index])} \u2013 {month_chip(months[end_index])}")
     after = len(filter_matches(st.session_state.results))
     st.session_state.last_change = change_line(before, after)
     st.session_state.loading_message = "Finding more ways to narrow your search\u2026"
@@ -1578,7 +1569,7 @@ def main():
     # same idea as a references rail, just for this app's own questions.
     main_column, rail_column = st.columns([2.3, 1], gap="large")
     with main_column:
-        render_top_bar(editable=phase == "results")
+        render_top_bar()
         if phase == "loading_questions":
             render_loading_questions()
         elif phase == "asking":
