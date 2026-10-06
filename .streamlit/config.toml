@@ -8,13 +8,3 @@ font = "sans serif"
 
 [client]
 toolbarMode = "minimal"
-
-[server]
-# Streamlit's auto-reload watcher walks every loaded module looking for a
-# __path__ attribute, which triggers transformers' lazy imports of its
-# (optional, torchvision-only) vision model classes. We don't use those
-# models and don't have torchvision installed, so that probe always fails
-# and floods the logs with "ModuleNotFoundError: No module named
-# 'torchvision'" - harmless, but it looks like the app is crashing. This
-# app doesn't need live auto-reload in production, so the watcher is off.
-fileWatcherType = "none"
