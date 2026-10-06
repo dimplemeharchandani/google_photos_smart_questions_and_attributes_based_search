@@ -118,6 +118,48 @@ ICON_REPO = _icon(
     '<polyline points="8 6 2 12 8 18"/>'
 )
 
+# Icons used only on the "How it works" page, one per step of either flow.
+ICON_EYE = _icon('<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>')
+ICON_TAG = _icon(
+    '<path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>'
+    '<line x1="7" y1="7" x2="7.01" y2="7"/>'
+)
+ICON_GRID = _icon(
+    '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>'
+    '<rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>'
+)
+ICON_CHECK = _icon(
+    '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>'
+)
+ICON_PENCIL = _icon(
+    '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>'
+    '<path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"/>'
+)
+ICON_SEARCH = _icon('<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>')
+ICON_LAYERS = _icon(
+    '<polygon points="12 2 2 7 12 12 22 7 12 2"/>'
+    '<polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>'
+)
+ICON_MESSAGE = _icon(
+    '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a'
+    '8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>'
+)
+ICON_POINTER = _icon('<path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/>')
+ICON_REPEAT = _icon(
+    '<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>'
+    '<polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>'
+)
+ICON_PHOTO = _icon(
+    '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>'
+    '<polyline points="21 15 16 10 5 21"/>'
+)
+ICON_CALENDAR = _icon(
+    '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>'
+    '<line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
+)
+ICON_SKIP = _icon('<polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/>')
+ICON_STOP = _icon('<circle cx="12" cy="12" r="10"/><rect x="9" y="9" width="6" height="6" rx="1"/>')
+
 PAGE_STYLE = """
 <style>
   :root {
@@ -172,6 +214,18 @@ PAGE_STYLE = """
   }
 
   /* ---------------- Sidebar ---------------- */
+  /* Streamlit's own sidebar chrome clips horizontal overflow (it only
+     expects vertical scrolling), which was silently hiding every nav
+     tooltip/popover since they're positioned just past the sidebar's
+     right edge. Force the whole ancestor chain to let them escape. */
+  [data-testid="stSidebar"],
+  [data-testid="stSidebarContent"],
+  [data-testid="stSidebarUserContent"],
+  [data-testid="stSidebar"] [data-testid="stVerticalBlockBorderWrapper"],
+  [data-testid="stSidebar"] [data-testid="stVerticalBlock"],
+  [data-testid="stSidebar"] [data-testid="stElementContainer"] {
+    overflow: visible !important;
+  }
   [data-testid="stSidebarContent"] { padding: 11px 16px 0 !important; }
   [data-testid="stSidebarUserContent"] { padding-left: 0 !important; padding-right: 0 !important; }
   [data-testid="stSidebar"] [data-testid="stVerticalBlock"] { gap: 0 !important; }
@@ -183,6 +237,7 @@ PAGE_STYLE = """
     flex: 0 0 auto !important;
     min-height: unset !important;
     height: auto !important;
+    overflow: visible !important;
   }
   [data-testid="stSidebar"] button {
     width: 100% !important;
@@ -287,8 +342,9 @@ PAGE_STYLE = """
   .st-key-brand::after { content: "Back to Quick Find."; }
   .st-key-nav-new::after { content: "Clear the search and start over."; }
   .st-key-nav-library::after { content: "Browse every photo, grouped by month."; }
-  .st-key-nav-flow::after { content: "Coming soon \\2014 see how matching works."; }
-  .st-key-nav-library button[kind="primary"] {
+  .st-key-nav-flow::after { content: "See how search and the questions work."; }
+  .st-key-nav-library button[kind="primary"],
+  .st-key-nav-flow button[kind="primary"] {
     background: #e8eaed !important;
     color: #3c4043 !important;
   }
@@ -746,6 +802,177 @@ PAGE_STYLE = """
     .hero { padding-top: 3rem; }
     .hero h1 { font-size: 1.5rem; }
   }
+
+  /* ---------------- How it works ---------------- */
+  .st-key-flow-page { max-width: 1000px; margin: 0 auto; }
+  .flow-hero { text-align: center; padding: .6rem 1rem 2rem; }
+  .flow-hero h1 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #202124;
+    margin: 0 0 .6rem;
+  }
+  .flow-hero p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.55;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  .flow-section { margin: 1.6rem 0 1.4rem; }
+  .flow-section-eyebrow {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: .35rem;
+  }
+  .flow-section-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 .45rem;
+  }
+  .flow-section-sub {
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.55;
+    max-width: 48rem;
+    margin: 0 0 1.3rem;
+  }
+
+  .flow-row {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0 0 2.2rem;
+  }
+  .flow-card {
+    flex: 1 1 190px;
+    min-width: 170px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent, var(--blue));
+    border-radius: 14px;
+    padding: 1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .flow-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent-soft, var(--blue-soft));
+    color: var(--accent, var(--blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flow-card-icon svg { width: 19px; height: 19px; }
+  .flow-card-step {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #9aa0a6;
+  }
+  .flow-card-title {
+    font-size: .98rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .flow-card-desc {
+    font-size: .85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .flow-card-outcome {
+    border-color: #cde9d4;
+    background: #f5fbf6;
+    box-shadow: 0 2px 12px rgba(52, 168, 83, .1);
+  }
+
+  .flow-arrow {
+    flex: 0 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c6cace;
+    font-size: 1.3rem;
+  }
+  .flow-arrow-labelled {
+    flex: 0 0 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    color: #9aa0a6;
+    font-size: .68rem;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0 .3rem;
+  }
+  .flow-arrow-labelled .glyph { font-size: 1.3rem; color: #c6cace; }
+
+  .flow-loop-note {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .3rem 0 1.4rem;
+    padding: .65rem .9rem;
+    background: #f8f9fa;
+    border: 1px dashed #dadce0;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: .84rem;
+    line-height: 1.5;
+  }
+  .flow-loop-note svg { width: 17px; height: 17px; flex: 0 0 17px; color: #80868b; }
+
+  .flow-rules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .8rem;
+  }
+  .flow-rule {
+    display: flex;
+    gap: .7rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: .85rem .95rem;
+  }
+  .flow-rule-icon {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--blue-soft);
+    color: #174ea6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flow-rule-icon svg { width: 15px; height: 15px; }
+  .flow-rule-title { font-weight: 600; font-size: .88rem; color: var(--ink); margin-bottom: .15rem; }
+  .flow-rule-desc { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+  @media (max-width: 860px) {
+    .flow-row { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); flex-basis: 26px; }
+    .flow-arrow-labelled { flex-direction: row; justify-content: flex-start; text-align: left; }
+    .flow-arrow-labelled .glyph { transform: rotate(90deg); }
+    .flow-rules { grid-template-columns: 1fr; }
+  }
 </style>
 """
 
@@ -771,7 +998,15 @@ def render_sidebar():
             st.session_state.view = "library"
             st.query_params["page"] = "library"
             st.rerun()
-        st.button("How it works", key="nav-flow", width="stretch")
+        if st.button(
+            "How it works",
+            key="nav-flow",
+            type="primary" if view == "flow" else "secondary",
+            width="stretch",
+        ):
+            st.session_state.view = "flow"
+            st.query_params["page"] = "flow"
+            st.rerun()
         st.markdown(
             f"<a class='nav-item' href='{GITHUB_URL}' target='_blank' rel='noopener'>"
             f"<span class='nav-ico'>{ICON_REPO}</span>"
@@ -879,17 +1114,28 @@ def month_chip(key):
 def show_date_slider(photos):
     """Month range from the earliest photo to the latest. Full range is the default.
 
-    This uses two separate, single-value sliders ("From" and "To") rather
-    than one two-handle range slider. Streamlit's range select_slider can
-    silently collapse back to a single handle across reruns (it cannot
-    always tell a two-ended range apart from a single option once the
-    widget already has stored state), which made one end stop sliding.
-    Two single sliders are unambiguous and both ends stay independently
-    draggable.
+    This is a single two-handle range slider (st.select_slider with a
+    tuple value), so both ends live on one track instead of two separate
+    sliders.
+
+    The ``value`` argument must be passed as a 2-tuple on *every* run, not
+    only the first. Streamlit's select_slider decides whether a run's
+    stored widget state should be read back as a range (a tuple) or a
+    single scalar by looking at whether the live Python call this run
+    passed a sequence as ``value`` - it does not infer this from the
+    widget's own history. Omitting ``value`` once the key already exists
+    in session_state (the previous approach here) makes that check see
+    ``None``, which is not a sequence, so the slider's own two-ended
+    selection gets deserialized back down to just its first handle - the
+    live widget still has two handles, but every rerun quietly re-sends a
+    single-value default to the frontend, which is what made the second
+    handle stop moving. Always rebuilding the tuple from whatever is
+    already in session_state (or the full range, the first time) keeps
+    both handles independently draggable across reruns.
     """
     months = library_months(photos)
     if len(months) < 2:
-        for key in ("date_bounds", "date_months", "date_from", "date_to"):
+        for key in ("date_bounds", "date_months", "date_range"):
             st.session_state.pop(key, None)
         return
     st.session_state.date_months = months
@@ -899,28 +1145,25 @@ def show_date_slider(photos):
     def label(index):
         return month_chip(months[index])
 
-    from_column, to_column = st.columns(2)
-    with from_column:
-        if "date_from" not in st.session_state:
-            st.select_slider(
-                "From", options=range(len(months)), value=0, format_func=label, key="date_from"
-            )
-        else:
-            st.select_slider("From", options=range(len(months)), format_func=label, key="date_from")
-    with to_column:
-        if "date_to" not in st.session_state:
-            st.select_slider(
-                "To", options=range(len(months)), value=last_index, format_func=label, key="date_to"
-            )
-        else:
-            st.select_slider("To", options=range(len(months)), format_func=label, key="date_to")
+    current = st.session_state.get("date_range", (0, last_index))
+    start_index = max(0, min(current[0], last_index))
+    end_index = max(0, min(current[1], last_index))
+
+    st.select_slider(
+        "Date range",
+        options=range(len(months)),
+        value=(start_index, end_index),
+        format_func=label,
+        key="date_range",
+        label_visibility="collapsed",
+    )
 
 
 def span_ends():
     """(start, end, full) month keys for the chosen range, or None when every photo is shown.
 
     This reads the *committed* indexes (date_start_index / date_end_index),
-    not the live date_from / date_to slider widgets directly. Streamlit
+    not the live date_range slider widget directly. Streamlit
     quietly drops a widget's stored value once that widget stops being
     instantiated on later runs (which happens as soon as the date question
     is answered and show_date_slider is no longer called) - so the chosen
@@ -1140,8 +1383,7 @@ def reset_search():
     st.session_state.answer_log = []
     st.session_state.pop("feedback", None)
     st.session_state.pop("result_sort", None)
-    st.session_state.pop("date_from", None)
-    st.session_state.pop("date_to", None)
+    st.session_state.pop("date_range", None)
     st.session_state.pop("date_bounds", None)
     st.session_state.pop("date_months", None)
     st.session_state.pop("date_start_index", None)
@@ -1183,8 +1425,7 @@ def start_search(query):
     st.session_state.phase = "loading_questions" if query else "idle"
     st.session_state.answer_log = []
     st.session_state.pop("feedback", None)
-    st.session_state.pop("date_from", None)
-    st.session_state.pop("date_to", None)
+    st.session_state.pop("date_range", None)
     st.session_state.pop("date_bounds", None)
     st.session_state.pop("date_months", None)
     st.session_state.pop("date_start_index", None)
@@ -1259,7 +1500,7 @@ def render_hero():
     """The idle headline, Google-homepage style. Only shown before a search starts."""
     heading = "Half-remember a photo? Just describe it."
     sub = (
-        "Type whatever you recall \u2014 a place, a color, a season. "
+        "Type whatever you recall, a place, a color, a season. "
         "We'll ask a couple of quick questions to narrow thousands of "
         "photos down to the one you're after."
     )
@@ -1354,10 +1595,9 @@ def render_date_question():
     if skip_clicked:
         start_index, end_index = 0, last_index
     else:
-        start_index = st.session_state.get("date_from", 0)
-        end_index = st.session_state.get("date_to", last_index)
+        start_index, end_index = st.session_state.get("date_range", (0, last_index))
     # Commit into plain keys (see span_ends) rather than writing back to
-    # the date_from / date_to widgets themselves - both because Streamlit
+    # the date_range widget itself - both because Streamlit
     # forbids reassigning a widget's value after it has rendered this run,
     # and because those widget keys will be pruned once this question is
     # no longer shown.
@@ -1480,7 +1720,7 @@ def render_feedback():
     # Checked after both buttons, so the caption appears on the very same
     # run as the click that set it (not only on the next rerun).
     if st.session_state.get("feedback"):
-        st.caption("Feedback recorded \u2014 thank you.")
+        st.caption("Feedback recorded, thank you.")
 
 
 def render_results_phase(photos):
@@ -1505,6 +1745,180 @@ def render_results_phase(photos):
     )
     show_results(visible, sort_by)
     render_feedback()
+
+
+def flow_card(step, title, desc, icon, accent, outcome=False):
+    """One box in a how-it-works flow: a step number, an icon, a title, a line of text."""
+    classes = "flow-card flow-card-outcome" if outcome else "flow-card"
+    style = "" if outcome else f" style='--accent:{accent[0]};--accent-soft:{accent[1]}'"
+    step_html = f"<div class='flow-card-step'>{html.escape(step)}</div>" if step else ""
+    return (
+        f"<div class='{classes}'{style}>"
+        f"<div class='flow-card-icon'>{icon}</div>"
+        f"{step_html}"
+        f"<div class='flow-card-title'>{html.escape(title)}</div>"
+        f"<div class='flow-card-desc'>{html.escape(desc)}</div>"
+        "</div>"
+    )
+
+
+def flow_arrow():
+    return "<div class='flow-arrow'>&#8594;</div>"
+
+
+def flow_arrow_labelled(text):
+    return (
+        "<div class='flow-arrow-labelled'>"
+        "<span class='glyph'>&#8594;</span>"
+        f"<span>{html.escape(text)}</span>"
+        "</div>"
+    )
+
+
+# The four Google colours, each paired with a pale tint for a card's icon chip.
+_BLUE = ("#4285F4", "#e8f0fe")
+_RED = ("#EA4335", "#fce8e6")
+_YELLOW = ("#FBBC04", "#fef7e0")
+_GREEN = ("#34A853", "#e6f4ea")
+
+
+def render_how_it_works():
+    """A plain-English walkthrough of the two flows behind this app:
+    getting photos ready to search (once), and answering a search (every time).
+    """
+    with st.container(key="flow-page"):
+        _render_how_it_works_body()
+
+
+def _render_how_it_works_body():
+    st.markdown(
+        "<div class='flow-hero'>"
+        "<h1>How Quick Find works</h1>"
+        "<p>No magic, just a few clear steps. Photos are read and labelled once, "
+        "ahead of time. Every search then compares meaning, not just words, and asks "
+        "at most a couple of quick questions when there is still too much to show you.</p>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+
+    # ---- Section 1: one-time setup ----
+    st.markdown(
+        "<div class='flow-section'>"
+        "<div class='flow-section-eyebrow'>Happens once, ahead of time</div>"
+        "<div class='flow-section-title'>Teaching the app about your photos</div>"
+        "<div class='flow-section-sub'>Before anyone can search, every photo in the "
+        "library is looked at and described. This only has to happen once per photo.</div>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+    setup_cards = [
+        ("Step 1", "An AI reads each photo", "It writes a short description, plus simple details such as who's in it, where it is, and what season it looks like.", ICON_EYE, _BLUE),
+        ("Step 2", "The details are saved", "The description and details are stored right next to the photo, like a label only the app can read.", ICON_TAG, _RED),
+        ("Step 3", "It's turned into numbers", "Each description becomes an \u201cembedding\u201d, a list of numbers that captures its meaning rather than its exact words.", ICON_GRID, _YELLOW),
+        ("Step 4", "The library is ready", "Once every photo has its numbers saved, the whole library can be searched instantly.", ICON_CHECK, _GREEN),
+    ]
+    row = ["<div class='flow-row'>"]
+    for index, (step, title, desc, icon, accent) in enumerate(setup_cards):
+        if index:
+            row.append(flow_arrow())
+        row.append(flow_card(step, title, desc, icon, accent))
+    row.append("</div>")
+    st.markdown("".join(row), unsafe_allow_html=True)
+
+    # ---- Section 2: a search begins ----
+    st.markdown(
+        "<div class='flow-section'>"
+        "<div class='flow-section-eyebrow'>Happens every time you search</div>"
+        "<div class='flow-section-title'>Finding the photo you described</div>"
+        "<div class='flow-section-sub'>A half-remembered sentence is enough. The app "
+        "looks for the closest meaning first, then double-checks the top candidates.</div>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+    search_cards = [
+        ("Step 1", "You describe it", "Type whatever you remember, even if it's vague, like \u201ca birthday cake with string lights, maybe last winter\u201d.", ICON_PENCIL, _BLUE),
+        ("Step 2", "Meaning is compared", "Your words are turned into the same kind of numbers, then compared against every photo to find the closest meanings.", ICON_SEARCH, _RED),
+        ("Step 3", "Top matches are double-checked", "A second, more careful model re-reads the closest candidates against your exact words and re-orders them.", ICON_LAYERS, _YELLOW),
+        ("Step 4", "A shortlist comes back", "The best-matching photos are lined up, ready to be narrowed further if there are still a lot of them.", ICON_PHOTO, _GREEN),
+    ]
+    row = ["<div class='flow-row'>"]
+    for index, (step, title, desc, icon, accent) in enumerate(search_cards):
+        if index:
+            row.append(flow_arrow())
+        row.append(flow_card(step, title, desc, icon, accent))
+    row.append("</div>")
+    st.markdown("".join(row), unsafe_allow_html=True)
+
+    # ---- Section 3: the narrowing loop ----
+    st.markdown(
+        "<div class='flow-section'>"
+        "<div class='flow-section-eyebrow'>Only when there's still a lot to choose from</div>"
+        "<div class='flow-section-title'>Narrowing it down together</div>"
+        "<div class='flow-section-sub'>Instead of dumping every match on screen, the "
+        "app asks one simple question at a time and narrows the list with each tap.</div>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+    loop_cards = [
+        ("", "Roughly when?", "First, a date range: drag a slider over the months your photo could be from.", ICON_CALENDAR, _BLUE),
+        ("", "One quick question", "Then a single tap question, such as \u201cWhere was it?\u201d or \u201cWho was in the photo?\u201d.", ICON_MESSAGE, _RED),
+        ("", "You tap an answer", "Matching photos stay, the rest drop out, instantly, or you can tap \u201cNot sure\u201d to skip it.", ICON_POINTER, _YELLOW),
+    ]
+    row = ["<div class='flow-row'>"]
+    for index, (step, title, desc, icon, accent) in enumerate(loop_cards):
+        if index:
+            row.append(flow_arrow())
+        row.append(flow_card(step, title, desc, icon, accent))
+    row.append(flow_arrow_labelled("repeats up to 3 times"))
+    row.append(
+        flow_card(
+            "",
+            "Your best matches",
+            "Once only a handful of photos remain, enough questions are answered, or you say \u201cNot sure\u201d too often, the search stops and shows the results.",
+            ICON_PHOTO,
+            _GREEN,
+            outcome=True,
+        )
+    )
+    row.append("</div>")
+    st.markdown("".join(row), unsafe_allow_html=True)
+    st.markdown(
+        "<div class='flow-loop-note'>"
+        f"{ICON_REPEAT}"
+        "<span>Every tap narrows a live list, so the question and photo count you see "
+        "always reflect everything you've answered so far, not the full library.</span>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+
+    # ---- Section 4: what makes a question worth asking ----
+    st.markdown(
+        "<div class='flow-section'>"
+        "<div class='flow-section-eyebrow'>Behind the scenes</div>"
+        "<div class='flow-section-title'>What makes a question worth asking</div>"
+        "<div class='flow-section-sub'>A question is only shown when answering it would "
+        "actually help. Four simple rules keep things short and relevant.</div>"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+    rules = [
+        (ICON_SKIP, "Never repeats itself", "A question already answered, or already covered by your search text, is never asked again."),
+        (ICON_GRID, "Skips questions that won't help", "If almost every remaining photo already shares one answer, or no answer would actually shrink the list, that question is left out."),
+        (ICON_CHECK, "Stays relevant to earlier answers", "Clothing colour is only asked when most remaining photos show people, and a specific month is only asked after a year has been chosen."),
+        (ICON_STOP, "Knows when to stop", "Asking stops once only a couple of photos remain, three questions have been asked, or \u201cNot sure\u201d has been tapped twice."),
+    ]
+    tiles = ["<div class='flow-rules'>"]
+    for icon, title, desc in rules:
+        tiles.append(
+            "<div class='flow-rule'>"
+            f"<div class='flow-rule-icon'>{icon}</div>"
+            "<div>"
+            f"<div class='flow-rule-title'>{html.escape(title)}</div>"
+            f"<div class='flow-rule-desc'>{html.escape(desc)}</div>"
+            "</div></div>"
+        )
+    tiles.append("</div>")
+    st.markdown("".join(tiles), unsafe_allow_html=True)
 
 
 def render_library(photos):
@@ -1545,6 +1959,10 @@ def main():
 
     if st.session_state.view == "library":
         render_library(photos)
+        return
+
+    if st.session_state.view == "flow":
+        render_how_it_works()
         return
 
     remember_question_state()
