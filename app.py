@@ -10,6 +10,7 @@ With an empty search, every photo is shown in a month-by-month timeline.
 import html
 import io
 import sys
+import time
 from pathlib import Path
 
 import streamlit as st
@@ -158,12 +159,16 @@ PAGE_STYLE = """
     background: linear-gradient(90deg, #FBBC04, #EA4335, #4285F4, #34A853);
   }
 
+  /* margin: auto keeps everything centred within whatever width is left
+     of the sidebar, on any screen size - not flush against its left edge. */
   [data-testid="stMain"] .block-container {
     padding-top: 1.1rem;
-    padding-bottom: 118px;
+    padding-bottom: 2rem;
     padding-left: 1.4rem;
     padding-right: 1.4rem;
-    max-width: 980px;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* ---------------- Sidebar ---------------- */
@@ -371,7 +376,10 @@ PAGE_STYLE = """
   }
   .hero.hero-compact p { display: none; }
 
-  .st-key-prompts [data-testid="stVerticalBlock"] {
+  /* The key class lands on the vertical block itself (there is no nested
+     stVerticalBlock to target), so the row/centre layout goes here. */
+  .st-key-prompts {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
@@ -414,13 +422,7 @@ PAGE_STYLE = """
 
   /* ---------------- Pinned search bar ---------------- */
   [data-testid="stForm"] {
-    position: fixed !important;
-    bottom: 28px !important;
-    left: calc(var(--sidebar-w) + 1.4rem) !important;
-    width: calc(100vw - var(--sidebar-w) - 2.8rem) !important;
-    max-width: 760px !important;
     height: auto !important;
-    z-index: 50 !important;
     margin: 0 !important;
     background: #fff;
     border: 1px solid #e3e6ea;
@@ -428,6 +430,90 @@ PAGE_STYLE = """
     box-shadow: 0 1px 2px rgba(32, 33, 36, .06), 0 8px 20px rgba(32, 33, 36, .10);
     padding: .25rem .35rem .25rem .9rem;
   }
+  /* Idle "New search": a Google-style search bar, centred in the normal
+     page flow, sitting between the hero and the example prompts. */
+  .st-key-search-center {
+    margin: 1.6rem 0 1.6rem !important;
+  }
+  /* Streamlit stretches stLayoutWrapper to 100% of its parent, which is
+     what actually holds the form - centering the outer block with flex
+     has nothing to centre, since that wrapper already fills it. Capping
+     and centering this wrapper itself is what moves the form. */
+  .st-key-search-center [data-testid="stLayoutWrapper"] {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .st-key-search-center [data-testid="stForm"] {
+    width: 100%;
+  }
+  .st-key-search-center [data-testid="stForm"]:hover,
+  .st-key-search-center [data-testid="stForm"]:focus-within {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .12), 0 2px 10px rgba(32, 33, 36, .08);
+  }
+  /* ---------------- Top bar (every phase after the first search) ---------------- */
+  .st-key-top-bar { margin: .1rem 0 1.6rem; }
+  .st-key-top-bar [data-testid="stHorizontalBlock"] {
+    align-items: center !important;
+    gap: .8rem !important;
+  }
+  /* The query sits here, unclickable, while questions are being asked -
+     shaped like a search bar so it reads as "your search", not a label. */
+  .top-query-pill {
+    display: flex;
+    align-items: center;
+    background: #f1f3f4;
+    color: #3c4043;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .7rem 1.2rem;
+    font-size: .98rem;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .st-key-search-top [data-testid="stForm"] { width: 100%; max-width: none; }
+  .st-key-top-bar div[data-testid="stButton"] > button {
+    min-height: 2.6rem;
+  }
+
+  /* ---------------- Answers rail (right of the conversation) ---------------- */
+  .st-key-answers-rail { position: sticky; top: 1.2rem; }
+  .rail-title {
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: .6rem;
+  }
+  .rail-empty { color: var(--muted); font-size: .84rem; line-height: 1.55; }
+  .answer-tiles { display: flex; flex-direction: column; gap: .55rem; }
+  .answer-tile {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blue);
+    border-radius: 10px;
+    padding: .55rem .7rem;
+    background: #fff;
+    animation: tile-in .22s ease;
+  }
+  @keyframes tile-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .answer-tile-label {
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #174ea6;
+  }
+  .answer-tile-value {
+    font-size: .9rem;
+    color: var(--ink);
+    margin-top: .15rem;
+    line-height: 1.35;
+  }
+
   [data-testid="stForm"] [data-testid="stVerticalBlock"] {
     flex-direction: row !important;
     align-items: center !important;
@@ -660,6 +746,7 @@ def render_sidebar():
             st.rerun()
         if st.button("New search", key="nav-new", width="stretch"):
             st.session_state.view = "home"
+            st.query_params["page"] = "home"
             st.session_state.do_reset = True
             st.rerun()
         if st.button(
@@ -669,6 +756,7 @@ def render_sidebar():
             width="stretch",
         ):
             st.session_state.view = "library"
+            st.query_params["page"] = "library"
             st.rerun()
         st.button("How it works", key="nav-flow", width="stretch")
         st.markdown(
@@ -776,40 +864,66 @@ def month_chip(key):
 
 
 def show_date_slider(photos):
-    """Month range from the earliest photo to the latest. Full range is the default."""
+    """Month range from the earliest photo to the latest. Full range is the default.
+
+    This uses two separate, single-value sliders ("From" and "To") rather
+    than one two-handle range slider. Streamlit's range select_slider can
+    silently collapse back to a single handle across reruns (it cannot
+    always tell a two-ended range apart from a single option once the
+    widget already has stored state), which made one end stop sliding.
+    Two single sliders are unambiguous and both ends stay independently
+    draggable.
+    """
     months = library_months(photos)
     if len(months) < 2:
-        st.session_state.pop("date_bounds", None)
+        for key in ("date_bounds", "date_months", "date_from", "date_to"):
+            st.session_state.pop(key, None)
         return
-    st.session_state.date_bounds = (months[0], months[-1])
-    value = (months[0], months[-1]) if "date_span" not in st.session_state else None
-    if value is None:
-        st.select_slider(
-            "Dates",
-            options=months,
-            format_func=month_chip,
-            key="date_span",
-        )
-        return
-    st.select_slider(
-        "Dates",
-        options=months,
-        value=value,
-        format_func=month_chip,
-        key="date_span",
-    )
+    st.session_state.date_months = months
+    last_index = len(months) - 1
+    st.session_state.date_bounds = (0, last_index)
+
+    def label(index):
+        return month_chip(months[index])
+
+    from_column, to_column = st.columns(2)
+    with from_column:
+        if "date_from" not in st.session_state:
+            st.select_slider(
+                "From", options=range(len(months)), value=0, format_func=label, key="date_from"
+            )
+        else:
+            st.select_slider("From", options=range(len(months)), format_func=label, key="date_from")
+    with to_column:
+        if "date_to" not in st.session_state:
+            st.select_slider(
+                "To", options=range(len(months)), value=last_index, format_func=label, key="date_to"
+            )
+        else:
+            st.select_slider("To", options=range(len(months)), format_func=label, key="date_to")
 
 
 def span_ends():
-    """(start, end, full) for the slider, or None when every photo is shown."""
+    """(start, end, full) month keys for the chosen range, or None when every photo is shown.
+
+    This reads the *committed* indexes (date_start_index / date_end_index),
+    not the live date_from / date_to slider widgets directly. Streamlit
+    quietly drops a widget's stored value once that widget stops being
+    instantiated on later runs (which happens as soon as the date question
+    is answered and show_date_slider is no longer called) - so the chosen
+    range is copied into these plain, never-pruned keys the moment the
+    question is answered, and that copy is what every later run reads.
+    """
     bounds = st.session_state.get("date_bounds")
-    picked = st.session_state.get("date_span")
-    if not bounds or not isinstance(picked, (tuple, list)) or len(picked) != 2:
+    months = st.session_state.get("date_months")
+    start_index = st.session_state.get("date_start_index")
+    end_index = st.session_state.get("date_end_index")
+    if not bounds or not months or start_index is None or end_index is None:
         return None
-    start, end = picked
-    if start > end:
-        start, end = end, start
-    return start, end, (start, end) == tuple(bounds)
+    if start_index > end_index:
+        start_index, end_index = end_index, start_index
+    full = (start_index, end_index) == tuple(bounds)
+    return months[start_index], months[end_index], full
 
 
 def photo_in_span(photo):
@@ -833,6 +947,82 @@ def filter_photos(photos):
 
 def filter_matches(matches):
     return [(photo, score) for photo, score in matches if photo_in_span(photo)]
+
+
+def results_photos():
+    """The photos still in play for the active search (ignores the date filter)."""
+    return [photo for photo, _score in st.session_state.get("results", [])]
+
+
+def date_question_pending():
+    """True while the date-range question still needs to be asked.
+
+    The slider's min/max come from the *current search's* photos, not the
+    whole library, so skip entirely when those results do not span at
+    least two months (show_date_slider would have nothing useful to ask).
+    """
+    if st.session_state.get("date_done", False):
+        return False
+    return len(library_months(results_photos())) >= 2
+
+
+def date_summary_line():
+    """'Dates: Jan 2023 - Dec 2024', or '' when no range was chosen."""
+    span = span_ends()
+    if span is None:
+        return ""
+    start, end, full = span
+    if full:
+        return ""
+    return f"Dates: {month_chip(start)} \u2013 {month_chip(end)}"
+
+
+def answer_tiles():
+    """Every answer given so far, as ('Label', 'Value') pairs, asked order.
+
+    The date range (if chosen) comes first, matching it always being the
+    first question. Each later piece reuses summary_line's "Label: Value"
+    formatting, just split back apart so each can sit in its own tile.
+    """
+    tiles = []
+    date_line = date_summary_line()
+    if date_line:
+        label, value = date_line.split(":", 1)
+        tiles.append((label.strip(), value.strip()))
+    attrs_line = summary_line(st.session_state.get("answers", {}))
+    if attrs_line:
+        for part in attrs_line.split(" · "):
+            if ":" in part:
+                label, value = part.split(":", 1)
+                tiles.append((label.strip(), value.strip()))
+    return tiles
+
+
+def render_answers_rail():
+    """The right-hand panel: every answer given so far, as small tiles.
+
+    Replaces the single inline "answers so far" line with something closer
+    to a running record of the conversation - one tile per answer, newest
+    appended at the bottom, in the order the questions were asked.
+    """
+    with st.container(key="answers-rail"):
+        st.markdown("<div class='rail-title'>Your answers</div>", unsafe_allow_html=True)
+        tiles = answer_tiles()
+        if not tiles:
+            st.markdown(
+                "<div class='rail-empty'>Your answers will show up here as you "
+                "respond to each question.</div>",
+                unsafe_allow_html=True,
+            )
+            return
+        cards = "".join(
+            "<div class='answer-tile'>"
+            f"<div class='answer-tile-label'>{html.escape(label)}</div>"
+            f"<div class='answer-tile-value'>{html.escape(value)}</div>"
+            "</div>"
+            for label, value in tiles
+        )
+        st.markdown(f"<div class='answer-tiles'>{cards}</div>", unsafe_allow_html=True)
 
 
 def detail_text(key, value):
@@ -888,7 +1078,7 @@ def show_photo_card(photo, score=None):
             st.image(image, width="stretch")
 
 
-def show_grid(entries, show_details=False, with_score=False):
+def show_grid(entries, with_score=False):
     """Four equal square photos per row. A short last row stays the same size."""
     for start in range(0, len(entries), COLUMNS):
         row = entries[start : start + COLUMNS]
@@ -902,17 +1092,15 @@ def show_grid(entries, show_details=False, with_score=False):
                 show_photo_card(photo, score if with_score else None)
                 if score is not None:
                     st.caption(f"{score:.2f}")
-                if with_score and show_details:
-                    st.write(photo.get("description") or "")
 
 
-def show_date_groups(groups, unknown, show_details=False, with_score=False):
+def show_date_groups(groups, unknown, with_score=False):
     for (year, month), items in groups:
         group_heading(f"{MONTH_NAMES[month]} {year}", len(items))
-        show_grid(items, show_details=show_details, with_score=with_score)
+        show_grid(items, with_score=with_score)
     if unknown:
         group_heading("Date unknown", len(unknown))
-        show_grid(unknown, show_details=show_details, with_score=with_score)
+        show_grid(unknown, with_score=with_score)
 
 
 def show_timeline(photos):
@@ -925,7 +1113,7 @@ def show_timeline(photos):
     show_date_groups(groups, unknown)
 
 
-def show_results(matches, show_details, sort_by):
+def show_results(matches, sort_by):
     """Search results, best match first, or grouped by date when asked."""
     if not matches:
         st.write("No close matches found. Try describing it differently.")
@@ -934,9 +1122,9 @@ def show_results(matches, show_details, sort_by):
     st.write(f"{len(matches)} photos found")
     if sort_by == "Date":
         groups, unknown = group_by_date(matches, lambda item: item[0])
-        show_date_groups(groups, unknown, show_details=show_details, with_score=True)
+        show_date_groups(groups, unknown, with_score=True)
         return
-    show_grid(matches, show_details=show_details, with_score=True)
+    show_grid(matches, with_score=True)
 
 
 def reset_search():
@@ -950,9 +1138,16 @@ def reset_search():
     st.session_state.stopped = False
     st.session_state.last_change = ""
     st.session_state.show_more_for = ""
+    st.session_state.phase = "idle"
+    st.session_state.date_done = False
+    st.session_state.pop("feedback", None)
     st.session_state.pop("result_sort", None)
-    st.session_state.pop("date_span", None)
+    st.session_state.pop("date_from", None)
+    st.session_state.pop("date_to", None)
     st.session_state.pop("date_bounds", None)
+    st.session_state.pop("date_months", None)
+    st.session_state.pop("date_start_index", None)
+    st.session_state.pop("date_end_index", None)
     st.session_state.search_round = st.session_state.get("search_round", 0) + 1
 
 
@@ -965,6 +1160,8 @@ def remember_question_state():
     st.session_state.setdefault("stopped", False)
     st.session_state.setdefault("last_change", "")
     st.session_state.setdefault("show_more_for", "")
+    st.session_state.setdefault("phase", "idle")
+    st.session_state.setdefault("date_done", False)
 
 
 def start_search(query):
@@ -978,7 +1175,20 @@ def start_search(query):
     st.session_state.stopped = False
     st.session_state.last_change = ""
     st.session_state.show_more_for = ""
-    st.session_state.result_sort = "Best match"
+    # Popped, not assigned: result_sort is also a widget key (its
+    # "Sort by" segmented_control sets default="Best match"), and Streamlit
+    # forbids giving a widget both a default and a directly-assigned value.
+    # Removing the key lets that default take over cleanly for this search.
+    st.session_state.pop("result_sort", None)
+    st.session_state.date_done = False
+    st.session_state.phase = "loading_questions" if query else "idle"
+    st.session_state.pop("feedback", None)
+    st.session_state.pop("date_from", None)
+    st.session_state.pop("date_to", None)
+    st.session_state.pop("date_bounds", None)
+    st.session_state.pop("date_months", None)
+    st.session_state.pop("date_start_index", None)
+    st.session_state.pop("date_end_index", None)
 
 
 def apply_tap(question, choice):
@@ -1043,25 +1253,79 @@ def show_question(question):
     return None
 
 
-def render_hero(idle):
-    """Headline above the search area. Compact once a search is active."""
-    mode = "hero-idle" if idle else "hero-compact"
-    if idle:
-        heading = "Half-remember a photo? Just describe it."
-        sub = (
-            "Type whatever you recall \u2014 a place, a color, a season. "
-            "We'll ask a couple of quick questions to narrow thousands of "
-            "photos down to the one you're after."
-        )
-    else:
-        heading = "Quick Find"
-        sub = ""
+def render_hero():
+    """The idle headline, Google-homepage style. Only shown before a search starts."""
+    heading = "Half-remember a photo? Just describe it."
+    sub = (
+        "Type whatever you recall \u2014 a place, a color, a season. "
+        "We'll ask a couple of quick questions to narrow thousands of "
+        "photos down to the one you're after."
+    )
     st.markdown(
-        f"<div class='hero {mode}'><h1>{heading}</h1>"
-        + (f"<p>{sub}</p>" if sub else "")
-        + "</div>",
+        f"<div class='hero hero-idle'><h1>{heading}</h1><p>{sub}</p></div>",
         unsafe_allow_html=True,
     )
+
+
+def render_search_form(centered):
+    """The search bar. Centred (Google-style) on the idle screen, otherwise
+    pinned to the bottom of the viewport so a new search is always reachable.
+
+    Enter inside the box submits the form, same as the Search button.
+    A new form key on Start over clears the box. A form keeps its own text.
+    """
+    search_round = st.session_state.get("search_round", 0)
+    wrapper_key = "search-center" if centered else "search-pinned"
+    with st.container(key=wrapper_key):
+        with st.form(f"search-{search_round}"):
+            search_text = st.text_input(
+                "Search text",
+                label_visibility="collapsed",
+                placeholder="Describe the photo you're looking for\u2026",
+            )
+            submitted = st.form_submit_button("Search")
+    return submitted, search_text
+
+
+def render_top_bar(editable):
+    """The row above every phase once a search is running.
+
+    While questions are being asked, the typed search sits here as a
+    plain, unclickable pill - the conversation has "moved to the top".
+    Once results are shown it turns back into a real search box, so a
+    fresh search can be typed right there. "Start over" sits beside it
+    either way, in the same horizontal row.
+    """
+    query = st.session_state.get("active_query", "")
+    submitted, search_text = False, ""
+    with st.container(key="top-bar"):
+        bar_column, reset_column = st.columns([5, 1])
+        with bar_column:
+            if editable:
+                with st.container(key="search-top"):
+                    with st.form(f"search-{st.session_state.get('search_round', 0)}"):
+                        search_text = st.text_input(
+                            "Search text",
+                            value=query,
+                            label_visibility="collapsed",
+                        )
+                        submitted = st.form_submit_button("Search")
+            else:
+                st.markdown(
+                    f"<div class='top-query-pill'>{html.escape(query)}</div>",
+                    unsafe_allow_html=True,
+                )
+        with reset_column:
+            start_over = st.button("Start over", key="top-start-over", width="stretch")
+
+    if start_over:
+        st.session_state.do_reset = True
+        st.rerun()
+    if submitted:
+        cleaned = clean_text(search_text)
+        if cleaned:
+            start_search(cleaned)
+            st.rerun()
 
 
 def render_prompts():
@@ -1071,6 +1335,185 @@ def render_prompts():
             if st.button(example, key=f"prompt-{i}"):
                 start_search(clean_text(example))
                 st.rerun()
+
+
+def render_date_question():
+    """The date range, asked like any other narrowing question.
+
+    The slider's min and max come from the photos in the *current*
+    search results (not the whole library), so dragging either end
+    always narrows a range that actually matches this search.
+
+    Two buttons: "Apply range" keeps whatever the slider is set to,
+    "Not sure" resets it to the full range (no date filtering at all).
+    """
+    with st.container(key="question-card"):
+        st.markdown(
+            "<p class='question-card-text'>Roughly when was this taken?</p>",
+            unsafe_allow_html=True,
+        )
+        show_date_slider(results_photos())
+        apply_column, skip_column = st.columns(2)
+        with apply_column:
+            apply_clicked = st.button("Apply range", key="date-apply", width="stretch")
+        with skip_column:
+            skip_clicked = st.button(config.NOT_SURE_LABEL, key="date-skip", width="stretch")
+    if not (apply_clicked or skip_clicked):
+        return
+    before = len(st.session_state.results)
+    st.session_state.date_done = True
+    months = st.session_state.get("date_months") or []
+    last_index = len(months) - 1 if months else 0
+    if skip_clicked:
+        start_index, end_index = 0, last_index
+    else:
+        start_index = st.session_state.get("date_from", 0)
+        end_index = st.session_state.get("date_to", last_index)
+    # Commit into plain keys (see span_ends) rather than writing back to
+    # the date_from / date_to widgets themselves - both because Streamlit
+    # forbids reassigning a widget's value after it has rendered this run,
+    # and because those widget keys will be pruned once this question is
+    # no longer shown.
+    st.session_state.date_start_index = start_index
+    st.session_state.date_end_index = end_index
+    after = len(filter_matches(st.session_state.results))
+    st.session_state.last_change = change_line(before, after)
+    st.session_state.loading_message = "Finding more ways to narrow your search\u2026"
+    st.session_state.phase = "loading_next"
+    st.rerun()
+
+
+def render_attribute_question(photos):
+    """The next attribute question, or move on to the results if none remain."""
+    query = st.session_state.get("active_query", "")
+    visible = filter_matches(st.session_state.results)
+    current = [photo for photo, _score in visible]
+    question = next_question(
+        current,
+        query,
+        st.session_state.answers,
+        asked=st.session_state.asked,
+        questions_asked=st.session_state.questions_asked,
+        not_sure_count=st.session_state.not_sure_count,
+        stopped=st.session_state.stopped,
+    )
+    if question is None:
+        st.session_state.phase = "loading_results"
+        st.rerun()
+        return
+    with st.container(key="question-card"):
+        st.markdown(
+            f"<p class='question-card-text'>{html.escape(question['text'])}</p>",
+            unsafe_allow_html=True,
+        )
+        tapped = show_question(question)
+    if tapped is not None:
+        apply_tap(question, tapped["value"])
+        st.session_state.loading_message = "Finding more ways to narrow your search\u2026"
+        st.session_state.phase = "loading_next"
+        st.rerun()
+
+
+def render_asking(photos):
+    """Exactly one question at a time: the date range first, then attributes.
+
+    Earlier answers now live in the rail on the right (render_answers_rail),
+    not repeated here - this column only ever shows the current question.
+    """
+    # This line is filled only inside apply_tap / render_date_question, so it
+    # stays hidden until the first tap.
+    if st.session_state.last_change:
+        st.write(st.session_state.last_change)
+
+    if date_question_pending():
+        render_date_question()
+        return
+    render_attribute_question(photos)
+
+
+def render_loading(message, seconds):
+    """A short, deliberate pause with a spinner message."""
+    with st.spinner(message):
+        time.sleep(seconds)
+
+
+def render_loading_questions():
+    render_loading("Intelligently curating questions to refine your search\u2026", 1.5)
+    st.session_state.phase = "asking"
+    st.rerun()
+
+
+def render_loading_next(photos):
+    message = st.session_state.get(
+        "loading_message", "Finding more ways to narrow your search\u2026"
+    )
+    render_loading(message, 1.2)
+    if date_question_pending():
+        st.session_state.phase = "asking"
+        st.rerun()
+        return
+    query = st.session_state.get("active_query", "")
+    visible = filter_matches(st.session_state.results)
+    current = [photo for photo, _score in visible]
+    question = next_question(
+        current,
+        query,
+        st.session_state.answers,
+        asked=st.session_state.asked,
+        questions_asked=st.session_state.questions_asked,
+        not_sure_count=st.session_state.not_sure_count,
+        stopped=st.session_state.stopped,
+    )
+    st.session_state.phase = "asking" if question is not None else "loading_results"
+    st.rerun()
+
+
+def render_loading_results():
+    render_loading("Curating your best matches\u2026", 1.5)
+    st.session_state.phase = "results"
+    st.rerun()
+
+
+def render_feedback():
+    """Single-click thumbs up / thumbs down. Local UI feedback only."""
+    st.write("Was this helpful?")
+    up_column, down_column, _rest = st.columns([1, 1, 6])
+    with up_column:
+        if st.button("\U0001F44D", key="feedback-up", width="stretch"):
+            st.session_state.feedback = "up"
+            st.toast("Thanks for the feedback!")
+    with down_column:
+        if st.button("\U0001F44E", key="feedback-down", width="stretch"):
+            st.session_state.feedback = "down"
+            st.toast("Thanks for the feedback!")
+    # Checked after both buttons, so the caption appears on the very same
+    # run as the click that set it (not only on the next rerun).
+    if st.session_state.get("feedback"):
+        st.caption("Feedback recorded \u2014 thank you.")
+
+
+def render_results_phase(photos):
+    """Final results: sort control, the photos, then quick feedback.
+
+    The answers that got here are listed in the rail on the right, "Start
+    over" lives in the top bar, and each photo's details already show on
+    hover over its "i" icon - so there is nothing else to toggle here.
+    """
+    results = st.session_state.results
+    visible = filter_matches(results)
+    if results and not visible:
+        st.write("No photos in this date range.")
+        return
+
+    sort_by = st.segmented_control(
+        "Sort by",
+        ["Best match", "Date"],
+        default="Best match",
+        key="result_sort",
+        width="content",
+    )
+    show_results(visible, sort_by)
+    render_feedback()
 
 
 def render_library(photos):
@@ -1086,7 +1529,9 @@ def render_library(photos):
 def main():
     st.set_page_config(page_title="Quick Find", page_icon="🔍", layout="wide")
     st.markdown(PAGE_STYLE, unsafe_allow_html=True)
-    st.session_state.setdefault("view", "home")
+    # A fresh browser tab has no session state yet, but the URL's "page"
+    # query param survives a refresh, so that is what decides the section.
+    st.session_state.setdefault("view", st.query_params.get("page", "home"))
     render_sidebar()
 
     if st.session_state.pop("do_reset", False):
@@ -1111,80 +1556,41 @@ def main():
         render_library(photos)
         return
 
-    # Enter inside the box submits the form, same as the Search button.
-    # A new form key on Start over clears the box. A form keeps its own text.
-    search_round = st.session_state.get("search_round", 0)
-    with st.form(f"search-{search_round}"):
-        search_text = st.text_input("Search text", label_visibility="collapsed")
-        submitted = st.form_submit_button("Search")
-
-    if submitted:
-        start_search(clean_text(search_text))
-
-    idle = not st.session_state.get("active_query", "")
-    render_hero(idle)
-    if idle:
-        render_prompts()
-
-    with st.container(key="toolbar"):
-        slider_column, detail_column, reset_column = st.columns([3, 1, 1])
-        with slider_column:
-            show_date_slider(photos or [])
-        with detail_column:
-            show_details = st.checkbox("Show details")
-        with reset_column:
-            start_over = st.button("Start over", width="stretch")
-
-    if start_over:
-        st.session_state.do_reset = True
-        st.rerun()
-
-    query = st.session_state.get("active_query", "")
-    if not query:
-        show_timeline(photos or [])
-        return
-
     remember_question_state()
-    if "results" not in st.session_state:
-        start_search(query)
 
-    results = st.session_state.results
-    visible = filter_matches(results)
-    current = [photo for photo, _score in visible]
-    question = next_question(
-        current,
-        query,
-        st.session_state.answers,
-        asked=st.session_state.asked,
-        questions_asked=st.session_state.questions_asked,
-        not_sure_count=st.session_state.not_sure_count,
-        stopped=st.session_state.stopped,
-    )
+    phase = st.session_state.phase
 
-    answers_so_far = summary_line(st.session_state.answers)
-    if answers_so_far:
-        st.write(answers_so_far)
-    # This line is filled only inside apply_tap, so it stays hidden until a tap.
-    if st.session_state.last_change:
-        st.write(st.session_state.last_change)
-    if question is not None:
-        st.write(question["text"])
-        tapped = show_question(question)
-        if tapped is not None:
-            apply_tap(question, tapped["value"])
-            st.rerun()
-
-    sort_by = st.segmented_control(
-        "Sort by",
-        ["Best match", "Date"],
-        default="Best match",
-        key="result_sort",
-        width="content",
-    )
-    if results and not visible:
-        st.write("No photos in this date range.")
+    if phase == "idle":
+        # Google-homepage style: hero, the search bar, then the example
+        # prompts, all centred - nothing else on screen yet.
+        render_hero()
+        submitted, search_text = render_search_form(centered=True)
+        render_prompts()
+        if submitted:
+            cleaned = clean_text(search_text)
+            if cleaned:
+                start_search(cleaned)
+                st.rerun()
         return
-    show_results(visible, show_details, sort_by)
+
+    # Every other phase: the conversation (or the results) on the left,
+    # a running record of the answers given so far on the right - the
+    # same idea as a references rail, just for this app's own questions.
+    main_column, rail_column = st.columns([2.3, 1], gap="large")
+    with main_column:
+        render_top_bar(editable=phase == "results")
+        if phase == "loading_questions":
+            render_loading_questions()
+        elif phase == "asking":
+            render_asking(photos or [])
+        elif phase == "loading_next":
+            render_loading_next(photos or [])
+        elif phase == "loading_results":
+            render_loading_results()
+        else:
+            render_results_phase(photos or [])
+    with rail_column:
+        render_answers_rail()
 
 
 if __name__ == "__main__":
