@@ -413,10 +413,22 @@ PAGE_STYLE = """
   }
 
   /* ---------------- Hero ---------------- */
+  /* The idle homepage (hero + search + prompts) is wrapped in this one
+     container (see .st-key-idle-stage below) so the whole group can be
+     centred as a unit, both horizontally and vertically in the viewport -
+     not just left/right-centred text sitting near the top. */
+  .st-key-idle-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: calc(100vh - 5rem);
+    width: 100%;
+  }
   .hero { text-align: center; padding: 6vh 1rem 1.4rem; }
-  .hero.hero-idle { padding: 9vh 1rem 1.6rem; }
+  .hero.hero-idle { padding: 0 1rem 1.8rem; }
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 2.3rem;
     font-weight: 500;
     letter-spacing: -0.03em;
     color: #202124;
@@ -424,11 +436,11 @@ PAGE_STYLE = """
   }
   .hero.hero-compact h1 { font-size: 1.4rem; }
   .hero p {
-    margin: .7rem auto 0;
-    max-width: 38rem;
+    margin: .85rem auto 0;
+    max-width: 42rem;
     color: var(--muted);
-    font-size: .98rem;
-    line-height: 1.45;
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
   .hero.hero-compact p { display: none; }
 
@@ -439,7 +451,7 @@ PAGE_STYLE = """
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
   }
   .st-key-prompts [data-testid="stElementContainer"] { margin: 0 !important; width: auto !important; }
   .st-key-prompts [data-testid="stButton"] { width: fit-content !important; }
@@ -448,19 +460,44 @@ PAGE_STYLE = """
     min-height: 0 !important;
     height: auto !important;
     font-style: italic !important;
-    font-size: 15px !important;
+    font-size: 16px !important;
     font-weight: 400 !important;
     color: #80868b !important;
     background: #fff !important;
     border: 1px solid #e3e6ea !important;
     border-radius: 999px !important;
-    padding: 8px 16px !important;
+    padding: 10px 18px !important;
     margin: 0 !important;
   }
   .st-key-prompts button:hover {
     color: #3c4043 !important;
     border-color: #dadce0 !important;
     background: #f8f9fa !important;
+  }
+
+  /* "Not sure" / "Show results now" (and the date question's "Apply
+     range" / "Not sure") always sit in this fixed footer row, directly
+     below whatever choice rows a question has - same spot every time,
+     so the layout doesn't shift between a question with 2 choices and
+     one with 6. */
+  .st-key-question-footer {
+    margin-top: .5rem;
+    padding-top: .7rem;
+    border-top: 1px solid var(--line);
+  }
+  /* Filled "secondary" treatment - a notch more prominent than the plain
+     outlined choice buttons above, without competing with an actual
+     primary (blue) action like "Start over". */
+  .st-key-question-footer div[data-testid="stButton"] > button {
+    background: #f1f3f4 !important;
+    border: 1px solid #dadce0 !important;
+    color: #3c4043 !important;
+    font-weight: 600 !important;
+  }
+  .st-key-question-footer div[data-testid="stButton"] > button:hover {
+    background: #e8eaed !important;
+    border-color: #c4c7ca !important;
+    color: #202124 !important;
   }
 
   /* ---------------- Toolbar ---------------- */
@@ -484,7 +521,7 @@ PAGE_STYLE = """
     border: 1px solid #e3e6ea;
     border-radius: 999px;
     box-shadow: 0 1px 2px rgba(32, 33, 36, .06), 0 8px 20px rgba(32, 33, 36, .10);
-    padding: .25rem .35rem .25rem .9rem;
+    padding: .3rem .4rem .3rem 1.1rem;
   }
   /* Idle "New search": a Google-style search bar, centred in the normal
      page flow, sitting between the hero and the example prompts. */
@@ -496,7 +533,7 @@ PAGE_STYLE = """
      has nothing to centre, since that wrapper already fills it. Capping
      and centering this wrapper itself is what moves the form. */
   .st-key-search-center [data-testid="stLayoutWrapper"] {
-    max-width: 560px;
+    max-width: 640px;
     margin: 0 auto;
   }
   .st-key-search-center [data-testid="stForm"] {
@@ -583,6 +620,29 @@ PAGE_STYLE = """
     line-height: 1.35;
   }
 
+  /* Quick thumbs up/down, boxed and sitting right below "Your answers"
+     in the rail - not down at the bottom of the results. */
+  .st-key-feedback-box {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: .9rem .9rem 1rem;
+    margin-top: .9rem;
+    background: #fff;
+  }
+  .st-key-feedback-box [data-testid="stMarkdownContainer"] p {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 .6rem;
+  }
+  .st-key-feedback-box [data-testid="stHorizontalBlock"] { gap: .5rem !important; }
+  .st-key-feedback-box div[data-testid="stButton"] button {
+    font-size: 1.05rem;
+    min-height: 2.3rem;
+    border-radius: 999px;
+  }
+  .st-key-feedback-box .stCaption { margin-top: .5rem; }
+
   [data-testid="stForm"] [data-testid="stVerticalBlock"] {
     flex-direction: row !important;
     align-items: center !important;
@@ -597,22 +657,22 @@ PAGE_STYLE = """
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
   }
   [data-testid="stForm"] [data-testid="stFormSubmitButton"] {
-    width: 42px !important;
-    height: 42px !important;
-    flex: 0 0 42px !important;
+    width: 48px !important;
+    height: 48px !important;
+    flex: 0 0 48px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
   [data-testid="stForm"] [data-testid="stFormSubmitButton"] button {
     position: relative;
-    width: 42px !important;
-    height: 42px !important;
-    min-width: 42px !important;
-    min-height: 42px !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
     padding: 0 !important;
     margin: 0 !important;
     border: none !important;
@@ -622,7 +682,7 @@ PAGE_STYLE = """
     align-items: center !important;
     justify-content: center !important;
     background:
-      radial-gradient(circle at center, #fff 0 15px, transparent 16px),
+      radial-gradient(circle at center, #fff 0 17px, transparent 18px),
       conic-gradient(#FBBC04 0 90deg, #EA4335 90deg 180deg, #4285F4 180deg 270deg, #34A853 270deg 360deg) !important;
   }
   [data-testid="stForm"] [data-testid="stFormSubmitButton"] button p,
@@ -631,9 +691,9 @@ PAGE_STYLE = """
     content: "";
     position: absolute;
     left: 50%; top: 50%;
-    width: 20px; height: 20px;
+    width: 23px; height: 23px;
     transform: translate(-50%, -50%);
-    background: center / 19px 19px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' stroke='%23000' stroke-width='1.35' stroke-linejoin='round' stroke-linecap='round' d='M13 19V7.83l4.88 4.88c.39.39 1.03.39 1.42 0a.996.996 0 000-1.41l-6.59-6.59a.996.996 0 00-1.41 0l-6.6 6.58a.996.996 0 101.41 1.41L11 7.83V19c0 .55.45 1 1 1s1-.45 1-1z'/%3E%3C/svg%3E");
+    background: center / 22px 22px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' stroke='%23000' stroke-width='1.35' stroke-linejoin='round' stroke-linecap='round' d='M13 19V7.83l4.88 4.88c.39.39 1.03.39 1.42 0a.996.996 0 000-1.41l-6.59-6.59a.996.996 0 00-1.41 0l-6.6 6.58a.996.996 0 101.41 1.41L11 7.83V19c0 .55.45 1 1 1s1-.45 1-1z'/%3E%3C/svg%3E");
   }
 
   /* ---------------- Buttons & controls elsewhere ---------------- */
@@ -1370,6 +1430,7 @@ def show_results(matches, sort_by):
 def reset_search():
     """Clear the search, the questions, and the answers."""
     st.session_state.active_query = ""
+    st.session_state.pending_query = ""
     st.session_state.results = []
     st.session_state.answers = {}
     st.session_state.asked = []
@@ -1406,9 +1467,20 @@ def remember_question_state():
 
 
 def start_search(query):
-    """Run one search and forget any questions from the previous search."""
+    """Queue one search and forget any questions from the previous search.
+
+    The actual search() call - which can take several seconds the first
+    time it runs a session, since that is when it loads the embedding and
+    re-ranking models - is deliberately *not* made here. Doing it here
+    would run it synchronously before the next rerun, so the screen would
+    sit frozen (no spinner, no feedback) for however long that takes.
+    Instead this only records which query is pending; render_loading_search
+    does the real work from inside a spinner, so every phase of a search -
+    this one included - gives the same immediate, visible feedback.
+    """
     st.session_state.active_query = query
-    st.session_state.results = search(query) if query else []
+    st.session_state.pending_query = query
+    st.session_state.results = []
     st.session_state.answers = {}
     st.session_state.asked = []
     st.session_state.questions_asked = 0
@@ -1422,7 +1494,7 @@ def start_search(query):
     # Removing the key lets that default take over cleanly for this search.
     st.session_state.pop("result_sort", None)
     st.session_state.date_done = False
-    st.session_state.phase = "loading_questions" if query else "idle"
+    st.session_state.phase = "loading_search" if query else "idle"
     st.session_state.answer_log = []
     st.session_state.pop("feedback", None)
     st.session_state.pop("date_range", None)
@@ -1459,7 +1531,14 @@ def apply_tap(question, choice):
 
 
 def buttons_for(question):
-    """Answers in rows, with the less common ones hidden until asked."""
+    """Answers in rows, with the less common ones hidden until asked.
+
+    "Not sure" and "Show results now" are returned separately from the
+    real choices (not appended onto the end of the same list) so they can
+    always be rendered on their own fixed last row - see show_question -
+    instead of landing wherever the choice count happens to leave off,
+    which used to shift them around from question to question.
+    """
     choices = []
     always = []
     for option in question["options"]:
@@ -1474,25 +1553,42 @@ def buttons_for(question):
     else:
         visible = list(choices[:VISIBLE_ANSWERS])
         visible.append({"value": MORE_OPTIONS, "label": MORE_OPTIONS})
-    return visible + always
+    return visible, always
 
 
 def show_question(question):
-    """Buttons in rows of four. Returns the tapped answer, or None.
+    """Real choices in rows of four, then "Not sure" / "Show results now"
+    pinned to their own fixed row underneath. Returns the tapped answer,
+    or None.
 
+    Keeping that pair on a row of their own - rather than wherever they'd
+    fall inside the same grid as the real choices - means they sit in the
+    same place every time, regardless of how many choices a question has.
     "More options" only reveals the rest. It is not an answer.
     """
-    options = buttons_for(question)
-    for start in range(0, len(options), COLUMNS):
-        row = options[start : start + COLUMNS]
-        columns = st.columns(COLUMNS)
-        for column, option in zip(columns, row):
+    visible, always = buttons_for(question)
+
+    def tap(options_row):
+        columns = st.columns(len(options_row))
+        for column, option in zip(columns, options_row):
             key = f"answer-{question['key']}-{option['value']}"
             if column.button(option["label"], key=key, width="stretch"):
                 if option["value"] == MORE_OPTIONS:
                     st.session_state.show_more_for = question["key"]
                     st.rerun()
                 return option
+        return None
+
+    for start in range(0, len(visible), COLUMNS):
+        tapped = tap(visible[start : start + COLUMNS])
+        if tapped is not None:
+            return tapped
+
+    if always:
+        with st.container(key="question-footer"):
+            tapped = tap(always)
+            if tapped is not None:
+                return tapped
     return None
 
 
@@ -1581,11 +1677,15 @@ def render_date_question():
             unsafe_allow_html=True,
         )
         show_date_slider(results_photos())
-        apply_column, skip_column = st.columns(2)
-        with apply_column:
-            apply_clicked = st.button("Apply range", key="date-apply", width="stretch")
-        with skip_column:
-            skip_clicked = st.button(config.NOT_SURE_LABEL, key="date-skip", width="stretch")
+        # Same fixed footer row as every attribute question (show_question)
+        # uses for "Not sure" / "Show results now" - so the two actions
+        # always land in the same place, question to question.
+        with st.container(key="question-footer"):
+            apply_column, skip_column = st.columns(2)
+            with apply_column:
+                apply_clicked = st.button("Apply range", key="date-apply", width="stretch")
+            with skip_column:
+                skip_clicked = st.button(config.NOT_SURE_LABEL, key="date-skip", width="stretch")
     if not (apply_clicked or skip_clicked):
         return
     before = len(st.session_state.results)
@@ -1603,9 +1703,13 @@ def render_date_question():
     # no longer shown.
     st.session_state.date_start_index = start_index
     st.session_state.date_end_index = end_index
+    # "Apply range" always logs a tile - even when the slider was left at
+    # its full default span - since the user still made a deliberate
+    # choice there, distinct from "Not sure". Only "Not sure" skips
+    # straight to the full range without a user-picked one to show.
     if skip_clicked:
         log_answer("Dates", config.NOT_SURE_LABEL)
-    elif (start_index, end_index) != (0, last_index):
+    else:
         log_answer("Dates", f"{month_chip(months[start_index])} \u2013 {month_chip(months[end_index])}")
     after = len(filter_matches(st.session_state.results))
     st.session_state.last_change = change_line(before, after)
@@ -1668,6 +1772,22 @@ def render_loading(message, seconds):
         time.sleep(seconds)
 
 
+def render_loading_search():
+    """Run the real search() call inside a spinner.
+
+    This is the one loading phase that does genuine work rather than a
+    deliberate pause - the first search of a session also loads the
+    embedding and re-ranking models, which can take several seconds. That
+    cost is real either way; the point of this phase is only to make sure
+    it always happens behind a spinner instead of a frozen screen.
+    """
+    query = st.session_state.get("pending_query", "")
+    with st.spinner("Searching your library\u2026"):
+        st.session_state.results = search(query) if query else []
+    st.session_state.phase = "loading_questions"
+    st.rerun()
+
+
 def render_loading_questions():
     render_loading("Intelligently curating questions to refine your search\u2026", 1.5)
     st.session_state.phase = "asking"
@@ -1706,29 +1826,35 @@ def render_loading_results():
 
 
 def render_feedback():
-    """Single-click thumbs up / thumbs down. Local UI feedback only."""
-    st.write("Was this helpful?")
-    up_column, down_column, _rest = st.columns([1, 1, 6])
-    with up_column:
-        if st.button("\U0001F44D", key="feedback-up", width="stretch"):
-            st.session_state.feedback = "up"
-            st.toast("Thanks for the feedback!")
-    with down_column:
-        if st.button("\U0001F44E", key="feedback-down", width="stretch"):
-            st.session_state.feedback = "down"
-            st.toast("Thanks for the feedback!")
-    # Checked after both buttons, so the caption appears on the very same
-    # run as the click that set it (not only on the next rerun).
-    if st.session_state.get("feedback"):
-        st.caption("Feedback recorded, thank you.")
+    """Single-click thumbs up / thumbs down. Local UI feedback only.
+
+    Lives in a bordered box in the rail, right below "Your answers" -
+    not at the bottom of the results, so it's visible without scrolling.
+    """
+    with st.container(key="feedback-box"):
+        st.write("Was this helpful?")
+        up_column, down_column = st.columns(2)
+        with up_column:
+            if st.button("\U0001F44D", key="feedback-up", width="stretch"):
+                st.session_state.feedback = "up"
+                st.toast("Thanks for the feedback!")
+        with down_column:
+            if st.button("\U0001F44E", key="feedback-down", width="stretch"):
+                st.session_state.feedback = "down"
+                st.toast("Thanks for the feedback!")
+        # Checked after both buttons, so the caption appears on the very
+        # same run as the click that set it (not only on the next rerun).
+        if st.session_state.get("feedback"):
+            st.caption("Feedback recorded, thank you.")
 
 
 def render_results_phase(photos):
-    """Final results: sort control, the photos, then quick feedback.
+    """Final results: sort control, then the photos.
 
-    The answers that got here are listed in the rail on the right, "Start
-    over" lives in the top bar, and each photo's details already show on
-    hover over its "i" icon - so there is nothing else to toggle here.
+    The answers that got here are listed in the rail on the right (along
+    with the thumbs up/down feedback box, right below them), "Start over"
+    lives in the top bar, and each photo's details already show on hover
+    over its "i" icon - so there is nothing else to toggle here.
     """
     results = st.session_state.results
     visible = filter_matches(results)
@@ -1744,7 +1870,6 @@ def render_results_phase(photos):
         width="content",
     )
     show_results(visible, sort_by)
-    render_feedback()
 
 
 def flow_card(step, title, desc, icon, accent, outcome=False):
@@ -1971,10 +2096,12 @@ def main():
 
     if phase == "idle":
         # Google-homepage style: hero, the search bar, then the example
-        # prompts, all centred - nothing else on screen yet.
-        render_hero()
-        submitted, search_text = render_search_form(centered=True)
-        render_prompts()
+        # prompts, all centred - both horizontally and vertically in the
+        # viewport, like a real homepage - nothing else on screen yet.
+        with st.container(key="idle-stage"):
+            render_hero()
+            submitted, search_text = render_search_form(centered=True)
+            render_prompts()
         if submitted:
             cleaned = clean_text(search_text)
             if cleaned:
@@ -1988,7 +2115,9 @@ def main():
     main_column, rail_column = st.columns([2.3, 1], gap="large")
     with main_column:
         render_top_bar()
-        if phase == "loading_questions":
+        if phase == "loading_search":
+            render_loading_search()
+        elif phase == "loading_questions":
             render_loading_questions()
         elif phase == "asking":
             render_asking(photos or [])
@@ -2000,6 +2129,14 @@ def main():
             render_results_phase(photos or [])
     with rail_column:
         render_answers_rail()
+        # Thumbs up/down only makes sense once results are on screen, so
+        # it only joins the rail in that final phase - right below the
+        # list of answers, boxed, same as the "expected" mock.
+        if phase not in (
+            "loading_search", "loading_questions", "asking",
+            "loading_next", "loading_results",
+        ):
+            render_feedback()
 
 
 if __name__ == "__main__":
