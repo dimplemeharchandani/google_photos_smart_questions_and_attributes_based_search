@@ -22,6 +22,10 @@ env/
 .cache/
 models/
 
+# Real usage feedback (§2.7) - local to each run, not a fixture like
+# data/test_results.csv, so it is not checked in.
+data/feedback_log.csv
+
 # OS and editor
 .DS_Store
 .AppleDouble

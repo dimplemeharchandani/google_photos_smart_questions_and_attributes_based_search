@@ -257,6 +257,46 @@ class QuestionTests(unittest.TestCase):
         kept_colours = apply_answer(coloured, "clothing_colour", "blue")
         self.assertEqual([item["id"] for item in kept_colours], [2, 5, 3])
 
+    def test_most_narrowing_question_is_asked_even_if_later_in_order(self):
+        """A lopsided split (location_type) should lose to an even one
+        (people_count) even though location_type comes first in
+        QUESTION_ORDER - see §2.4."""
+        photos = []
+        for index in range(10):
+            photos.append(
+                photo(
+                    index,
+                    main_subject=["people"],
+                    location_type="beach" if index < 9 else "home",
+                    people_count="one" if index < 5 else "two",
+                )
+            )
+        question = next_question(photos, "a photo", {})
+        self.assertEqual(question["key"], "people_count")
+
+    def test_question_skipped_when_most_photos_have_no_known_value(self):
+        """A question almost nobody can answer (season, in the real
+        library) should be skipped even when its known photos split
+        evenly - see §2.5."""
+        photos = []
+        for index in range(20):
+            photos.append(
+                photo(
+                    index,
+                    location_type="beach" if index % 2 == 0 else "home",
+                    season="summer" if index < 3 else ("winter" if index < 6 else "unknown"),
+                )
+            )
+        question = next_question(photos, "a photo", {})
+        self.assertEqual(question["key"], "location_type")
+
+        few_unknowns = [
+            photo(index, season="summer" if index % 2 == 0 else "winter")
+            for index in range(20)
+        ]
+        still_asked = next_question(few_unknowns, "a photo", {})
+        self.assertEqual(still_asked["key"], "season")
+
     def test_stop_after_question_limits(self):
         photos = []
         for index in range(12):
