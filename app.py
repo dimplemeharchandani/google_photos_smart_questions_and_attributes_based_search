@@ -198,12 +198,12 @@ PAGE_STYLE = """
   .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
     background: #ffffff;
   }
-  [data-testid="stAppViewContainer"]::before {
+  .stApp::before {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 3px;
-    z-index: 200;
+    z-index: 999999;
     pointer-events: none;
     background: linear-gradient(90deg, #FBBC04, #EA4335, #4285F4, #34A853);
   }
