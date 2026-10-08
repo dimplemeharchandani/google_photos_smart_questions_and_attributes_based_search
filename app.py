@@ -1652,7 +1652,7 @@ def render_hero():
     heading = "Half-remember a photo? Just describe it."
     sub = (
         "Type whatever you recall, a place, a color, a season. "
-        "We'll ask a couple of quick questions to narrow thousands of "
+        "We'll ask a couple of quick smart questions to narrow thousands of "
         "photos down to the one you're after."
     )
     st.markdown(
