@@ -1289,6 +1289,14 @@ def date_question_pending():
     return len(library_months(results_photos())) >= 2
 
 
+def asked_question_keys():
+    """Question keys that the clarifying-question engine should skip."""
+    asked = list(st.session_state.get("asked", []))
+    if st.session_state.get("date_done", False):
+        asked.extend(config.DATE_ATTRIBUTES)
+    return asked
+
+
 def answer_label(question_key):
     """The short name shown on a tile, e.g. 'main_subject' -> 'Mainly of'."""
     return SUMMARY_NAMES.get(question_key, question_key.replace("_", " ").title())
@@ -1782,7 +1790,7 @@ def render_attribute_question(photos):
         current,
         query,
         st.session_state.answers,
-        asked=st.session_state.asked,
+        asked=asked_question_keys(),
         questions_asked=st.session_state.questions_asked,
         not_sure_count=st.session_state.not_sure_count,
         stopped=st.session_state.stopped,
@@ -1867,7 +1875,7 @@ def render_loading_next(photos):
         current,
         query,
         st.session_state.answers,
-        asked=st.session_state.asked,
+        asked=asked_question_keys(),
         questions_asked=st.session_state.questions_asked,
         not_sure_count=st.session_state.not_sure_count,
         stopped=st.session_state.stopped,
