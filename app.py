@@ -97,7 +97,7 @@ GITHUB_URL = (
 EXAMPLE_PROMPTS = (
     "a birthday cake with string lights, maybe last winter",
     "cafe photo with food served on the table",
-    "trip photos with friends near the mountains",
+    "trip photos near the mountains",
 )
 
 # The four semicircles of the Google Photos mark: yellow, red, green, blue.
